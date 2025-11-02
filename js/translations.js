@@ -196,7 +196,7 @@ const translations = {
                     description: "Construction d'une maison individuelle avec terrasse et jardin paysagé."
                 },
                 school: {
-                    title: "Projet d'école primaire",
+                    title: "Projet Mall Martin Bakole",
                     location: "Kinshasa",
                     description: "Construction d'une école moderne dans les normes internationales."
                 },
@@ -636,7 +636,7 @@ const translations = {
                     description: "Construction of an individual house with terrace and landscaped garden."
                 },
                 school: {
-                    title: "Primary School Project",
+                    title: "Mall Martin Bakole Project",
                     location: "Kinshasa",
                     description: "Construction of a modern school meeting international standards."
                 },
