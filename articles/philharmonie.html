@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Philharmonie de Paris - Kayaya Ilunga Construction</title>
+    <link rel="icon" type="image/x-icon" href="../images/icons/logo.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/language-switcher.css">
+    <!-- Ajout des meta tags SEO -->
+    <meta name="description" content="La Philharmonie de Paris - Chef-d'œuvre architectural signé Jean Nouvel. Inaugurée en 2015, elle est un lieu emblématique dédié à la musique et à l'excellence acoustique.">
+    <meta name="keywords" content="Philharmonie Paris, Jean Nouvel, architecture musicale, salle de concert Paris, acoustique exceptionnelle, culture Paris, monument architecture">
+    <meta name="author" content="Process Architecture">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="La Philharmonie de Paris - Un Chef-d'Œuvre Architectural">
+    <meta property="og:description" content="Découvrez la Philharmonie de Paris, chef-d'œuvre architectural signé Jean Nouvel">
+    <meta property="og:image" content="../blog/La_Philharmonie_de_Paris/p6.jpg">
+    <meta property="og:url" content="https://arnoldnzama.github.io/KAYAYA-CONSTRUCTION/articles/philharmonie.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        .article-hero {
+            background: linear-gradient(135deg, rgba(39, 40, 122, 0.8), rgba(39, 40, 122, 0.6)),
+                        url('../blog/La_Philharmonie_de_Paris/p6.jpg') center/cover;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #c69b49;
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #c69b49;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .article-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(39, 40, 122, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(39, 40, 122, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: rgba(39, 40, 122, 1);
+            transform: rotate(90deg);
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(39, 40, 122, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-nav:hover {
+            background: rgba(39, 40, 122, 1);
+        }
+        
+        .modal-prev {
+            left: 1rem;
+        }
+        
+        .modal-next {
+            right: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="secondary-bg shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center space-x-2">
+                        <img src="../images/logos/logo.png" alt="Logo Process Architecture" class="h-24 w-auto object-contain">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.home">Accueil</a>
+                    <a href="../index.html#about" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.about">À propos</a>
+                    <a href="../index.html#services" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.services">Services</a>
+                    <a href="../realisations.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.projects">Réalisations</a>
+                    <a href="../blog.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-white pb-1" data-translate="nav.blog">Blog</a>
+                    <a href="../contact.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="lang-btn-white">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">FR</span>
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div class="lang-dropdown">
+                            <div class="lang-option" data-lang="fr">
+                                <img src="../images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                                <span>Français</span>
+                            </div>
+                            <div class="lang-option" data-lang="en">
+                                <img src="../images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                                <span>English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-xl text-white"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+                        <div class="mobile-menu hidden md:hidden primary-bg py-4 border-t border-white border-opacity-20">
+                            <a href="../index.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.home">Accueil</a>
+                            <a href="../index.html#about" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.about">À propos</a>
+                            <a href="../index.html#services" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.services">Services</a>
+                            <a href="../realisations.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.projects">Réalisations</a>
+                            <a href="../blog.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white" data-translate="nav.blog">Blog</a>
+                            <a href="../contact.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.contact">Contact</a>
+                            
+                            <!-- Language Switcher Mobile -->
+                            <div class="language-switcher px-4 mt-2">
+                                <button class="lang-btn-white-mobile">
+                                    <i class="fas fa-globe"></i>
+                                    <span id="current-lang-mobile">FR</span>
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </button>
+                                <div class="lang-dropdown">
+                                    <div class="lang-option" data-lang="fr">
+                                        <img src="../images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                                        <span>Français</span>
+                                    </div>
+                                    <div class="lang-option" data-lang="en">
+                                        <img src="../images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                                        <span>English</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="article-hero">
+        <div class="container mx-auto px-6">
+            <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
+                <span class="text-white font-semibold">
+                    <i class="fas fa-tag mr-2"></i><span data-translate="articles.philharmonie.category">Inauguration</span>
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-translate="articles.philharmonie.title">
+                La Philharmonie de Paris
+            </h1>
+            <p class="text-xl md:text-2xl mb-8" data-translate="articles.philharmonie.subtitle">
+                Un Chef-d'Œuvre Architectural Signé Jean Nouvel
+            </p>
+            <div class="article-meta inline-flex bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
+                <div class="meta-item text-white">
+                    <i class="far fa-calendar"></i>
+                    <span data-translate="articles.philharmonie.date">4 Juillet 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="article-content">
+                
+                <!-- Introduction -->
+                <div class="mb-8">
+                    <p class="text-xl text-gray-700 font-medium leading-relaxed" data-translate="articles.philharmonie.content.intro">
+                        Inaugurée le 14 janvier 2015, la Philharmonie de Paris représente l'un des projets architecturaux les plus ambitieux et novateurs du début du 21e siècle. Conçue par l'architecte de renom Jean Nouvel, elle s'impose comme un lieu emblématique dédié à la musique et à l'excellence acoustique.
+                    </p>
+                </div>
+
+                <h2><i class="fas fa-building mr-3"></i><span data-translate="articles.philharmonie.content.architecture.title">Une Architecture Audacieuse</span></h2>
+                <p data-translate="articles.philharmonie.content.architecture.p1">
+                    La Philharmonie de Paris se distingue par son architecture spectaculaire et avant-gardiste. Le bâtiment, recouvert d'écailles de métal réfléchissantes, évoque à la fois un paysage montagneux et un oiseau en vol. Cette enveloppe métallique de 340 000 tuiles d'aluminium anodisé change d'apparence selon l'angle de vue et la luminosité, créant un dialogue permanent avec son environnement.
+                </p>
+                <p data-translate="articles.philharmonie.content.architecture.p2">
+                    S'élevant sur 52 mètres de hauteur, la structure abrite une salle de concert principale de 2 400 places, conçue pour offrir une acoustique exceptionnelle. Jean Nouvel a imaginé un espace où le public entoure l'orchestre, créant une intimité unique entre les musiciens et les spectateurs.
+                </p>
+
+                <h2><i class="fas fa-music mr-3"></i><span data-translate="articles.philharmonie.content.acoustique.title">L'Excellence Acoustique</span></h2>
+                <p data-translate="articles.philharmonie.content.acoustique.p1">
+                    L'acoustique de la grande salle a été conçue en collaboration avec le célèbre acousticien néo-zélandais Harold Marshall. La salle présente une géométrie asymétrique innovante, avec des balcons qui semblent flotter dans l'espace. Cette configuration permet à chaque spectateur de bénéficier d'une expérience sonore optimale, quelle que soit sa position.
+                </p>
+                <p data-translate="articles.philharmonie.content.acoustique.p2">
+                    Les matériaux ont été soigneusement sélectionnés pour leurs propriétés acoustiques : le bois de peuplier des Landes pour les panneaux muraux, le chêne pour le parquet de la scène. Chaque détail a été pensé pour servir la musique et offrir une expérience d'écoute sans équivalent.
+                </p>
+
+                <!-- Galerie d'Images -->
+                <h2><i class="fas fa-images mr-3"></i><span data-translate="articles.philharmonie.content.gallery">Galerie Photographique</span></h2>
+                <div class="article-gallery">
+                    <div class="gallery-item" onclick="openModal(0)">
+                        <img src="../blog/La_Philharmonie_de_Paris/p1.jpg" alt="Philharmonie de Paris 1">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(1)">
+                        <img src="../blog/La_Philharmonie_de_Paris/p2.jpg" alt="Philharmonie de Paris 2">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(2)">
+                        <img src="../blog/La_Philharmonie_de_Paris/p3.jpg" alt="Philharmonie de Paris 3">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(3)">
+                        <img src="../blog/La_Philharmonie_de_Paris/p4.jpg" alt="Philharmonie de Paris 4">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(4)">
+                        <img src="../blog/La_Philharmonie_de_Paris/p5.jpg" alt="Philharmonie de Paris 5">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(5)">
+                        <img src="../blog/La_Philharmonie_de_Paris/p6.jpg" alt="Philharmonie de Paris 6">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(6)">
+                        <img src="../blog/La_Philharmonie_de_Paris/p7.jpg" alt="Philharmonie de Paris 7">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(7)">
+                        <img src="../blog/La_Philharmonie_de_Paris/p8.jpg" alt="Philharmonie de Paris 8">
+                    </div>
+                </div>
+
+                <h2><i class="fas fa-landmark mr-3"></i><span data-translate="articles.philharmonie.content.culturel.title">Un Lieu Culturel Majeur</span></h2>
+                <p data-translate="articles.philharmonie.content.culturel.p1">
+                    Au-delà de sa fonction de salle de concert, la Philharmonie de Paris est conçue comme un véritable lieu de vie culturelle. Elle accueille non seulement des concerts de musique classique, mais aussi du jazz, des musiques du monde, et propose un riche programme éducatif destiné à tous les publics.
+                </p>
+                <p data-translate="articles.philharmonie.content.culturel.p2">
+                    Le bâtiment comprend également un musée de la musique, des espaces d'exposition, des salles de répétition, et un espace éducatif innovant. Cette approche globale fait de la Philharmonie un équipement culturel complet, au service de la démocratisation de la musique.
+                </p>
+
+                <h3><i class="fas fa-check-circle mr-2 primary-color"></i><span data-translate="articles.philharmonie.content.caracteristiques.title">Caractéristiques Techniques</span></h3>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.philharmonie.content.caracteristiques.architecte">Architecte : Jean Nouvel avec Ateliers Jean Nouvel</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.philharmonie.content.caracteristiques.surface">Surface : 23 000 m² de surface utile</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.philharmonie.content.caracteristiques.capacite">Capacité : 2 400 places dans la grande salle</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.philharmonie.content.caracteristiques.hauteur">Hauteur : 52 mètres</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.philharmonie.content.caracteristiques.cout">Coût : 390 millions d'euros</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.philharmonie.content.caracteristiques.inauguration">Inauguration : 14 janvier 2015</span>
+                    </li>
+                </ul>
+
+                <h2><i class="fas fa-award mr-3"></i><span data-translate="articles.philharmonie.content.reconnaissance.title">Reconnaissance Internationale</span></h2>
+                <p data-translate="articles.philharmonie.content.reconnaissance.p1">
+                    Depuis son inauguration, la Philharmonie de Paris a reçu de nombreuses distinctions et est devenue un symbole architectural majeur de la capitale française. Elle attire non seulement les mélomanes du monde entier, mais aussi les passionnés d'architecture contemporaine.
+                </p>
+                <p data-translate="articles.philharmonie.content.reconnaissance.p2">
+                    Son intégration au Parc de la Villette, dans le 19e arrondissement de Paris, a également contribué à la revitalisation de ce quartier, démontrant comment un projet culturel d'envergure peut transformer un territoire urbain.
+                </p>
+
+                <h2><i class="fas fa-lightbulb mr-3"></i><span data-translate="articles.philharmonie.content.inspiration.title">Inspiration pour Process Architecture</span></h2>
+                <p data-translate="articles.philharmonie.content.inspiration.p1">
+                    Pour Process Architecture, la Philharmonie de Paris représente un exemple parfait de la manière dont l'architecture peut servir un projet culturel ambitieux. L'attention portée aux détails, la recherche de l'excellence acoustique et fonctionnelle, ainsi que l'audace du geste architectural sont autant de principes qui guident notre propre approche des projets.
+                </p>
+                <p data-translate="articles.philharmonie.content.inspiration.p2">
+                    Ce projet démontre qu'un bâtiment peut être à la fois une œuvre d'art, un outil performant et un catalyseur de vie sociale et culturelle. C'est précisément cette vision holistique que nous cherchons à appliquer dans nos réalisations, adaptée au contexte africain et aux besoins de nos clients.
+                </p>
+
+                <!-- Navigation Article -->
+                <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+                    <a href="decorex.html" class="inline-flex items-center gap-2 text-[#c69b49] font-semibold hover:gap-4 transition-all">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-translate="articles.navigation.previous">Article Précédent</span>
+                    </a>
+                    <a href="../blog.html" class="inline-flex items-center gap-2 text-[#c69b49] font-semibold hover:gap-4 transition-all">
+                        <span data-translate="articles.navigation.backToBlog">Retour au Blog</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <a href="arabie-saoudite.html" class="inline-flex items-center gap-2 text-[#c69b49] font-semibold hover:gap-4 transition-all">
+                        <span data-translate="articles.navigation.next">Article Suivant</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="related-articles bg-gray-50 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold primary-color mb-8 text-center">
+                <i class="fas fa-book mr-3"></i><span data-translate="articles.related.title">Articles Connexes</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <a href="decorex.html" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                    <img src="../blog/Expo_DECOREX_July_2025/exp4.jpg" alt="DECOREX" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold primary-color mb-2">Expo DECOREX Sandton</h3>
+                        <p class="text-gray-600">The Future of Living - Innovation et design...</p>
+                    </div>
+                </a>
+                <a href="arabie-saoudite.html" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                    <img src="../blog/Royaume _Arabie_Saoudite/r2.jpg" alt="Arabie Saoudite" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold primary-color mb-2">Pavillon d'Arabie Saoudite</h3>
+                        <p class="text-gray-600">Architecture audacieuse à l'EXPO Dubaï 2020...</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour afficher les images -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-prev modal-nav" onclick="changeImage(-1)">&#10094;</div>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Image agrandie">
+        </div>
+        <div class="modal-next modal-nav" onclick="changeImage(1)">&#10095;</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="secondary-bg py-16">
+        <div class="container mx-auto px-6">
+            <!-- Logo et description centrés -->
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <img src="../images/logos/logo.png" alt="Logo Process Architecture" class="h-20 w-auto object-contain mx-auto">
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Process Architecture</h3>
+                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets, pierre après pierre depuis 2019 en Afrique et en Europe.</p>
+            </div>
+
+            <!-- Colonnes de navigation -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.home">Accueil</a></li>
+                        <li><a href="../index.html#about" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.about">À propos</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.services">Services</a></li>
+                        <li><a href="../realisations.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.projects">Réalisations</a></li>
+                        <li><a href="../blog.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.blog">Blog</a></li>
+                        <li><a href="../contact.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.services.title">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.residential.title">Construction résidentielle</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.commercial.title">Construction commerciale</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.renovation.title">Rénovation</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.public.title">Travaux publics</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
+                    <div class="space-y-3">
+                        <p class="text-gray-200" data-translate="footer.contact.address">160, Av. Isoki, C/Barumbu, Kinshasa-RDC</p>
+                        <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867</p>
+                        <p class="text-gray-200" data-translate="footer.contact.email">contact@kayayailungacontsruction.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Réseaux sociaux -->
+            <div class="text-center mb-8">
+                <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.social.title">Suivez-nous</h4>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=100054446112355" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ligne de séparation et copyright -->
+            <div class="border-t border-white border-opacity-20 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Process Architecture. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#c69b49] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../js/translations.js"></script>
+    <script src="../js/language-switcher.js"></script>
+    <script>
+        // Données des images
+        const images = [
+            { src: '../blog/La_Philharmonie_de_Paris/p1.jpg', title: 'Philharmonie 1' },
+            { src: '../blog/La_Philharmonie_de_Paris/p2.jpg', title: 'Philharmonie 2' },
+            { src: '../blog/La_Philharmonie_de_Paris/p3.jpg', title: 'Philharmonie 3' },
+            { src: '../blog/La_Philharmonie_de_Paris/p4.jpg', title: 'Philharmonie 4' },
+            { src: '../blog/La_Philharmonie_de_Paris/p5.jpg', title: 'Philharmonie 5' },
+            { src: '../blog/La_Philharmonie_de_Paris/p6.jpg', title: 'Philharmonie 6' },
+            { src: '../blog/La_Philharmonie_de_Paris/p7.jpg', title: 'Philharmonie 7' },
+            { src: '../blog/La_Philharmonie_de_Paris/p8.jpg', title: 'Philharmonie 8' }
+        ];
+
+        let currentImageIndex = 0;
+
+        function openModal(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = images[index].src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = images[currentImageIndex].src;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (modal.classList.contains('active')) {
+                if (event.key === 'ArrowLeft') {
+                    changeImage(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changeImage(1);
+                } else if (event.key === 'Escape') {
+                    closeModal();
+                }
+            }
+        });
+
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('invisible');
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.add('invisible');
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
+

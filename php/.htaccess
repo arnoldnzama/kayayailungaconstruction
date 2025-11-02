@@ -1,0 +1,39 @@
+# Sécurité du dossier PHP
+
+# Bloquer l'accès aux fichiers de configuration
+<Files "config.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "functions.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Bloquer l'accès aux fichiers de logs
+<FilesMatch "\.txt$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Autoriser l'accès uniquement aux scripts de traitement
+<Files "process_contact.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+<Files "test_email.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Désactiver le listing
+Options -Indexes
+
+# Protection PHP
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_value upload_max_filesize 5M
+    php_value post_max_size 10M
+</IfModule>

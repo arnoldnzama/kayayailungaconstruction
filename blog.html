@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Kayaya Ilunga Construction</title>
+    <link rel="icon" type="image/x-icon" href="images/icons/logo.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <!-- Ajout des meta tags SEO -->
+    <meta name="description" content="Blog Kayaya Ilunga Construction - Découvrez les dernières tendances en architecture, design et innovation dans le monde de la construction. Articles sur l'EXPO DECOREX, la Philharmonie de Paris et plus.">
+    <meta name="keywords" content="blog architecture, design intérieur, innovation construction, DECOREX, Philharmonie Paris, tendances architecture, Kayaya Ilunga Construction">
+    <meta name="author" content="Kayaya Ilunga Construction">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Blog & Actualités - Kayaya Ilunga Construction">
+    <meta property="og:description" content="Découvrez les dernières tendances en architecture et design">
+    <meta property="og:image" content="blog/Expo_DECOREX_July_2025/exp4.jpg">
+    <meta property="og:url" content="https://arnoldnzama.github.io/KAYAYA-CONSTRUCTION/blog.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        .blog-hero {
+            background: linear-gradient(135deg, rgba(39, 40, 122, 0.9), rgba(39, 40, 122, 0.7)),
+                        url('blog/Expo_DECOREX_July_2025/exp4.jpg') center/cover;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .article-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(39, 40, 122, 0.2);
+        }
+        
+        .article-image {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .article-card:hover .article-image img {
+            transform: scale(1.1);
+        }
+        
+        .article-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(39, 40, 122, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+        
+        .article-content {
+            padding: 2rem;
+        }
+        
+        .article-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #c69b49;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .article-excerpt {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e5e5;
+        }
+        
+        .article-date {
+            color: #999;
+            font-size: 0.875rem;
+        }
+        
+        .read-more-btn {
+            background: #c69b49;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .read-more-btn:hover {
+            background: #1a1a50;
+            transform: translateX(5px);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #ff9702, #ff6b00);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            z-index: 10;
+            text-transform: uppercase;
+        }
+        
+        @media (max-width: 768px) {
+            .article-image {
+                height: 220px;
+            }
+            
+            .article-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="secondary-bg shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-24 w-auto object-contain">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.home">Accueil</a>
+                    <a href="index.html#about" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.about">À propos</a>
+                    <a href="index.html#services" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.services">Services</a>
+                    <a href="realisations.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.projects">Réalisations</a>
+                    <a href="blog.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-[#c69b49] pb-1" data-translate="nav.blog">Blog</a>
+                    <a href="contact.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="lang-btn-white">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">FR</span>
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div class="lang-dropdown">
+                            <div class="lang-option" data-lang="fr">
+                                <img src="images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                                <span>Français</span>
+                            </div>
+                            <div class="lang-option" data-lang="en">
+                                <img src="images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                                <span>English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-xl text-white"></i>
+                    </button>
+                </div>
+            </div>
+                        <!-- Mobile menu -->
+                        <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-white border-opacity-20">
+                            <a href="index.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.home">Accueil</a>
+                            <a href="index.html#about" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.about">À propos</a>
+                            <a href="index.html#services" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.services">Services</a>
+                            <a href="realisations.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.projects">Réalisations</a>
+                            <a href="blog.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white" data-translate="nav.blog">Blog</a>
+                            <a href="contact.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.contact">Contact</a>
+                            
+                            <!-- Language Switcher Mobile -->
+                            <div class="language-switcher px-4 mt-2">
+                                <button class="lang-btn-white-mobile">
+                                    <i class="fas fa-globe"></i>
+                                    <span id="current-lang-mobile">FR</span>
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </button>
+                                <div class="lang-dropdown">
+                                    <div class="lang-option" data-lang="fr">
+                                        <img src="images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                                        <span>Français</span>
+                                    </div>
+                                    <div class="lang-option" data-lang="en">
+                                        <img src="images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                                        <span>English</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                <i class="fas fa-newspaper mr-4"></i><span data-translate="blog.hero.title">Blog & Actualités</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto" data-translate="blog.hero.subtitle">
+                Découvrez les dernières tendances en architecture, design et innovation dans le monde de la construction.
+            </p>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            
+            <!-- Featured Article -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold mb-8 primary-color">
+                    <i class="fas fa-star mr-3"></i><span data-translate="blog.featured">Article à la Une</span>
+                </h2>
+                
+                <div class="article-card" data-aos="fade-up">
+                    <div class="featured-badge">
+                        <i class="fas fa-star mr-1"></i><span data-translate="blog.featured">À la Une</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-0">
+                        <div class="article-image md:h-full">
+                            <div class="article-category" data-translate="articles.decorex.category">Expo DECOREX</div>
+                            <img src="blog/Expo_DECOREX_July_2025/exp4.jpg" alt="Expo DECOREX">
+                        </div>
+                        <div class="article-content flex flex-col justify-center">
+                            <h3 class="article-title text-2xl md:text-3xl" data-translate="articles.decorex.title">
+                                Expo DECOREX Sandton Convention - The Future of Living
+                            </h3>
+                            <p class="article-excerpt text-lg" data-translate="articles.decorex.excerpt">
+                                « The future of living » explore comment les technologies de pointe et le design avant-gardiste révolutionnent la vie à la maison, améliorant notre qualité de vie. L'exposition DECOREX 2025 à Sandton Convention Center a réuni les plus grands noms du design et de l'architecture.
+                            </p>
+                            <div class="article-meta">
+                                <div class="article-date">
+                                    <i class="far fa-calendar mr-2"></i><span data-translate="articles.decorex.date">24-27 Juillet 2025</span>
+                                </div>
+                                <a href="articles/decorex.html" class="read-more-btn">
+                                    <span data-translate="articles.navigation.readArticle">Lire l'article</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- All Articles Grid -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8 primary-color">
+                    <i class="fas fa-list mr-3"></i><span data-translate="blog.allArticles">Tous les Articles</span>
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Article 1: DECOREX -->
+                    <div class="article-card">
+                        <div class="article-image">
+                            <div class="article-category" data-translate="articles.decorex.category">Expo DECOREX</div>
+                            <img src="blog/Expo_DECOREX_July_2025/exp1.jpg" alt="Expo DECOREX">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title" data-translate="articles.decorex.title">
+                                Expo DECOREX Sandton Convention
+                            </h3>
+                            <p class="article-excerpt" data-translate="articles.decorex.shortExcerpt">
+                                Découvrez les innovations présentées à l'exposition DECOREX 2025 à Sandton, où le design rencontre la technologie pour façonner l'avenir de l'habitat.
+                            </p>
+                            <div class="article-meta">
+                                <div class="article-date">
+                                    <i class="far fa-calendar mr-2"></i><span data-translate="articles.decorex.date">24-27 Juillet 2025</span>
+                                </div>
+                                <a href="articles/decorex.html" class="read-more-btn">
+                                    <span data-translate="articles.navigation.readMore">Lire plus</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 2: Philharmonie de Paris -->
+                    <div class="article-card">
+                        <div class="article-image">
+                            <div class="article-category" data-translate="articles.philharmonie.category">Inauguration</div>
+                            <img src="blog/La_Philharmonie_de_Paris/p6.jpg" alt="Philharmonie de Paris">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title" data-translate="articles.philharmonie.title">
+                                La Philharmonie de Paris
+                            </h3>
+                            <p class="article-excerpt" data-translate="articles.philharmonie.excerpt">
+                                La Philharmonie de Paris, inaugurée le 14 janvier 2015, est un chef-d'œuvre architectural signé Jean Nouvel. Un lieu emblématique dédié à la musique et à l'excellence acoustique.
+                            </p>
+                            <div class="article-meta">
+                                <div class="article-date">
+                                    <i class="far fa-calendar mr-2"></i><span data-translate="articles.philharmonie.date">4 Juillet 2025</span>
+                                </div>
+                                <a href="articles/philharmonie.html" class="read-more-btn">
+                                    <span data-translate="articles.navigation.readMore">Lire plus</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Article 3: Pavillon Arabie Saoudite -->
+                    <div class="article-card">
+                        <div class="article-image">
+                            <div class="article-category" data-translate="articles.arabieSaoudite.category">Design</div>
+                            <img src="blog/Royaume _Arabie_Saoudite/r2.jpg" alt="Pavillon Arabie Saoudite">
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title" data-translate="articles.arabieSaoudite.title">
+                                Pavillon du Royaume d'Arabie Saoudite
+                            </h3>
+                            <p class="article-excerpt" data-translate="articles.arabieSaoudite.excerpt">
+                                Le pavillon de l'Arabie Saoudite à l'EXPO Dubaï 2020 se distingue par son architecture audacieuse et fonctionnelle, alliant tradition et modernité dans un design spectaculaire.
+                            </p>
+                            <div class="article-meta">
+                                <div class="article-date">
+                                    <i class="far fa-calendar mr-2"></i><span data-translate="articles.arabieSaoudite.date">5 Mars 2025</span>
+                                </div>
+                                <a href="articles/arabie-saoudite.html" class="read-more-btn">
+                                    <span data-translate="articles.navigation.readMore">Lire plus</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="secondary-bg py-16">
+        <div class="container mx-auto px-6">
+            <!-- Logo et description centrés -->
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-20 w-auto object-contain mx-auto">
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction</h3>
+                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets, pierre après pierre depuis 2019 en Afrique et en Europe.</p>
+            </div>
+
+            <!-- Colonnes de navigation -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.home">Accueil</a></li>
+                        <li><a href="index.html#about" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.about">À propos</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.services">Services</a></li>
+                        <li><a href="realisations.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.projects">Réalisations</a></li>
+                        <li><a href="blog.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.blog">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.services.title">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.residential.title">Construction résidentielle</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.commercial.title">Construction commerciale</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.renovation.title">Rénovation</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.public.title">Travaux publics</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
+                    <div class="space-y-3">
+                        <p class="text-gray-200" data-translate="footer.contact.address">160, Av. Isoki, C/Barumbu, Kinshasa-RDC</p>
+                        <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867</p>
+                        <p class="text-gray-200" data-translate="footer.contact.email">contact@kayayailungacontsruction.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Réseaux sociaux -->
+            <div class="text-center mb-8">
+                <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.social.title">Suivez-nous</h4>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=100054446112355" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ligne de séparation et copyright -->
+            <div class="border-t border-white border-opacity-20 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga Construction. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#c69b49] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Le menu mobile et le bouton back-to-top sont gérés par js/script.js
+    </script>
+</body>
+</html>
+

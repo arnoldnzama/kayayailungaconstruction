@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavillon du Royaume d'Arabie Saoudite - Kayaya Ilunga Construction</title>
+    <link rel="icon" type="image/x-icon" href="../images/icons/logo.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/colors.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/language-switcher.css">
+    <!-- Ajout des meta tags SEO -->
+    <meta name="description" content="Pavillon du Royaume d'Arabie Saoudite à l'EXPO Dubaï 2020. Architecture audacieuse et fonctionnelle alliant tradition et modernité. Un projet architectural spectaculaire.">
+    <meta name="keywords" content="Pavillon Arabie Saoudite, EXPO Dubaï 2020, architecture audacieuse, Boris Micka Associates, Vision 2030, design innovation, exposition universelle">
+    <meta name="author" content="Kayaya Ilunga Construction">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Pavillon du Royaume d'Arabie Saoudite - EXPO Dubaï 2020">
+    <meta property="og:description" content="Découvrez l'architecture audacieuse du pavillon saoudien à l'EXPO Dubaï">
+    <meta property="og:image" content="../blog/Royaume _Arabie_Saoudite/r2.jpg">
+    <meta property="og:url" content="https://arnoldnzama.github.io/KAYAYA-CONSTRUCTION/articles/arabie-saoudite.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        .article-hero {
+            background: linear-gradient(135deg, rgba(39, 40, 122, 0.8), rgba(39, 40, 122, 0.6)),
+                        url('../blog/Royaume _Arabie_Saoudite/r2.jpg') center/cover;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .article-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #c69b49;
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #c69b49;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .article-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(39, 40, 122, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(39, 40, 122, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            background: rgba(39, 40, 122, 1);
+            transform: rotate(90deg);
+        }
+        
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(39, 40, 122, 0.8);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-nav:hover {
+            background: rgba(39, 40, 122, 1);
+        }
+        
+        .modal-prev {
+            left: 1rem;
+        }
+        
+        .modal-next {
+            right: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="secondary-bg shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center space-x-2">
+                        <img src="../images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-24 w-auto object-contain">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.home">Accueil</a>
+                    <a href="../index.html#about" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.about">À propos</a>
+                    <a href="../index.html#services" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.services">Services</a>
+                    <a href="../realisations.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.projects">Réalisations</a>
+                    <a href="../blog.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-white pb-1" data-translate="nav.blog">Blog</a>
+                    <a href="../contact.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.contact">Contact</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="lang-btn-white">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">FR</span>
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div class="lang-dropdown">
+                            <div class="lang-option" data-lang="fr">
+                                <img src="../images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                                <span>Français</span>
+                            </div>
+                            <div class="lang-option" data-lang="en">
+                                <img src="../images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                                <span>English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-xl text-white"></i>
+                    </button>
+                </div>
+            </div>
+                        <!-- Mobile menu -->
+                        <div class="mobile-menu hidden md:hidden primary-bg py-4 border-t border-white border-opacity-20">
+                            <a href="../index.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.home">Accueil</a>
+                            <a href="../index.html#about" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.about">À propos</a>
+                            <a href="../index.html#services" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.services">Services</a>
+                            <a href="../realisations.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.projects">Réalisations</a>
+                            <a href="../blog.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white" data-translate="nav.blog">Blog</a>
+                            <a href="../contact.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.contact">Contact</a>
+                            
+                            <!-- Language Switcher Mobile -->
+                            <div class="language-switcher px-4 mt-2">
+                                <button class="lang-btn-white-mobile">
+                                    <i class="fas fa-globe"></i>
+                                    <span id="current-lang-mobile">FR</span>
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </button>
+                                <div class="lang-dropdown">
+                                    <div class="lang-option" data-lang="fr">
+                                        <img src="../images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                                        <span>Français</span>
+                                    </div>
+                                    <div class="lang-option" data-lang="en">
+                                        <img src="../images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                                        <span>English</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="article-hero">
+        <div class="container mx-auto px-6">
+            <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
+                <span class="text-white font-semibold">
+                    <i class="fas fa-tag mr-2"></i><span data-translate="articles.arabieSaoudite.category">Design</span>
+                </span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-translate="articles.arabieSaoudite.title">
+                Pavillon du Royaume d'Arabie Saoudite
+            </h1>
+            <p class="text-xl md:text-2xl mb-8" data-translate="articles.arabieSaoudite.subtitle">
+                EXPO Dubaï 2020 - Architecture Audacieuse et Fonctionnelle
+            </p>
+            <div class="article-meta inline-flex bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
+                <div class="meta-item text-white">
+                    <i class="far fa-calendar"></i>
+                    <span data-translate="articles.arabieSaoudite.date">5 Mars 2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <article class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="article-content">
+                
+                <!-- Introduction -->
+                <div class="mb-8">
+                    <p class="text-xl text-gray-700 font-medium leading-relaxed" data-translate="articles.arabieSaoudite.content.intro">
+                        Le pavillon de l'Arabie Saoudite à l'EXPO Dubaï 2020 (qui s'est déroulée en 2021-2022) s'est imposé comme l'un des pavillons les plus spectaculaires et innovants de l'exposition universelle. Alliant tradition et modernité, il a offert aux visiteurs une expérience immersive unique à travers l'histoire, la culture et la vision futuriste du Royaume.
+                    </p>
+                </div>
+
+                <h2><i class="fas fa-building mr-3"></i><span data-translate="articles.arabieSaoudite.content.design.title">Un Design Audacieux</span></h2>
+                <p data-translate="articles.arabieSaoudite.content.design.p1">
+                    Conçu par le cabinet d'architectes Boris Micka Associates, le pavillon saoudien se distingue par sa forme organique spectaculaire. La structure, qui évoque une fenêtre vers l'avenir, s'élève majestueusement sur plusieurs étages avec une façade inclinée qui défie les conventions architecturales traditionnelles.
+                </p>
+                <p data-translate="articles.arabieSaoudite.content.design.p2">
+                    L'enveloppe extérieure du bâtiment est composée d'un écran LED massif de plus de 2 000 m², l'un des plus grands jamais utilisés pour un pavillon d'exposition. Cet écran géant transforme le pavillon en une toile vivante, projetant des visuels dynamiques qui racontent l'histoire de l'Arabie Saoudite, de ses paysages désertiques à ses villes ultramodernes.
+                </p>
+
+                <h2><i class="fas fa-star mr-3"></i><span data-translate="articles.arabieSaoudite.content.experience.title">Une Expérience Immersive</span></h2>
+                <p data-translate="articles.arabieSaoudite.content.experience.p1">
+                    À l'intérieur, le parcours visiteur a été conçu comme un voyage à travers le temps et l'espace. Les visiteurs commencent leur exploration au niveau supérieur du pavillon, d'où ils bénéficient d'une vue panoramique sur le site de l'EXPO, avant de descendre progressivement à travers différentes zones thématiques.
+                </p>
+                <p data-translate="articles.arabieSaoudite.content.experience.p2">
+                    Le thème du pavillon, "Sky Window", invite les visiteurs à découvrir l'ambition saoudienne incarnée par la Vision 2030, un plan de transformation économique et sociale ambitieux. Chaque étage présente un aspect différent de cette vision : l'innovation, la durabilité, la culture et l'hospitalité légendaire saoudienne.
+                </p>
+
+                <!-- Galerie d'Images -->
+                <h2><i class="fas fa-images mr-3"></i><span data-translate="articles.arabieSaoudite.content.gallery">Galerie Photographique</span></h2>
+                <div class="article-gallery">
+                    <div class="gallery-item" onclick="openModal(0)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r1.jpg" alt="Pavillon Arabie Saoudite 1">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(1)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r2.jpg" alt="Pavillon Arabie Saoudite 2">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(2)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r3.jpg" alt="Pavillon Arabie Saoudite 3">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(3)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r4.jpg" alt="Pavillon Arabie Saoudite 4">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(4)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r5.jpg" alt="Pavillon Arabie Saoudite 5">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(5)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r6.jpg" alt="Pavillon Arabie Saoudite 6">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(6)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r7.jpg" alt="Pavillon Arabie Saoudite 7">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(7)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r8.jpg" alt="Pavillon Arabie Saoudite 8">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(8)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r9.jpg" alt="Pavillon Arabie Saoudite 9">
+                    </div>
+                    <div class="gallery-item" onclick="openModal(9)">
+                        <img src="../blog/Royaume _Arabie_Saoudite/r10.jpg" alt="Pavillon Arabie Saoudite 10">
+                    </div>
+                </div>
+
+                <h2><i class="fas fa-leaf mr-3"></i><span data-translate="articles.arabieSaoudite.content.innovation.title">Innovation et Durabilité</span></h2>
+                <p data-translate="articles.arabieSaoudite.content.innovation.p1">
+                    Le pavillon saoudien ne se contente pas d'être visuellement impressionnant ; il intègre également des technologies durables avancées. La conception du bâtiment optimise l'efficacité énergétique grâce à une orientation stratégique qui minimise l'exposition au soleil intense de Dubaï, tout en maximisant la ventilation naturelle.
+                </p>
+                <p data-translate="articles.arabieSaoudite.content.innovation.p2">
+                    Les systèmes de gestion de l'énergie et de l'eau intégrés au pavillon démontrent l'engagement de l'Arabie Saoudite envers le développement durable, un pilier central de sa Vision 2030. Des panneaux solaires, des systèmes de récupération d'eau et des matériaux de construction écologiques ont été utilisés tout au long du projet.
+                </p>
+
+                <h3><i class="fas fa-check-circle mr-2 primary-color"></i><span data-translate="articles.arabieSaoudite.content.highlights.title">Points Forts du Pavillon</span></h3>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.highlights.item1">Plus de 13 000 m² d'espace d'exposition sur 3 étages</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.highlights.item2">Écran LED de 2 000 m², l'un des plus grands au monde</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.highlights.item3">Une architecture inclinée spectaculaire défiant la gravité</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.highlights.item4">Intégration de technologies durables et éco-responsables</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.highlights.item5">Expérience immersive combinant tradition et innovation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.highlights.item6">Mise en valeur de la Vision 2030 du Royaume</span>
+                    </li>
+                </ul>
+
+                <h2><i class="fas fa-users mr-3"></i><span data-translate="articles.arabieSaoudite.content.culture.title">Une Expérience Culturelle Riche</span></h2>
+                <p data-translate="articles.arabieSaoudite.content.culture.p1">
+                    Au-delà de l'architecture et de la technologie, le pavillon saoudien a offert une plongée profonde dans la riche culture du Royaume. Des expositions interactives ont permis aux visiteurs de découvrir l'hospitalité arabe traditionnelle, l'artisanat local, la cuisine saoudienne, ainsi que les projets de développement gigantesques comme NEOM, The Line et la Red Sea Development.
+                </p>
+                <p data-translate="articles.arabieSaoudite.content.culture.p2">
+                    Des spectacles audiovisuels immersifs, des installations artistiques contemporaines et des espaces de rencontre ont créé une atmosphère dynamique où passé et futur se rencontrent. Le pavillon a également accueilli de nombreux événements culturels, des conférences et des célébrations nationales tout au long de l'EXPO.
+                </p>
+
+                <h2><i class="fas fa-trophy mr-3"></i><span data-translate="articles.arabieSaoudite.content.reconnaissance.title">Reconnaissance et Impact</span></h2>
+                <p data-translate="articles.arabieSaoudite.content.reconnaissance.p1">
+                    Le pavillon de l'Arabie Saoudite a été l'un des plus visités de l'EXPO Dubaï 2020, attirant des millions de visiteurs du monde entier. Son architecture audacieuse et son contenu captivant ont valu au pavillon de nombreuses distinctions et ont renforcé l'image du Royaume comme acteur majeur sur la scène mondiale.
+                </p>
+                <p data-translate="articles.arabieSaoudite.content.reconnaissance.p2">
+                    Ce projet démontre comment l'architecture peut servir de vecteur de communication puissant pour un pays, racontant une histoire de transformation et d'ambition tout en créant une expérience mémorable pour les visiteurs.
+                </p>
+
+                <h2><i class="fas fa-lightbulb mr-3"></i><span data-translate="articles.arabieSaoudite.content.lecons.title">Leçons pour Kayaya Ilunga Construction</span></h2>
+                <p data-translate="articles.arabieSaoudite.content.lecons.intro">
+                    Pour Kayaya Ilunga Construction, le pavillon saoudien représente un exemple inspirant de la manière dont l'architecture peut allier audace esthétique, innovation technologique et message culturel fort. Plusieurs leçons clés peuvent être tirées de ce projet :
+                </p>
+                <ul class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.lecons.lesson1">L'importance de créer des expériences immersives qui racontent une histoire</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.lecons.lesson2">L'intégration harmonieuse de la technologie au service du design</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.lecons.lesson3">L'équilibre entre identité culturelle et vision futuriste</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
+                        <span data-translate="articles.arabieSaoudite.content.lecons.lesson4">L'engagement envers la durabilité sans compromettre l'ambition architecturale</span>
+                    </li>
+                </ul>
+                <p data-translate="articles.arabieSaoudite.content.lecons.conclusion">
+                    Ces principes guident notre approche des projets à Kayaya Ilunga Construction, où nous cherchons constamment à créer des espaces qui inspirent, fonctionnent parfaitement et racontent l'histoire unique de chaque client.
+                </p>
+
+                <!-- Navigation Article -->
+                <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
+                    <a href="philharmonie.html" class="inline-flex items-center gap-2 text-[#c69b49] font-semibold hover:gap-4 transition-all">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-translate="articles.navigation.previous">Article Précédent</span>
+                    </a>
+                    <a href="../blog.html" class="inline-flex items-center gap-2 text-[#c69b49] font-semibold hover:gap-4 transition-all">
+                        <span data-translate="articles.navigation.backToBlog">Retour au Blog</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Articles -->
+    <section class="related-articles bg-gray-50 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold primary-color mb-8 text-center">
+                <i class="fas fa-book mr-3"></i><span data-translate="articles.related.title">Articles Connexes</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <a href="decorex.html" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                    <img src="../blog/Expo_DECOREX_July_2025/exp4.jpg" alt="DECOREX" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold primary-color mb-2">Expo DECOREX Sandton</h3>
+                        <p class="text-gray-600">The Future of Living - Innovation et design...</p>
+                    </div>
+                </a>
+                <a href="philharmonie.html" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
+                    <img src="../blog/La_Philharmonie_de_Paris/p6.jpg" alt="Philharmonie" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold primary-color mb-2">La Philharmonie de Paris</h3>
+                        <p class="text-gray-600">Un chef-d'œuvre architectural signé Jean Nouvel...</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour afficher les images -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-prev modal-nav" onclick="changeImage(-1)">&#10094;</div>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Image agrandie">
+        </div>
+        <div class="modal-next modal-nav" onclick="changeImage(1)">&#10095;</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="secondary-bg py-16">
+        <div class="container mx-auto px-6">
+            <!-- Logo et description centrés -->
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <img src="../images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-20 w-auto object-contain mx-auto">
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction</h3>
+                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets, pierre après pierre depuis 2019 en Afrique et en Europe.</p>
+            </div>
+
+            <!-- Colonnes de navigation -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.home">Accueil</a></li>
+                        <li><a href="../index.html#about" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.about">À propos</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.services">Services</a></li>
+                        <li><a href="../realisations.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.projects">Réalisations</a></li>
+                        <li><a href="../blog.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.blog">Blog</a></li>
+                        <li><a href="../contact.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.services.title">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.residential.title">Construction résidentielle</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.commercial.title">Construction commerciale</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.renovation.title">Rénovation</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.public.title">Travaux publics</a></li>
+                        <li><a href="../index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
+                    <div class="space-y-3">
+                        <p class="text-gray-200" data-translate="footer.contact.address">160, Av. Isoki, C/Barumbu, Kinshasa-RDC</p>
+                        <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867</p>
+                        <p class="text-gray-200" data-translate="footer.contact.email">contact@kayayailungacontsruction.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Réseaux sociaux -->
+            <div class="text-center mb-8">
+                <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.social.title">Suivez-nous</h4>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://www.facebook.com/profile.php?id=100054446112355" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ligne de séparation et copyright -->
+            <div class="border-t border-white border-opacity-20 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga Construction. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#c69b49] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="../js/translations.js"></script>
+    <script src="../js/language-switcher.js"></script>
+    <script>
+        // Données des images
+        const images = [
+            { src: '../blog/Royaume _Arabie_Saoudite/r1.jpg', title: 'Pavillon 1' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r2.jpg', title: 'Pavillon 2' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r3.jpg', title: 'Pavillon 3' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r4.jpg', title: 'Pavillon 4' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r5.jpg', title: 'Pavillon 5' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r6.jpg', title: 'Pavillon 6' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r7.jpg', title: 'Pavillon 7' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r8.jpg', title: 'Pavillon 8' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r9.jpg', title: 'Pavillon 9' },
+            { src: '../blog/Royaume _Arabie_Saoudite/r10.jpg', title: 'Pavillon 10' }
+        ];
+
+        let currentImageIndex = 0;
+
+        function openModal(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = images[index].src;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            
+            if (currentImageIndex < 0) {
+                currentImageIndex = images.length - 1;
+            } else if (currentImageIndex >= images.length) {
+                currentImageIndex = 0;
+            }
+            
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = images[currentImageIndex].src;
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById('imageModal');
+            if (modal.classList.contains('active')) {
+                if (event.key === 'ArrowLeft') {
+                    changeImage(-1);
+                } else if (event.key === 'ArrowRight') {
+                    changeImage(1);
+                } else if (event.key === 'Escape') {
+                    closeModal();
+                }
+            }
+        });
+
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('invisible');
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.add('invisible');
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
+
