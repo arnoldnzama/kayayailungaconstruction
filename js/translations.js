@@ -118,7 +118,7 @@ const translations = {
                 title: "Nos coordonnées",
                 address: {
                     title: "Adresse",
-                    content: "160, Av. Isoki, C/Barumbu, Kinshasa-RDC"
+                    content: "12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo"
                 },
                 phone: {
                     title: "Téléphone",
@@ -162,7 +162,7 @@ const translations = {
             },
             contact: {
                 title: "Contact",
-                address: "160, Av. Isoki, C/Barumbu, Kinshasa-RDC",
+                address: "12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo",
                 phone: "+243 858 673 529 / +49 1512 5025867",
                 email: "contact@kayayailungacontsruction.com"
             },
@@ -558,7 +558,7 @@ const translations = {
                 title: "Our Contact Information",
                 address: {
                     title: "Address",
-                    content: "160, Av. Isoki, C/Barumbu, Kinshasa-RDC"
+                    content: "12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo"
                 },
                 phone: {
                     title: "Phone",
@@ -602,7 +602,7 @@ const translations = {
             },
             contact: {
                 title: "Contact",
-                address: "160, Av. Isoki, C/Barumbu, Kinshasa-RDC",
+                address: "12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo",
                 phone: "+243 858 673 529 / +49 1512 5025867",
                 email: "contact@kayayailungacontsruction.com"
             },

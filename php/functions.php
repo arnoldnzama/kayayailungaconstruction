@@ -400,7 +400,7 @@ function get_user_email_template($data) {
             
             <p><strong>Nos coordonnées :</strong></p>
             <p>
-                📍 160, Av. Isoki, C/Barumbu, Kinshasa-RDC<br>
+                📍 12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo<br>
                 📞 " . SUPPORT_PHONE . " / +243 971 996 77<br>
                 📧 " . SUPPORT_EMAIL . "
             </p>
