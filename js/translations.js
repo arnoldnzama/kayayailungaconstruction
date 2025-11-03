@@ -267,8 +267,8 @@ const translations = {
                 title: "Nos Réalisations",
                 subtitle: "Découvrez nos projets de construction, rénovation et aménagement réalisés avec passion et expertise. Chaque projet est une histoire unique que nous avons eu le plaisir de bâtir.",
                 stats: {
-                    projects: "10+ Projets",
-                    photos: "90+ Photos",
+                    projects: "3 Projets",
+                    photos: "15 Photos",
                     satisfaction: "100% Satisfaction"
                 }
             },
@@ -279,22 +279,16 @@ const translations = {
                 amenagement: "Aménagement",
                 infrastructure: "Infrastructure"
             },
+            categories: {
+                residence: "Résidentiel",
+                commercial: "Commercial",
+                amenagement: "Aménagement",
+                infrastructure: "Infrastructure"
+            },
             projects: {
                 arch_interieur: {
                     title: "Architecture Intérieure",
                     description: "Projet d'aménagement intérieur moderne"
-                },
-                hangar: {
-                    title: "Construction de Hangar",
-                    description: "Construction d'un hangar industriel moderne"
-                },
-                jo: {
-                    title: "Projet JO",
-                    description: "Projet d'infrastructure sportive"
-                },
-                Les_tressesu_de_Lyvia: {
-                    title: "Les Tresseurs de Lyvia",
-                    description: "Aménagement commercial pour artisans"
                 },
                 mall: {
                     title: "Centre Commercial",
@@ -303,10 +297,6 @@ const translations = {
                 residence_privee: {
                     title: "Résidence Privée",
                     description: "Construction d'une résidence privée de luxe"
-                },
-                visite_papa_cenco: {
-                    title: "Visite Papa Cenco",
-                    description: "Projet d'infrastructure publique"
                 }
             },
             cta: {
@@ -737,8 +727,8 @@ const translations = {
                 title: "Our Projects",
                 subtitle: "Discover our construction, renovation and development projects carried out with passion and expertise. Each project is a unique story that we had the pleasure of building.",
                 stats: {
-                    projects: "10+ Projects",
-                    photos: "90+ Photos",
+                    projects: "3 Projects",
+                    photos: "15 Photos",
                     satisfaction: "100% Satisfaction"
                 }
             },
@@ -749,22 +739,16 @@ const translations = {
                 amenagement: "Development",
                 infrastructure: "Infrastructure"
             },
+            categories: {
+                residence: "Residential",
+                commercial: "Commercial",
+                amenagement: "Interior",
+                infrastructure: "Infrastructure"
+            },
             projects: {
                 arch_interieur: {
                     title: "Interior Architecture",
                     description: "Modern interior design project"
-                },
-                hangar: {
-                    title: "Warehouse Construction",
-                    description: "Modern industrial warehouse construction"
-                },
-                jo: {
-                    title: "JO Project",
-                    description: "Sports infrastructure project"
-                },
-                Les_tressesu_de_Lyvia: {
-                    title: "Lyvia Weavers",
-                    description: "Commercial space for artisans"
                 },
                 mall: {
                     title: "Shopping Mall",
@@ -773,10 +757,6 @@ const translations = {
                 residence_privee: {
                     title: "Private Residence",
                     description: "Luxury private residence construction"
-                },
-                visite_papa_cenco: {
-                    title: "Papa Cenco Visit",
-                    description: "Public infrastructure project"
                 }
             },
             cta: {

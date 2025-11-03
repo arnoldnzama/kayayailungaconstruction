@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Réalisations - Kayaya Ilunga Construction</title>
     <link rel="icon" type="image/x-icon" href="images/icons/logo.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/language-switcher.css">
     <!-- Ajout des meta tags SEO -->
-    <meta name="description" content="Nos Réalisations - Kayaya Ilunga Construction. Découvrez nos projets de construction, rénovation et aménagement en RDC. Plus de 10 projets réalisés avec passion et expertise.">
-    <meta name="keywords" content="réalisations Kayaya Ilunga Construction, projets construction RDC, portfolio architecture Kinshasa, projets bâtiment Congo, rénovation Kinshasa, aménagement intérieur RDC">
+    <meta name="description"
+        content="Nos Réalisations - Kayaya Ilunga Construction. Découvrez nos projets de construction, rénovation et aménagement en RDC. Plus de 10 projets réalisés avec passion et expertise.">
+    <meta name="keywords"
+        content="réalisations Kayaya Ilunga Construction, projets construction RDC, portfolio architecture Kinshasa, projets bâtiment Congo, rénovation Kinshasa, aménagement intérieur RDC">
     <meta name="author" content="Kayaya Ilunga Construction">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Nos Réalisations - Kayaya Ilunga Construction">
@@ -25,7 +29,7 @@
         .project-section {
             margin-bottom: 4rem;
         }
-        
+
         .project-header {
             text-align: center;
             margin-bottom: 2rem;
@@ -33,14 +37,14 @@
             background: linear-gradient(135deg, rgba(39, 40, 122, 0.05), rgba(39, 40, 122, 0.02));
             border-radius: 1rem;
         }
-        
+
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
             padding: 1rem 0;
         }
-        
+
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -49,23 +53,23 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(39, 40, 122, 0.2);
         }
-        
+
         .gallery-item img {
             width: 100%;
             height: 280px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .gallery-item:hover img {
             transform: scale(1.1);
         }
-        
+
         .gallery-item-overlay {
             position: absolute;
             bottom: 0;
@@ -77,7 +81,7 @@
             transform: translateY(0);
             transition: transform 0.3s ease;
         }
-        
+
         .image-counter {
             position: absolute;
             top: 1rem;
@@ -89,7 +93,7 @@
             font-size: 0.875rem;
             font-weight: 600;
         }
-        
+
         .filter-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -97,7 +101,7 @@
             gap: 1rem;
             margin: 2rem 0;
         }
-        
+
         .filter-btn {
             padding: 0.75rem 1.5rem;
             border-radius: 2rem;
@@ -108,13 +112,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .filter-btn:hover,
         .filter-btn.active {
             background: #c69b49;
             color: white;
         }
-        
+
         .project-folder {
             position: relative;
             background: white;
@@ -124,23 +128,23 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .project-folder:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(39, 40, 122, 0.2);
         }
-        
+
         .project-folder-image {
             width: 100%;
             height: 280px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .project-folder:hover .project-folder-image {
             transform: scale(1.05);
         }
-        
+
         .project-folder-info {
             position: absolute;
             bottom: 0;
@@ -150,18 +154,18 @@
             padding: 1.5rem;
             color: white;
         }
-        
+
         .project-folder-title {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
-        
+
         .project-folder-count {
             font-size: 0.875rem;
             opacity: 0.9;
         }
-        
+
         .project-category-badge {
             position: absolute;
             top: 1rem;
@@ -174,7 +178,7 @@
             font-weight: 600;
             text-transform: uppercase;
         }
-        
+
         .modal-image {
             width: 100%;
             height: 250px;
@@ -183,15 +187,15 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        
+
         .modal-image:hover {
             transform: scale(1.02);
         }
-        
+
         #image-lightbox {
             z-index: 1000;
         }
-        
+
         .project-folder.image-error {
             background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
             display: flex;
@@ -199,27 +203,27 @@
             justify-content: center;
             min-height: 280px;
         }
-        
+
         .project-folder.image-error::before {
             content: "📁";
             font-size: 3rem;
             color: #9ca3af;
         }
-        
+
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 gap: 1rem;
             }
-            
+
             .gallery-item img {
                 height: 200px;
             }
-            
+
             .project-folder-image {
                 height: 200px;
             }
-            
+
             .modal-image {
                 height: 180px;
             }
@@ -234,17 +238,30 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-24 w-auto object-contain">
+                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction"
+                            class="h-24 w-auto object-contain">
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.home">Accueil</a>
-                    <a href="index.html#about" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.about">À propos</a>
-                    <a href="index.html#services" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.services">Services</a>
-                    <a href="realisations.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-[#c69b49] pb-1" data-translate="nav.projects">Réalisations</a>
-                    <a href="blog.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.blog">Blog</a>
-                    <a href="contact.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.contact">Contact</a>
-                    
+                    <a href="index.html"
+                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        data-translate="nav.home">Accueil</a>
+                    <a href="index.html#about"
+                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        data-translate="nav.about">À propos</a>
+                    <a href="index.html#services"
+                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        data-translate="nav.services">Services</a>
+                    <a href="realisations.html"
+                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-[#c69b49] pb-1"
+                        data-translate="nav.projects">Réalisations</a>
+                    <a href="blog.html"
+                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        data-translate="nav.blog">Blog</a>
+                    <a href="contact.html"
+                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        data-translate="nav.contact">Contact</a>
+
                     <!-- Language Switcher -->
                     <div class="language-switcher">
                         <button class="lang-btn-white">
@@ -272,13 +289,25 @@
             </div>
             <!-- Mobile menu -->
             <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-white border-opacity-20">
-                <a href="index.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.home">Accueil</a>
-                <a href="index.html#about" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.about">À propos</a>
-                <a href="index.html#services" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.services">Services</a>
-                <a href="realisations.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white" data-translate="nav.projects">Réalisations</a>
-                <a href="blog.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.blog">Blog</a>
-                <a href="contact.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.contact">Contact</a>
-                
+                <a href="index.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.home">Accueil</a>
+                <a href="index.html#about"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.about">À propos</a>
+                <a href="index.html#services"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.services">Services</a>
+                <a href="realisations.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white"
+                    data-translate="nav.projects">Réalisations</a>
+                <a href="blog.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.blog">Blog</a>
+                <a href="contact.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.contact">Contact</a>
+
                 <!-- Language Switcher Mobile -->
                 <div class="language-switcher px-4 mt-2">
                     <button class="lang-btn-white-mobile">
@@ -306,24 +335,26 @@
         <div class="container mx-auto px-6">
             <div class="text-center max-w-4xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6 primary-color">
-                    <i class="fas fa-building mr-4"></i><span data-translate="realisations.hero.title">Nos Réalisations</span>
+                    <i class="fas fa-building mr-4"></i><span data-translate="realisations.hero.title">Nos
+                        Réalisations</span>
                 </h1>
                 <p class="text-xl text-gray-700 mb-8" data-translate="realisations.hero.subtitle">
-                    Découvrez nos projets de construction, rénovation et aménagement réalisés avec passion et expertise. 
+                    Découvrez nos projets de construction, rénovation et aménagement réalisés avec passion et expertise.
                     Chaque projet est une histoire unique que nous avons eu le plaisir de bâtir.
                 </p>
                 <div class="flex justify-center items-center gap-4 text-gray-600">
                     <div class="flex items-center gap-2">
                         <i class="fas fa-check-circle primary-color"></i>
-                        <span class="font-semibold" data-translate="realisations.hero.stats.projects">10+ Projets</span>
+                        <span class="font-semibold" data-translate="realisations.hero.stats.projects">3 Projets</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <i class="fas fa-images primary-color"></i>
-                        <span class="font-semibold" data-translate="realisations.hero.stats.photos">90+ Photos</span>
+                        <span class="font-semibold" data-translate="realisations.hero.stats.photos">15 Photos</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <i class="fas fa-star primary-color"></i>
-                        <span class="font-semibold" data-translate="realisations.hero.stats.satisfaction">100% Satisfaction</span>
+                        <span class="font-semibold" data-translate="realisations.hero.stats.satisfaction">100%
+                            Satisfaction</span>
                     </div>
                 </div>
             </div>
@@ -335,19 +366,24 @@
         <div class="container mx-auto px-6">
             <div class="filter-buttons">
                 <button class="filter-btn active" onclick="filterProjects('all')">
-                    <i class="fas fa-th mr-2"></i><span data-translate="realisations.filters.all">Tous les projets</span>
+                    <i class="fas fa-th mr-2"></i><span data-translate="realisations.filters.all">Tous les
+                        projets</span>
                 </button>
                 <button class="filter-btn" onclick="filterProjects('residence')">
-                    <i class="fas fa-home mr-2"></i><span data-translate="realisations.filters.residence">Résidentiel</span>
+                    <i class="fas fa-home mr-2"></i><span
+                        data-translate="realisations.filters.residence">Résidentiel</span>
                 </button>
                 <button class="filter-btn" onclick="filterProjects('commercial')">
-                    <i class="fas fa-building mr-2"></i><span data-translate="realisations.filters.commercial">Commercial</span>
+                    <i class="fas fa-building mr-2"></i><span
+                        data-translate="realisations.filters.commercial">Commercial</span>
                 </button>
                 <button class="filter-btn" onclick="filterProjects('amenagement')">
-                    <i class="fas fa-couch mr-2"></i><span data-translate="realisations.filters.amenagement">Aménagement</span>
+                    <i class="fas fa-couch mr-2"></i><span
+                        data-translate="realisations.filters.amenagement">Aménagement</span>
                 </button>
                 <button class="filter-btn" onclick="filterProjects('infrastructure')">
-                    <i class="fas fa-city mr-2"></i><span data-translate="realisations.filters.infrastructure">Infrastructure</span>
+                    <i class="fas fa-city mr-2"></i><span
+                        data-translate="realisations.filters.infrastructure">Infrastructure</span>
                 </button>
             </div>
         </div>
@@ -362,7 +398,8 @@
             </div>
 
             <!-- Project Modal -->
-            <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+            <div id="project-modal"
+                class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
                 <div class="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
                     <div class="flex justify-between items-center p-6 border-b">
                         <h3 id="modal-title" class="text-2xl font-bold primary-color"></h3>
@@ -379,19 +416,24 @@
             </div>
 
             <!-- Image Lightbox -->
-            <div id="image-lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-60 hidden flex items-center justify-center p-4">
+            <div id="image-lightbox"
+                class="fixed inset-0 bg-black bg-opacity-90 z-60 hidden flex items-center justify-center p-4">
                 <div class="relative max-w-full max-h-full">
-                    <button id="close-lightbox" class="absolute top-4 right-4 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75">
+                    <button id="close-lightbox"
+                        class="absolute top-4 right-4 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75">
                         <i class="fas fa-times"></i>
                     </button>
-                    <button id="prev-image" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75">
+                    <button id="prev-image"
+                        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75">
                         <i class="fas fa-chevron-left"></i>
                     </button>
-                    <button id="next-image" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75">
+                    <button id="next-image"
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75">
                         <i class="fas fa-chevron-right"></i>
                     </button>
                     <img id="lightbox-image" class="max-w-full max-h-full object-contain" src="" alt="">
-                    <div id="image-counter" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full">
+                    <div id="image-counter"
+                        class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full">
                         <span id="current-image">1</span> / <span id="total-images">1</span>
                     </div>
                 </div>
@@ -406,14 +448,19 @@
                 Prêt à concrétiser votre projet ?
             </h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto" data-translate="realisations.cta.subtitle">
-                Notre équipe est à votre disposition pour discuter de vos besoins et vous accompagner dans la réalisation de vos rêves.
+                Notre équipe est à votre disposition pour discuter de vos besoins et vous accompagner dans la
+                réalisation de vos rêves.
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="contact.html" class="bg-white text-[#c69b49] font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block">
-                    <i class="fas fa-envelope mr-2"></i><span data-translate="realisations.cta.contact">Nous Contacter</span>
+                <a href="contact.html"
+                    class="bg-white text-[#c69b49] font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block">
+                    <i class="fas fa-envelope mr-2"></i><span data-translate="realisations.cta.contact">Nous
+                        Contacter</span>
                 </a>
-                <a href="index.html" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-white hover:text-[#c69b49] inline-block">
-                    <i class="fas fa-home mr-2"></i><span data-translate="realisations.cta.home">Retour à l'Accueil</span>
+                <a href="index.html"
+                    class="border-2 border-white text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-white hover:text-[#c69b49] inline-block">
+                    <i class="fas fa-home mr-2"></i><span data-translate="realisations.cta.home">Retour à
+                        l'Accueil</span>
                 </a>
             </div>
         </div>
@@ -425,41 +472,59 @@
             <!-- Logo et description centrés -->
             <div class="text-center mb-12">
                 <div class="mb-6">
-                    <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-20 w-auto object-contain mx-auto">
+                    <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction"
+                        class="h-20 w-auto object-contain mx-auto">
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction</h3>
-                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets, pierre après pierre depuis 2019 en Afrique et en Europe.</p>
+                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction
+                </h3>
+                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets,
+                    pierre après pierre depuis 2019 en Afrique et en Europe.</p>
             </div>
 
             <!-- Colonnes de navigation -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div class="text-center md:text-left">
-                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation</h4>
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation
+                    </h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.home">Accueil</a></li>
-                        <li><a href="index.html#about" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.about">À propos</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.services">Services</a></li>
-                        <li><a href="realisations.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.projects">Réalisations</a></li>
-                        <li><a href="blog.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.blog">Blog</a></li>
-                        <li><a href="contact.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="index.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.home">Accueil</a></li>
+                        <li><a href="index.html#about" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.about">À propos</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.services">Services</a></li>
+                        <li><a href="realisations.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.projects">Réalisations</a></li>
+                        <li><a href="blog.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.blog">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.services.title">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.residential.title">Construction résidentielle</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.commercial.title">Construction commerciale</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.renovation.title">Rénovation</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.public.title">Travaux publics</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.residential.title">Construction résidentielle</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.commercial.title">Construction commerciale</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.renovation.title">Rénovation</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.public.title">Travaux publics</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
                     </ul>
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
                     <div class="space-y-3">
-                        <p class="text-gray-200" data-translate="footer.contact.address">12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo</p>
-                        <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867</p>
-                        <p class="text-gray-200" data-translate="footer.contact.email">contact@kayayailungacontsruction.com</p>
+                        <p class="text-gray-200" data-translate="footer.contact.address">12, N'sele Boulevard Lumumba,
+                            Kinshasa, République Démocratique du Congo</p>
+                        <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512
+                            5025867</p>
+                        <p class="text-gray-200" data-translate="footer.contact.email">
+                            contact@kayayailungacontsruction.com</p>
                     </div>
                 </div>
             </div>
@@ -468,16 +533,20 @@
             <div class="text-center mb-8">
                 <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.social.title">Suivez-nous</h4>
                 <div class="flex justify-center space-x-4">
-                    <a href="https://www.facebook.com/profile.php?id=100054446112355" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                    <a href="https://www.facebook.com/profile.php?id=100054446112355"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -486,14 +555,16 @@
             <!-- Ligne de séparation et copyright -->
             <div class="border-t border-white border-opacity-20 pt-8">
                 <div class="text-center">
-                    <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga Construction. Tous droits réservés.</p>
+                    <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga
+                        Construction. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#c69b49] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-[#c69b49] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -514,33 +585,6 @@
                 descriptionEn: 'Modern interior design project'
             },
             {
-                id: 'hangar',
-                title: 'Construction de Hangar',
-                titleEn: 'Warehouse Construction',
-                category: 'commercial',
-                images: ['h1-1.jpg', 'h1.jpg', 'h11.jpg', 'h12.jpg', 'h13.jpg', 'h14.jpg', 'h15.jpg', 'h16.jpg', 'h17.jpg', 'h18.jpg', 'h19.jpg', 'h2.jpg', 'h20.jpg', 'h3.jpg', 'h4.jpg', 'h5.jpg', 'h6.jpg', 'h7.jpg', 'h8.jpg', 'h9.jpg'],
-                description: 'Construction d\'un hangar industriel moderne',
-                descriptionEn: 'Modern industrial warehouse construction'
-            },
-            {
-                id: 'jo',
-                title: 'Projet JO',
-                titleEn: 'JO Project',
-                category: 'infrastructure',
-                images: ['jo1-1.jpg', 'jo1.jpg', 'jo2.jpg', 'jo3.jpg', 'jo4.jpg', 'jo5.jpg', 'jo6.jpg', 'jo7.jpg'],
-                description: 'Projet d\'infrastructure sportive',
-                descriptionEn: 'Sports infrastructure project'
-            },
-            {
-                id: 'Les_tressesu_de_Lyvia',
-                title: 'Les Tresseurs de Lyvia',
-                titleEn: 'Lyvia Weavers',
-                category: 'commercial',
-                images: ['l1.jpg', 'l10.jpg', 'l11.jpg', 'l12.jpg', 'l13.jpg', 'l14.jpg', 'l2.jpg', 'l3.jpg', 'l4.jpg', 'l5.jpg', 'l6.jpg', 'l7.jpg', 'l8.jpg', 'l9-1.jpg', 'l9.jpg'],
-                description: 'Aménagement commercial pour artisans',
-                descriptionEn: 'Commercial space for artisans'
-            },
-            {
                 id: 'mall',
                 title: 'Centre Commercial',
                 titleEn: 'Shopping Mall',
@@ -557,15 +601,6 @@
                 images: ['r1.jpg', 'r10.jpg', 'r2.jpg', 'r3.jpg', 'r4.jpg', 'r5.jpg', 'r6.jpg', 'r7.jpg', 'r8.jpg', 'r9.jpg'],
                 description: 'Construction d\'une résidence privée de luxe',
                 descriptionEn: 'Luxury private residence construction'
-            },
-            {
-                id: 'visite_papa_cenco',
-                title: 'Visite Papa Cenco',
-                titleEn: 'Papa Cenco Visit',
-                category: 'infrastructure',
-                images: ['v1.jpg', 'v2.jpg', 'v3.jpg', 'v4.jpg', 'v5.jpg', 'v6.jpg', 'v7.jpg', 'v8.jpg'],
-                description: 'Projet d\'infrastructure publique',
-                descriptionEn: 'Public infrastructure project'
             }
         ];
 
@@ -574,7 +609,7 @@
         let currentImageIndex = 0;
 
         // Initialize projects on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadProjects();
             setupModalEvents();
             setupLightboxEvents();
@@ -584,9 +619,9 @@
         function loadProjects() {
             const projectsGrid = document.getElementById('projects-grid');
             const filteredProjects = currentFilter === 'all' ? projects : projects.filter(p => p.category === currentFilter);
-            
+
             projectsGrid.innerHTML = '';
-            
+
             filteredProjects.forEach(project => {
                 const projectElement = createProjectElement(project);
                 projectsGrid.appendChild(projectElement);
@@ -598,19 +633,14 @@
             const div = document.createElement('div');
             div.className = 'project-folder';
             div.setAttribute('data-category', project.category);
-            
+
             const currentLang = getCurrentLanguage();
             const title = currentLang === 'en' ? project.titleEn : project.title;
             const description = currentLang === 'en' ? project.descriptionEn : project.description;
-            
-            // Get category label
-            const categoryLabels = {
-                'residence': currentLang === 'en' ? 'Residential' : 'Résidentiel',
-                'commercial': currentLang === 'en' ? 'Commercial' : 'Commercial',
-                'amenagement': currentLang === 'en' ? 'Interior' : 'Aménagement',
-                'infrastructure': currentLang === 'en' ? 'Infrastructure' : 'Infrastructure'
-            };
-            
+
+            // Get category label from translations
+            const categoryLabels = getCategoryLabels(currentLang);
+
             div.innerHTML = `
                 <div class="project-category-badge">${categoryLabels[project.category]}</div>
                 <img src="projets/${project.id}/${project.images[0]}" alt="${title}" class="project-folder-image" onerror="this.style.display='none'; this.parentNode.classList.add('image-error');">
@@ -619,19 +649,19 @@
                     <div class="project-folder-count">${project.images.length} ${currentLang === 'en' ? 'photos' : 'photos'}</div>
                 </div>
             `;
-            
+
             div.addEventListener('click', () => openProjectModal(project));
-            
+
             return div;
         }
 
         // Filter projects
         function filterProjects(category) {
             const buttons = document.querySelectorAll('.filter-btn');
-            
+
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            
+
             currentFilter = category;
             loadProjects();
         }
@@ -641,24 +671,24 @@
             const modal = document.getElementById('project-modal');
             const modalTitle = document.getElementById('modal-title');
             const modalGallery = document.getElementById('modal-gallery');
-            
+
             const currentLang = getCurrentLanguage();
             const title = currentLang === 'en' ? project.titleEn : project.title;
-            
+
             modalTitle.textContent = title;
             modalGallery.innerHTML = '';
-            
+
             project.images.forEach((image, index) => {
                 const imgElement = document.createElement('div');
                 imgElement.className = 'gallery-item';
                 imgElement.innerHTML = `
                     <img src="projets/${project.id}/${image}" alt="${title} - Image ${index + 1}" class="modal-image" onerror="this.style.display='none'; this.parentNode.style.display='none';">
                 `;
-                
+
                 imgElement.addEventListener('click', () => openLightbox(project.images, index, project.id));
                 modalGallery.appendChild(imgElement);
             });
-            
+
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
@@ -667,16 +697,16 @@
         function openLightbox(images, startIndex, projectId) {
             currentImages = images.map(img => `projets/${projectId}/${img}`);
             currentImageIndex = startIndex;
-            
+
             const lightbox = document.getElementById('image-lightbox');
             const lightboxImage = document.getElementById('lightbox-image');
             const currentImageSpan = document.getElementById('current-image');
             const totalImagesSpan = document.getElementById('total-images');
-            
+
             lightboxImage.src = currentImages[currentImageIndex];
             currentImageSpan.textContent = currentImageIndex + 1;
             totalImagesSpan.textContent = currentImages.length;
-            
+
             lightbox.classList.remove('hidden');
         }
 
@@ -684,12 +714,12 @@
         function setupModalEvents() {
             const modal = document.getElementById('project-modal');
             const closeModal = document.getElementById('close-modal');
-            
+
             closeModal.addEventListener('click', () => {
                 modal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
             });
-            
+
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
                     modal.classList.add('hidden');
@@ -704,27 +734,27 @@
             const closeLightbox = document.getElementById('close-lightbox');
             const prevImage = document.getElementById('prev-image');
             const nextImage = document.getElementById('next-image');
-            
+
             closeLightbox.addEventListener('click', () => {
                 lightbox.classList.add('hidden');
             });
-            
+
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) {
                     lightbox.classList.add('hidden');
                 }
             });
-            
+
             prevImage.addEventListener('click', () => {
                 currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
                 updateLightboxImage();
             });
-            
+
             nextImage.addEventListener('click', () => {
                 currentImageIndex = (currentImageIndex + 1) % currentImages.length;
                 updateLightboxImage();
             });
-            
+
             // Keyboard navigation
             document.addEventListener('keydown', (e) => {
                 if (!lightbox.classList.contains('hidden')) {
@@ -743,7 +773,7 @@
         function updateLightboxImage() {
             const lightboxImage = document.getElementById('lightbox-image');
             const currentImageSpan = document.getElementById('current-image');
-            
+
             lightboxImage.src = currentImages[currentImageIndex];
             currentImageSpan.textContent = currentImageIndex + 1;
         }
@@ -753,6 +783,20 @@
             return localStorage.getItem('selectedLanguage') || 'fr';
         }
 
+        // Get category labels from translations
+        function getCategoryLabels(lang) {
+            if (typeof translations !== 'undefined' && translations[lang] && translations[lang].realisations && translations[lang].realisations.categories) {
+                return translations[lang].realisations.categories;
+            }
+            // Fallback labels
+            return {
+                'residence': lang === 'en' ? 'Residential' : 'Résidentiel',
+                'commercial': lang === 'en' ? 'Commercial' : 'Commercial',
+                'amenagement': lang === 'en' ? 'Interior' : 'Aménagement',
+                'infrastructure': lang === 'en' ? 'Infrastructure' : 'Infrastructure'
+            };
+        }
+
         // Update projects when language changes
         function updateProjectsLanguage() {
             loadProjects();
@@ -760,13 +804,14 @@
 
         // Listen for language changes
         document.addEventListener('languageChanged', updateProjectsLanguage);
-        
+
         // Update project titles when language changes
-        window.addEventListener('storage', function(e) {
+        window.addEventListener('storage', function (e) {
             if (e.key === 'selectedLanguage') {
                 updateProjectsLanguage();
             }
         });
     </script>
 </body>
+
 </html>
