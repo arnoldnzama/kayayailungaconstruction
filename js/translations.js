@@ -279,6 +279,36 @@ const translations = {
                 amenagement: "Aménagement",
                 infrastructure: "Infrastructure"
             },
+            projects: {
+                arch_interieur: {
+                    title: "Architecture Intérieure",
+                    description: "Projet d'aménagement intérieur moderne"
+                },
+                hangar: {
+                    title: "Construction de Hangar",
+                    description: "Construction d'un hangar industriel moderne"
+                },
+                jo: {
+                    title: "Projet JO",
+                    description: "Projet d'infrastructure sportive"
+                },
+                Les_tressesu_de_Lyvia: {
+                    title: "Les Tresseurs de Lyvia",
+                    description: "Aménagement commercial pour artisans"
+                },
+                mall: {
+                    title: "Centre Commercial",
+                    description: "Construction d'un centre commercial moderne"
+                },
+                residence_privee: {
+                    title: "Résidence Privée",
+                    description: "Construction d'une résidence privée de luxe"
+                },
+                visite_papa_cenco: {
+                    title: "Visite Papa Cenco",
+                    description: "Projet d'infrastructure publique"
+                }
+            },
             cta: {
                 title: "Prêt à concrétiser votre projet ?",
                 subtitle: "Notre équipe est à votre disposition pour discuter de vos besoins et vous accompagner dans la réalisation de vos rêves.",
@@ -718,6 +748,36 @@ const translations = {
                 commercial: "Commercial",
                 amenagement: "Development",
                 infrastructure: "Infrastructure"
+            },
+            projects: {
+                arch_interieur: {
+                    title: "Interior Architecture",
+                    description: "Modern interior design project"
+                },
+                hangar: {
+                    title: "Warehouse Construction",
+                    description: "Modern industrial warehouse construction"
+                },
+                jo: {
+                    title: "JO Project",
+                    description: "Sports infrastructure project"
+                },
+                Les_tressesu_de_Lyvia: {
+                    title: "Lyvia Weavers",
+                    description: "Commercial space for artisans"
+                },
+                mall: {
+                    title: "Shopping Mall",
+                    description: "Modern shopping mall construction"
+                },
+                residence_privee: {
+                    title: "Private Residence",
+                    description: "Luxury private residence construction"
+                },
+                visite_papa_cenco: {
+                    title: "Papa Cenco Visit",
+                    description: "Public infrastructure project"
+                }
             },
             cta: {
                 title: "Ready to realize your project?",
