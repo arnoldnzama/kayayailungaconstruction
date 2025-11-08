@@ -6,12 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kayaya Ilunga Construction - Bâtissons vos projets, pierre après pierre</title>
     <link rel="icon" type="image/x-icon" href="images/icons/logo.ico">
+
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="img/architecture.webp" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+        as="style">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/colors.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Nouvelle architecture CSS modulaire -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/fallbacks.css">
     <link rel="stylesheet" href="css/language-switcher.css">
     <!-- Ajout des meta tags SEO -->
     <meta name="description"
@@ -31,9 +50,9 @@
 <div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center" style="background-color: #000000;">
     <div class="relative text-center">
         <img src="images/logos/logo.png" alt="Logo" class="w-32 h-32 mx-auto mb-8 animate-bounce"
-            style="filter: brightness(1.2);">
+            style="filter: brightness(1.2);" onerror="this.style.display='none'">
         <div class="w-48 h-2 rounded-full overflow-hidden" style="background-color: #333333;">
-            <div class="loading-bar h-full rounded-full" style="background-color: #c69b49; width: 0%"></div>
+            <div class="loading-bar h-full rounded-full" style="background-color: #b78836; width: 0%"></div>
         </div>
         <div class="mt-4 font-semibold" style="color: #fffffe;">Chargement...</div>
     </div>
@@ -41,10 +60,11 @@
 
 
 
-<body class="bg-gray-50" oncontextmenu="return false">
+<body class="bg-[#0a0a0a]" style="background-color: #0a0a0a;">
+
     <!-- Navigation -->
-    <nav class="secondary-bg shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3">
+    <nav class="secondary-bg shadow-md sticky top-0 z-50" style="background-color: #0a0a0a;">
+        <div class="container mx-auto px-6 py-3" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2">
@@ -53,23 +73,23 @@
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-[#c69b49] pb-1"
+                    <a href="index.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-[#b78836] pb-1"
                         data-translate="nav.home">Accueil</a>
-                    <a href="#about"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
-                        data-translate="nav.about">À propos</a>
-                    <a href="#services"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                    <a href="equipe.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.about">Équipe</a>
+                    <a href="services.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
                         data-translate="nav.services">Services</a>
                     <a href="realisations.html"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
                         data-translate="nav.projects">Réalisations</a>
                     <a href="blog.html"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
                         data-translate="nav.blog">Blog</a>
                     <a href="contact.html"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
                         data-translate="nav.contact">Contact</a>
 
                     <!-- Language Switcher -->
@@ -98,24 +118,24 @@
                 </div>
             </div>
             <!-- Mobile menu -->
-            <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-[#c69b49] border-opacity-20">
-                <a href="#home"
-                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-[#c69b49] hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-[#c69b49]"
+            <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-white border-opacity-20">
+                <a href="index.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white"
                     data-translate="nav.home">Accueil</a>
-                <a href="#about"
-                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-[#c69b49] hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-[#c69b49]"
-                    data-translate="nav.about">À propos</a>
-                <a href="#services"
-                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-[#c69b49] hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-[#c69b49]"
+                <a href="equipe.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.about">Équipe</a>
+                <a href="services.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
                     data-translate="nav.services">Services</a>
                 <a href="realisations.html"
-                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-[#c69b49] hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-[#c69b49]"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
                     data-translate="nav.projects">Réalisations</a>
                 <a href="blog.html"
-                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-[#c69b49] hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-[#c69b49]"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
                     data-translate="nav.blog">Blog</a>
                 <a href="contact.html"
-                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-[#c69b49] hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-[#c69b49]"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
                     data-translate="nav.contact">Contact</a>
 
                 <!-- Language Switcher Mobile -->
@@ -137,86 +157,152 @@
                     </div>
                 </div>
             </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero flex items-center justify-center text-center text-white">
-        <video class="hero-background" autoplay loop muted playsinline>
-            <source src="vid/3d.mp4" type="video/mp4">
-        </video>
-        <div class="container mx-auto px-6 relative z-10 hero-content">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                <span data-translate="hero.title">Bâtissons vos projets,</span>
-                <span class="primary-color" data-translate="hero.subtitle">pierre après pierre</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-8" data-translate="hero.description">Votre partenaire en construction
-                résidentielle et commerciale en Afrique et en Europe</p>
-            <a href="contact.html"
-                class="primary-bg hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 mt-8 inline-block"
-                data-translate="hero.cta">Poser vos questions</a>
-        </div>
+    <section id="home" class="hero-section">
+        <main id="main-content">
+            <!-- Video Background -->
+            <video class="hero-video" autoplay loop muted playsinline poster="img/architecture.webp">
+                <source src="vid/3d.mp4" type="video/mp4">
+            </video>
+
+            <!-- Fallback Image for browsers that don't support video -->
+            <div class="hero-fallback-image"></div>
+
+            <!-- Dark Overlay -->
+            <div class="hero-overlay"></div>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <div class="hero-content-wrapper">
+                    <h1 class="hero-title">
+                        <span class="hero-title-main" data-translate="hero.title">Bâtissons vos projets,</span>
+                        <span class="hero-title-accent" data-translate="hero.subtitle">pierre après pierre</span>
+                    </h1>
+                    <p class="hero-description" data-translate="hero.description">
+                        Votre partenaire en construction résidentielle et commerciale en Afrique et en Europe
+                    </p>
+                    <a href="contact.html" class="hero-cta" data-translate="hero.cta">
+                        Démarrer un projet
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <div class="scroll-indicator-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <span class="scroll-indicator-text" data-translate="hero.scroll">Découvrir</span>
+            </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white fade-in">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title" data-translate="about.title">À propos de nous
-            </h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
-                    <img src="projets/ecole/ec1.jpg" alt="Équipe de construction"
-                        class="rounded-lg shadow-xl hover-zoom w-1/2 mx-auto">
-                </div>
-                <div class="md:w-1/2">
-                    <h3 class="text-2xl font-bold mb-4 primary-color" data-translate="about.story.title">Notre histoire
-                    </h3>
-                    <p class="text-gray-700 mb-6" data-translate="about.story.content">Fondée en 2019, Process
-                        Architecture est une société pour les travaux de constructions, rénovation, réaménagement et
-                        décorations.
-                        tout corps d'état : génie civil, CVC, électricité, bois, revêtements , plâtre, peinture,
-                        architecture intérieure et extérieure. Nous vous construisons votre maison de rêve.</p>
+    <!-- About / Philosophy Section -->
+    <section id="about" class="about-section animate-on-scroll" data-animation="fade-in-up">
+        <div class="about-container">
+            <div class="about-content">
+                <!-- Text Column -->
+                <div class="about-text">
+                    <div class="about-accent-line"></div>
+                    <h2 class="about-title" data-translate="about.title">Notre Philosophie</h2>
+                    <div class="about-description">
+                        <p data-translate="about.philosophy.intro">
+                            Fondée en 2024, Kayaya Ilunga Construction est une société dédiée aux travaux de
+                            construction,
+                            rénovation, réaménagement et décorations. Nous maîtrisons tous les corps d'état : génie
+                            civil,
+                            CVC, électricité, bois, revêtements, plâtre, peinture, architecture intérieure et
+                            extérieure.
+                        </p>
+                        <p data-translate="about.philosophy.mission">
+                            Notre mission est de transformer vos visions en réalité, en créant des espaces qui allient
+                            esthétique, fonctionnalité et durabilité. Nous vous construisons votre maison de rêve,
+                            pierre après pierre, avec passion et expertise.
+                        </p>
+                    </div>
 
-                    <h3 class="text-2xl font-bold mb-4 primary-color" data-translate="about.values.title">Nos valeurs
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="value-card p-6 rounded-lg">
-                            <i class="fas fa-award service-icon primary-color text-4xl mb-4"></i>
-                            <h4 class="font-bold mb-2 text-xl" data-translate="about.values.quality.title">Qualité</h4>
-                            <p class="text-gray-700" data-translate="about.values.quality.content">Des matériaux premium
-                                et un savoir-faire irréprochable pour des résultats durables.</p>
+                    <!-- Company Values -->
+                    <div class="about-values">
+                        <h3 class="about-values-title" data-translate="about.values.title">Nos Valeurs</h3>
+                        <div class="about-values-grid">
+                            <div class="about-value-item">
+                                <div class="about-value-icon">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="about-value-content">
+                                    <h4 data-translate="about.values.quality.title">Qualité</h4>
+                                    <p data-translate="about.values.quality.content">
+                                        Des matériaux premium et un savoir-faire irréprochable pour des résultats
+                                        durables.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="about-value-item">
+                                <div class="about-value-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="about-value-content">
+                                    <h4 data-translate="about.values.deadlines.title">Respect des délais</h4>
+                                    <p data-translate="about.values.deadlines.content">
+                                        Une organisation rigoureuse pour respecter nos engagements calendaires.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="about-value-item">
+                                <div class="about-value-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="about-value-content">
+                                    <h4 data-translate="about.values.transparency.title">Transparence</h4>
+                                    <p data-translate="about.values.transparency.content">
+                                        Des devis détaillés et un suivi régulier pour une relation de confiance.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="about-value-item">
+                                <div class="about-value-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="about-value-content">
+                                    <h4 data-translate="about.values.team.title">Équipe qualifiée</h4>
+                                    <p data-translate="about.values.team.content">
+                                        Des professionnels expérimentés et certifiés pour chaque spécialité.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="value-card p-6 rounded-lg">
-                            <i class="fas fa-clock service-icon primary-color text-4xl mb-4"></i>
-                            <h4 class="font-bold mb-2 text-xl" data-translate="about.values.deadlines.title">Respect des
-                                délais</h4>
-                            <p class="text-gray-700" data-translate="about.values.deadlines.content">Une organisation
-                                rigoureuse pour respecter nos engagements calendaires.</p>
-                        </div>
-                        <div class="value-card p-6 rounded-lg">
-                            <i class="fas fa-eye service-icon primary-color text-4xl mb-4"></i>
-                            <h4 class="font-bold mb-2 text-xl" data-translate="about.values.transparency.title">
-                                Transparence</h4>
-                            <p class="text-gray-700" data-translate="about.values.transparency.content">Des devis
-                                détaillés et un suivi régulier pour une relation de confiance.</p>
-                        </div>
-                        <div class="value-card p-6 rounded-lg">
-                            <i class="fas fa-users service-icon primary-color text-4xl mb-4"></i>
-                            <h4 class="font-bold mb-2 text-xl" data-translate="about.values.team.title">Équipe qualifiée
-                            </h4>
-                            <p class="text-gray-700" data-translate="about.values.team.content">Des professionnels
-                                expérimentés et certifiés pour chaque spécialité.</p>
+
+                        <!-- CTA Button to Team Page -->
+                        <div class="text-center mt-12">
+                            <a href="equipe.html"
+                                class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#b78836] to-[#d4a855] text-white font-bold rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#b78836]/50 hover:scale-105">
+                                <i class="fas fa-users mr-3"></i>
+                                <span data-translate="about.cta.team">Découvrir notre équipe</span>
+                                <i class="fas fa-arrow-right ml-3"></i>
+                            </a>
                         </div>
                     </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="about-image">
+                    <img src="img/architecture.webp" alt="Architecture Process" loading="lazy" class="lazy-image"
+                        onerror="this.src='images/placeholder.svg'; this.onerror=null;">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Mission Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white fade-in">
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white animate-on-scroll" data-animation="fade-in-up">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-8 primary-color" data-translate="mission.title">Construire
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900" data-translate="mission.title">Construire
                     l'avenir, ensemble.</h2>
 
                 <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -243,453 +329,594 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 bg-white fade-in">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 section-title" data-translate="services.title">Une gamme
-                    complète de services</h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto" data-translate="services.subtitle">Nos
-                    solutions couvrent tous les aspects de la construction, de la planification à la réalisation clé en
-                    main.</p>
+    <section id="services" class="services-section animate-on-scroll" data-animation="fade-in-up">
+        <div class="services-container">
+            <div class="services-header">
+                <h2 class="services-title" data-translate="services.title">Une gamme complète de services</h2>
+                <p class="services-subtitle" data-translate="services.subtitle">Nos solutions couvrent tous les aspects
+                    de la construction, de la planification à la réalisation clé en main.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div class="services-grid">
                 <!-- Service 1 -->
-                <div class="service-card p-10 rounded-xl text-center">
-                    <i class="fas fa-home text-5xl text-[#006397] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4" data-translate="services.items.residential.title">Construction
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service-title" data-translate="services.items.residential.title">Construction
                         résidentielle</h3>
-                    <p class="text-gray-600 mb-6" data-translate="services.items.residential.description">Maisons sur
+                    <p class="service-description" data-translate="services.items.residential.description">Maisons sur
                         mesure, lotissements, logements collectifs. Nous bâtissons vos espaces de vie avec passion.</p>
-                    <a href="#contact" class="inline-block text-[#006397] font-semibold"
-                        data-translate="services.items.residential.cta">En savoir plus</a>
+                    <a href="#contact" class="service-link" data-translate="services.items.residential.cta">En savoir
+                        plus →</a>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="service-card p-10 rounded-xl text-center">
-                    <i class="fas fa-building text-5xl text-[#006397] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4" data-translate="services.items.commercial.title">Construction
-                        commerciale</h3>
-                    <p class="text-gray-600 mb-6" data-translate="services.items.commercial.description">Bureaux,
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-title" data-translate="services.items.commercial.title">Construction commerciale
+                    </h3>
+                    <p class="service-description" data-translate="services.items.commercial.description">Bureaux,
                         commerces, entrepôts : des espaces professionnels pensés pour durer et évoluer.</p>
-                    <a href="#contact" class="inline-block text-[#006397] font-semibold"
-                        data-translate="services.items.commercial.cta">En savoir plus</a>
+                    <a href="#contact" class="service-link" data-translate="services.items.commercial.cta">En savoir
+                        plus →</a>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="service-card p-10 rounded-xl text-center">
-                    <i class="fas fa-hammer text-5xl text-[#006397] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4" data-translate="services.items.renovation.title">Rénovation</h3>
-                    <p class="text-gray-600 mb-6" data-translate="services.items.renovation.description">Réhabilitation
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3 class="service-title" data-translate="services.items.renovation.title">Rénovation</h3>
+                    <p class="service-description" data-translate="services.items.renovation.description">Réhabilitation
                         complète ou transformation légère, nous redonnons vie à vos bâtiments.</p>
-                    <a href="#contact" class="inline-block text-[#006397] font-semibold"
-                        data-translate="services.items.renovation.cta">En savoir plus</a>
+                    <a href="#contact" class="service-link" data-translate="services.items.renovation.cta">En savoir
+                        plus →</a>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="service-card p-10 rounded-xl text-center">
-                    <i class="fas fa-road text-5xl text-[#006397] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4" data-translate="services.items.public.title">Travaux publics
-                    </h3>
-                    <p class="text-gray-600 mb-6" data-translate="services.items.public.description">Voirie,
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3 class="service-title" data-translate="services.items.public.title">Travaux publics</h3>
+                    <p class="service-description" data-translate="services.items.public.description">Voirie,
                         infrastructures, aménagements extérieurs : des réalisations solides et durables.</p>
-                    <a href="#contact" class="inline-block text-[#006397] font-semibold"
-                        data-translate="services.items.public.cta">En savoir plus</a>
+                    <a href="#contact" class="service-link" data-translate="services.items.public.cta">En savoir plus
+                        →</a>
                 </div>
 
                 <!-- Service 5 -->
-                <div class="service-card p-10 rounded-xl text-center">
-                    <i class="fas fa-clipboard-check text-5xl text-[#006397] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4" data-translate="services.items.management.title">Maîtrise
-                        d'œuvre</h3>
-                    <p class="text-gray-600 mb-6" data-translate="services.items.management.description">Planification,
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="service-title" data-translate="services.items.management.title">Maîtrise d'œuvre</h3>
+                    <p class="service-description" data-translate="services.items.management.description">Planification,
                         coordination, et contrôle de la qualité, pour un chantier mené de main de maître.</p>
-                    <a href="#contact" class="inline-block text-[#006397] font-semibold"
-                        data-translate="services.items.management.cta">En savoir plus</a>
+                    <a href="#contact" class="service-link" data-translate="services.items.management.cta">En savoir
+                        plus →</a>
                 </div>
 
                 <!-- Service 6 -->
-                <div class="service-card p-10 rounded-xl text-center">
-                    <i class="fas fa-hard-hat text-5xl text-[#006397] mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4" data-translate="services.items.structure.title">Gros œuvre</h3>
-                    <p class="text-gray-600 mb-6" data-translate="services.items.structure.description">Des fondations
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3 class="service-title" data-translate="services.items.structure.title">Gros œuvre</h3>
+                    <p class="service-description" data-translate="services.items.structure.description">Des fondations
                         aux structures porteuses, nous assurons la robustesse de vos bâtiments.</p>
-                    <a href="#contact" class="inline-block text-[#006397] font-semibold"
-                        data-translate="services.items.structure.cta">En savoir plus</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white fade-in">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title" data-translate="projects.title">Nos
-                réalisations</h2>
-            <p class="text-xl text-gray-700 mb-12 max-w-3xl mx-auto text-center" data-translate="projects.subtitle">
-                Découvrez une sélection de nos projets récents en RDC et les Provinces.</p>
-
-            <div class="flex justify-center mb-8">
-                <button class="filter-btn active px-4 py-2 mx-2 rounded-full primary-bg text-white" data-filter="all"
-                    data-translate="projects.filters.all">Tous</button>
-                <button class="filter-btn px-4 py-2 mx-2 rounded-full border border-gray-300 hover:bg-gray-100"
-                    data-filter="residential" data-translate="projects.filters.residential">Résidentiel</button>
-                <button class="filter-btn px-4 py-2 mx-2 rounded-full border border-gray-300 hover:bg-gray-100"
-                    data-filter="commercial" data-translate="projects.filters.commercial">Commercial</button>
-                <button class="filter-btn px-4 py-2 mx-2 rounded-full border border-gray-300 hover:bg-gray-100"
-                    data-filter="renovation" data-translate="projects.filters.renovation">Rénovation</button>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="gallery-item residential">
-                    <div class="before-after rounded-lg overflow-hidden shadow-md">
-                        <img src="projets/arch_interieur/a1.jpg" alt="Avant projet" class="w-full">
-                        <div class="after">
-                            <img src="projets/arch_interieur/a2.jpeg" alt="Après projet">
-                        </div>
-                        <div class="slider"></div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2" data-translate="projects.items.residence_privee.title">
-                            Résidence collective</h3>
-                        <p class="text-gray-600 mb-2" data-translate="projects.items.residence_privee.location">Kinshasa
-                        </p>
-                        <p class="text-gray-700" data-translate="projects.items.residence_privee.description">
-                            Construction d'une maison individuelle avec terrasse et jardin paysagé.</p>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="gallery-item projet ecole">
-                    <div class="before-after rounded-lg overflow-hidden shadow-md">
-                        <img src="projets/mall/img1-small.webp" alt="Avant projet" class="w-full">
-                        <div class="after">
-                            <img src="projets/mall/img2-small.webp" alt="Après projet">
-                        </div>
-                        <div class="slider"></div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2" data-translate="projects.items.school.title">Projet Mall
-                            Martin Bakole</h3>
-                        <p class="text-gray-600 mb-2" data-translate="projects.items.school.location">Kinshasa</p>
-                        <p class="text-gray-700" data-translate="projects.items.school.description">Construction d'une
-                            école moderne dans les normes internationales.</p>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="gallery-item renovation">
-                    <div class="before-after rounded-lg overflow-hidden shadow-md">
-                        <img src="projets/Les_tressesu_de_Lyvia/l6.jpg" alt="Avant projet" class="w-full">
-                        <div class="after">
-                            <img src="projets/Les_tressesu_de_Lyvia/l9-1.jpg" alt="Après projet">
-                        </div>
-                        <div class="slider"></div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2" data-translate="projects.items.container.title">Rénovation
-                            d'un conteneur</h3>
-                        <p class="text-gray-600 mb-2" data-translate="projects.items.container.location">RDC, Kinshasa -
-                            2025</p>
-                        <p class="text-gray-700" data-translate="projects.items.container.description">Réhabilitation
-                            complète d'un conteneur de 60 pieds.</p>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="gallery-item renovation">
-                    <div class="before-after rounded-lg overflow-hidden shadow-md">
-                        <img src="projets/visite_papa_cenco/v5.jpg" alt="Avant projet" class="w-full">
-                        <div class="after">
-                            <img src="projets/visite_papa_cenco/v1.jpg" alt="Après projet">
-                        </div>
-                        <div class="slider"></div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2" data-translate="projects.items.papa_cenco.title">Visite
-                            Papa-CENCO</h3>
-                        <p class="text-gray-600 mb-2" data-translate="projects.items.papa_cenco.location">RDC, Kinshasa
-                            - 2023</p>
-                        <p class="text-gray-700" data-translate="projects.items.papa_cenco.description">Un lieu
-                            emblématique dédié à la prière, à la rencontre et au renouveau spirituel.</p>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="gallery-item renovation">
-                    <div class="before-after rounded-lg overflow-hidden shadow-md">
-                        <img src="projets/jo/jo1-1.jpg" alt="Avant projet" class="w-full">
-                        <div class="after">
-                            <img src="projets/jo/jo7.jpg" alt="Après projet">
-                        </div>
-                        <div class="slider"></div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2" data-translate="projects.items.olympics.title">Jeux
-                            Olympiques</h3>
-                        <p class="text-gray-600 mb-2" data-translate="projects.items.olympics.location">RDC, Kinshasa -
-                            2023</p>
-                        <p class="text-gray-700" data-translate="projects.items.olympics.description">Innovation
-                            décorative au service d'un design olympique d'exception.</p>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="gallery-item renovation">
-                    <div class="before-after rounded-lg overflow-hidden shadow-md">
-                        <img src="projets/hangar/h15.jpg" alt="Avant rénovation" class="w-full">
-                        <div class="after">
-                            <img src="projets/hangar/h20.jpg" alt="Après rénovation">
-                        </div>
-                        <div class="slider"></div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold mb-2" data-translate="projects.items.hangar.title">Construction
-                            hangar</h3>
-                        <p class="text-gray-600 mb-2" data-translate="projects.items.hangar.location">RDC, Kinshasa -
-                            2025</p>
-                        <p class="text-gray-700" data-translate="projects.items.hangar.description">Ancien hangar
-                            entièrement rénové et transformé en maison d'habitation.</p>
-                    </div>
+                    <a href="#contact" class="service-link" data-translate="services.items.structure.cta">En savoir plus
+                        →</a>
                 </div>
             </div>
 
+            <!-- CTA Button to Services Page -->
             <div class="text-center mt-12">
-                <a href="realisations.html"
-                    class="primary-bg hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block"
-                    data-translate="projects.cta">Voir plus de réalisations</a>
+                <a href="services.html"
+                    class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#b78836] to-[#d4a855] text-white font-bold rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:shadow-[#b78836]/50 hover:scale-105">
+                    <i class="fas fa-tools mr-3"></i>
+                    <span data-translate="services.viewAll">Découvrir tous nos services</span>
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 section-title" data-translate="blog.title">Blog & Actualités
-            </h2>
-            <p class="text-xl text-gray-700 mb-12 max-w-3xl mx-auto text-center" data-translate="blog.subtitle">
-                Découvrez les dernières tendances et actualités dans le domaine de la construction et de l'architecture.
-            </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Article 1 -->
-                <article class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover-zoom">
-                    <div class="relative">
-                        <img src="blog/Expo_DECOREX_July_2025/exp4.jpg" alt="Construction durable"
-                            class="w-full h-48 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#006397] text-white px-3 py-1 rounded-full text-sm"
-                            data-translate="blog.categories.innovation">
-                            Expo DECOREX
-                        </div>
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects-section animate-on-scroll" data-animation="fade-in-up">
+        <div class="projects-container">
+            <div class="projects-header">
+                <h2 class="projects-title" data-translate="projects.title">Nos réalisations</h2>
+                <p class="projects-subtitle" data-translate="projects.subtitle">
+                    Découvrez une sélection de nos projets récents en RDC et les Provinces.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 - Large -->
+                <div class="project-card project-card-large">
+                    <div class="project-image-wrapper">
+                        <img src="projets/arch_interieur/a2.jpeg" alt="Résidence collective"
+                            class="project-image lazy-image" loading="lazy"
+                            onerror="this.src='images/placeholder.svg'; this.onerror=null;">
+                        <div class="project-overlay"></div>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" data-translate="blog.articles.innovation.title">Center The
-                            future of living </h3>
-                        <p class="text-gray-600 mb-4" data-translate="blog.articles.innovation.excerpt">« The future of
-                            living » explore comment les technologies de pointe et le design avant-gardiste
-                            révolutionnent la vie à la maison, améliorant notre qualité de vie....</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500" data-translate="blog.articles.innovation.date">24-27
-                                Juillet 2025</span>
-                            <a href="articles/decorex.html"
-                                class="text-[#006397] hover:text-[#ff9702] font-semibold transition-colors"
-                                data-translate="blog.readMore">Lire plus →</a>
+                    <div class="project-content">
+                        <span class="project-category"
+                            data-translate="projects.categories.residential">Résidentiel</span>
+                        <h3 class="project-title" data-translate="projects.items.residence_privee.title">Résidence
+                            collective</h3>
+                        <p class="project-location" data-translate="projects.items.residence_privee.location">Kinshasa
+                        </p>
+                        <p class="project-description" data-translate="projects.items.residence_privee.description">
+                            Construction d'une maison individuelle avec terrasse et jardin paysagé.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Small -->
+                <div class="project-card project-card-small">
+                    <div class="project-image-wrapper">
+                        <img src="projets/mall/img2-small.webp" alt="Projet Mall Martin Bakole"
+                            class="project-image lazy-image" loading="lazy"
+                            onerror="this.src='images/placeholder.svg'; this.onerror=null;">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-translate="projects.categories.commercial">Commercial</span>
+                        <h3 class="project-title" data-translate="projects.items.school.title">Projet Mall Martin Bakole
+                        </h3>
+                        <p class="project-location" data-translate="projects.items.school.location">Kinshasa</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Small -->
+                <div class="project-card project-card-small">
+                    <div class="project-image-wrapper">
+                        <img src="projets/Les_tressesu_de_Lyvia/l9-1.jpg" alt="Rénovation conteneur"
+                            class="project-image lazy-image" loading="lazy"
+                            onerror="this.src='images/placeholder.svg'; this.onerror=null;">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-translate="projects.categories.renovation">Rénovation</span>
+                        <h3 class="project-title" data-translate="projects.items.container.title">Rénovation d'un
+                            conteneur</h3>
+                        <p class="project-location" data-translate="projects.items.container.location">RDC, Kinshasa -
+                            2025</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Small -->
+                <div class="project-card project-card-small">
+                    <div class="project-image-wrapper">
+                        <img src="projets/visite_papa_cenco/v1.jpg" alt="Visite Papa-CENCO"
+                            class="project-image lazy-image" loading="lazy"
+                            onerror="this.src='images/placeholder.svg'; this.onerror=null;">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-translate="projects.categories.religious">Religieux</span>
+                        <h3 class="project-title" data-translate="projects.items.papa_cenco.title">Visite Papa-CENCO
+                        </h3>
+                        <p class="project-location" data-translate="projects.items.papa_cenco.location">RDC, Kinshasa -
+                            2023</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 - Large -->
+                <div class="project-card project-card-large">
+                    <div class="project-image-wrapper">
+                        <img src="projets/jo/jo7.jpg" alt="Jeux Olympiques" class="project-image lazy-image"
+                            loading="lazy" onerror="this.src='images/placeholder.svg'; this.onerror=null;">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-translate="projects.categories.decoration">Décoration</span>
+                        <h3 class="project-title" data-translate="projects.items.olympics.title">Jeux Olympiques</h3>
+                        <p class="project-location" data-translate="projects.items.olympics.location">RDC, Kinshasa -
+                            2023</p>
+                        <p class="project-description" data-translate="projects.items.olympics.description">
+                            Innovation décorative au service d'un design olympique d'exception.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Project 6 - Small -->
+                <div class="project-card project-card-small">
+                    <div class="project-image-wrapper">
+                        <img src="projets/hangar/h20.jpg" alt="Construction hangar" class="project-image lazy-image"
+                            loading="lazy" onerror="this.src='images/placeholder.svg'; this.onerror=null;">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category" data-translate="projects.categories.renovation">Rénovation</span>
+                        <h3 class="project-title" data-translate="projects.items.hangar.title">Construction hangar</h3>
+                        <p class="project-location" data-translate="projects.items.hangar.location">RDC, Kinshasa - 2025
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="projects-cta-wrapper">
+                <a href="realisations.html" class="projects-cta-button" data-translate="projects.cta">
+                    Voir tous les projets
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works-section animate-on-scroll" data-animation="fade-in-up">
+        <div class="how-it-works-container">
+            <div class="how-it-works-header">
+                <h2 class="how-it-works-title" data-translate="howItWorks.title">Notre processus</h2>
+                <p class="how-it-works-subtitle" data-translate="howItWorks.subtitle">
+                    De la conception à la réalisation, découvrez les étapes clés de votre projet
+                </p>
+            </div>
+
+            <div class="how-it-works-timeline">
+                <!-- Step 1 -->
+                <div class="how-it-works-step">
+                    <div class="step-number">
+                        <span>01</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-translate="howItWorks.steps.consultation.title">Consultation
+                            initiale</h3>
+                        <p class="step-description" data-translate="howItWorks.steps.consultation.description">
+                            Nous écoutons vos besoins, analysons votre projet et définissons ensemble vos objectifs et
+                            contraintes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Connector Line 1 -->
+                <div class="step-connector"></div>
+
+                <!-- Step 2 -->
+                <div class="how-it-works-step">
+                    <div class="step-number">
+                        <span>02</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-translate="howItWorks.steps.design.title">Conception & Design</h3>
+                        <p class="step-description" data-translate="howItWorks.steps.design.description">
+                            Nos architectes créent des plans détaillés et des visualisations 3D pour donner vie à votre
+                            vision.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Connector Line 2 -->
+                <div class="step-connector"></div>
+
+                <!-- Step 3 -->
+                <div class="how-it-works-step">
+                    <div class="step-number">
+                        <span>03</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-translate="howItWorks.steps.planning.title">Planification</h3>
+                        <p class="step-description" data-translate="howItWorks.steps.planning.description">
+                            Établissement du calendrier, budget détaillé et coordination des équipes pour un démarrage
+                            optimal.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Connector Line 3 -->
+                <div class="step-connector"></div>
+
+                <!-- Step 4 -->
+                <div class="how-it-works-step">
+                    <div class="step-number">
+                        <span>04</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-translate="howItWorks.steps.construction.title">Construction</h3>
+                        <p class="step-description" data-translate="howItWorks.steps.construction.description">
+                            Réalisation des travaux avec un suivi rigoureux de la qualité et du respect des délais.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Connector Line 4 -->
+                <div class="step-connector"></div>
+
+                <!-- Step 5 -->
+                <div class="how-it-works-step">
+                    <div class="step-number">
+                        <span>05</span>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-translate="howItWorks.steps.delivery.title">Livraison & Suivi</h3>
+                        <p class="step-description" data-translate="howItWorks.steps.delivery.description">
+                            Réception des travaux, formation et accompagnement post-livraison pour votre satisfaction
+                            totale.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / News Section -->
+    <section id="blog" class="blog-section animate-on-scroll" data-animation="fade-in-up">
+        <div class="blog-container">
+            <!-- Blog Header -->
+            <div class="blog-header">
+                <h2 class="blog-title" data-translate="blog.title">Blog & Actualités</h2>
+                <p class="blog-subtitle" data-translate="blog.subtitle">
+                    Découvrez les dernières tendances et actualités dans le domaine de la construction et de
+                    l'architecture.
+                </p>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <!-- Article 1 -->
+                <article class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="blog/Expo_DECOREX_July_2025/exp4.jpg" alt="Expo DECOREX - The future of living"
+                            class="blog-image lazy-image" loading="lazy"
+                            onerror="this.src='images/placeholder.svg'; this.onerror=null;">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-card-title" data-translate="blog.articles.innovation.title">
+                            The future of living
+                        </h3>
+                        <p class="blog-excerpt" data-translate="blog.articles.innovation.excerpt">
+                            « The future of living » explore comment les technologies de pointe et le design
+                            avant-gardiste
+                            révolutionnent la vie à la maison, améliorant notre qualité de vie.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date" data-translate="blog.articles.innovation.date">24-27 Juillet
+                                2025</span>
+                            <a href="articles/decorex.html" class="blog-read-more" data-translate="blog.readMore">
+                                Lire plus →
+                            </a>
                         </div>
                     </div>
                 </article>
 
                 <!-- Article 2 -->
-                <article class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover-zoom">
-                    <div class="relative">
-                        <img src="blog/La_Philharmonie_de_Paris/p6.jpg" alt="Smart Building"
-                            class="w-full h-48 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#006397] text-white px-3 py-1 rounded-full text-sm"
-                            data-translate="blog.categories.technology">
-                            Innauguration
-                        </div>
+                <article class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="blog/La_Philharmonie_de_Paris/p6.jpg" alt="La Philharmonie de Paris"
+                            class="blog-image lazy-image" loading="lazy"
+                            onerror="this.src='images/placeholder.svg'; this.onerror=null;">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" data-translate="blog.articles.technology.title">La
-                            Philharmonie de Paris</h3>
-                        <p class="text-gray-600 mb-4" data-translate="blog.articles.technology.excerpt">La Philharmonie
-                            de Paris, inaugurée le 14 janvier 2015....</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500" data-translate="blog.articles.technology.date">4 Juillet
-                                2025</span>
-                            <a href="articles/philharmonie.html"
-                                class="text-[#006397] hover:text-[#ff9702] font-semibold transition-colors"
-                                data-translate="blog.readMore">Lire plus →</a>
+                    <div class="blog-content">
+                        <h3 class="blog-card-title" data-translate="blog.articles.technology.title">
+                            La Philharmonie de Paris
+                        </h3>
+                        <p class="blog-excerpt" data-translate="blog.articles.technology.excerpt">
+                            La Philharmonie de Paris, inaugurée le 14 janvier 2015, est un chef-d'œuvre architectural
+                            conçu par Jean Nouvel, alliant acoustique exceptionnelle et design contemporain.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date" data-translate="blog.articles.technology.date">4 Juillet 2025</span>
+                            <a href="articles/philharmonie.html" class="blog-read-more" data-translate="blog.readMore">
+                                Lire plus →
+                            </a>
                         </div>
                     </div>
                 </article>
 
                 <!-- Article 3 -->
-                <article class="blog-card bg-white rounded-lg shadow-lg overflow-hidden hover-zoom">
-                    <div class="relative">
-                        <img src="blog/Royaume _Arabie_Saoudite/r2.jpg" alt="Architecture moderne"
-                            class="w-full h-48 object-cover">
-                        <div class="absolute top-4 left-4 bg-[#006397] text-white px-3 py-1 rounded-full text-sm"
-                            data-translate="blog.categories.design">
-                            Design
-                        </div>
+                <article class="blog-card">
+                    <div class="blog-image-wrapper">
+                        <img src="blog/Royaume _Arabie_Saoudite/r2.jpg" alt="Pavillon du Royaume d'Arabie Saoudite"
+                            class="blog-image lazy-image" loading="lazy"
+                            onerror="this.src='images/placeholder.svg'; this.onerror=null;">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-3" data-translate="blog.articles.design.title">Pavillon du
-                            Royaume d'Arabie Saoudite. 2020</h3>
-                        <p class="text-gray-600 mb-4" data-translate="blog.articles.design.excerpt">Le pavillon de
-                            l'Arabie Saoudite à l'EXPO Dubaï 2020 se distingue par son architecture audacieuse et
-                            fonctionnelle...</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500" data-translate="blog.articles.design.date">5 Mars
-                                2025</span>
-                            <a href="articles/arabie-saoudite.html"
-                                class="text-[#006397] hover:text-[#ff9702] font-semibold transition-colors"
-                                data-translate="blog.readMore">Lire plus →</a>
+                    <div class="blog-content">
+                        <h3 class="blog-card-title" data-translate="blog.articles.design.title">
+                            Pavillon du Royaume d'Arabie Saoudite
+                        </h3>
+                        <p class="blog-excerpt" data-translate="blog.articles.design.excerpt">
+                            Le pavillon de l'Arabie Saoudite à l'EXPO Dubaï 2020 se distingue par son architecture
+                            audacieuse et fonctionnelle, reflétant la vision moderne du royaume.
+                        </p>
+                        <div class="blog-meta">
+                            <span class="blog-date" data-translate="blog.articles.design.date">5 Mars 2025</span>
+                            <a href="articles/arabie-saoudite.html" class="blog-read-more"
+                                data-translate="blog.readMore">
+                                Lire plus →
+                            </a>
                         </div>
                     </div>
                 </article>
             </div>
 
-            <div class="text-center mt-12">
-                <a href="blog.html"
-                    class="primary-bg hover:bg-secondary text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block"
-                    data-translate="blog.cta">Voir tous les articles</a>
+            <!-- CTA Button -->
+            <div class="blog-cta-wrapper">
+                <a href="blog.html" class="blog-cta-button" data-translate="blog.cta">
+                    Voir tous les articles
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Partners Section -->
-    <section class="partners-section py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center section-title" data-translate="partners.title">
-                Ils nous font confiance</h2>
-            <div class="partners-track">
-                <div class="partners-container">
-                    <!-- Premier groupe de logos -->
-                    <div class="partner-logo">
-                        <img src="images/parts/logo_officiel.png" alt="Partenaire BIT" class="h-16">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="images/parts/CANAL-logo-300x169.png" alt="Partenaire BIT" class="h-16">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="images/parts/mb.webp" alt="Partenaire BIT" class="h-16">
-                    </div>
-                    <div class="partner-logo">
-                        <img src="images/parts/Vodacom-Logo.wine_-300x200.png" alt="Partenaire BIT" class="h-16">
-                    </div>
+    <section id="partners" class="partners-section animate-on-scroll" data-animation="fade-in-up">
+        <div class="partners-container">
+            <h2 class="partners-title" data-translate="partners.title">
+                Ils nous font confiance
+            </h2>
+            <div class="partners-logo-container">
+                <div class="partner-logo">
+                    <img src="images/parts/logo_officiel.png" alt="Partenaire BIT" loading="lazy" class="lazy-image"
+                        onerror="this.style.opacity='0.3'; this.onerror=null;">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/parts/CANAL-logo-300x169.png" alt="Partenaire Canal+" loading="lazy"
+                        class="lazy-image" onerror="this.style.opacity='0.3'; this.onerror=null;">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/parts/mb.webp" alt="Partenaire MB" loading="lazy" class="lazy-image"
+                        onerror="this.style.opacity='0.3'; this.onerror=null;">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/parts/Vodacom-Logo.wine_-300x200.png" alt="Partenaire Vodacom" loading="lazy"
+                        class="lazy-image" onerror="this.style.opacity='0.3'; this.onerror=null;">
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- Contact CTA Section -->
+    <section id="contact-cta" class="contact-cta-section animate-on-scroll" data-animation="scale-in">
+        <div class="contact-cta-container">
+            <h2 class="contact-cta-title" data-translate="contactCta.title">
+                Prêt à démarrer votre projet ?
+            </h2>
+            <p class="contact-cta-subtitle" data-translate="contactCta.subtitle">
+                Discutons de votre vision et transformons-la en réalité
+            </p>
+            <a href="contact.html" class="contact-cta-button" data-translate="contactCta.button">
+                Contactez-nous
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="secondary-bg py-16">
-        <div class="container mx-auto px-6">
-            <!-- Logo et description centrés -->
-            <div class="text-center mb-12">
-                <div class="mb-6">
-                    <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction"
-                        class="h-20 w-auto object-contain mx-auto">
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction
-            </div>h3>
-            <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets,
-                pierre après pierre depuis 2019 en Afrique et en Europe.</p>
-        </div>
-
-        <!-- Colonnes de navigation -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div class="text-center md:text-left">
-                <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation
-                </h4>
-                <ul class="space-y-3">
-                    <li><a href="index.html" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="nav.home">Accueil</a></li>
-                    <li><a href="index.html#about" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="nav.about">À propos</a></li>
-                    <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="nav.services">Services</a></li>
-                    <li><a href="realisations.html" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="nav.projects">Réalisations</a></li>
-                    <li><a href="blog.html" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="nav.blog">Blog</a></li>
-                    <li><a href="contact.html" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="nav.contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="text-center md:text-left">
-                <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.services.title">Services</h4>
-                <ul class="space-y-3">
-                    <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="services.items.residential.title">Construction résidentielle</a></li>
-                    <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="services.items.commercial.title">Construction commerciale</a></li>
-                    <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="services.items.renovation.title">Rénovation</a></li>
-                    <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="services.items.public.title">Travaux publics</a></li>
-                    <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
-                            data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
-                </ul>
-            </div>
-            <div class="text-center md:text-left">
-                <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
-                <div class="space-y-3">
-                    <p class="text-gray-200" data-translate="footer.contact.address">12, N'sele Boulevard Lumumba,
-                        Kinshasa, République Démocratique du Congo</p>
-                    <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867
-                    </p>
-                    <p class="text-gray-200" data-translate="footer.contact.email">contact@kayayailungacontsruction.com
+    <footer class="footer" style="background-color: #0a0a0a;">
+        <div class="footer-container">
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Column 1: Logo + Description -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" loading="lazy"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <h3 class="footer-brand" data-translate="footer.title">Kayaya Ilunga Construction</h3>
+                    <p class="footer-description" data-translate="footer.description">
+                        Bâtissons vos projets, pierre après pierre depuis 2024 en Afrique et en Europe.
                     </p>
                 </div>
-            </div>
-        </div>
 
-        <!-- Réseaux sociaux -->
-        <div class="text-center mb-8">
-            <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.social.title">Suivez-nous</h4>
-            <div class="flex justify-center space-x-4">
-                <a href="https://www.facebook.com/" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#"
-                    class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#"
-                    class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#"
-                    class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </div>
-        </div>
+                <!-- Column 2: Navigation -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title" data-translate="footer.navigation.title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav.home">Accueil</a></li>
+                        <li><a href="index.html#about" data-translate="nav.about">À propos</a></li>
+                        <li><a href="index.html#services" data-translate="nav.services">Services</a></li>
+                        <li><a href="realisations.html" data-translate="nav.projects">Réalisations</a></li>
+                        <li><a href="blog.html" data-translate="nav.blog">Blog</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
 
-        <!-- Ligne de séparation et copyright -->
-        <div class="border-t border-white border-opacity-20 pt-8">
-            <div class="text-center">
-                <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Process
-                    Architecture. Tous droits réservés.</p>
+                <!-- Column 3: Services -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title" data-translate="footer.services.title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services" data-translate="services.items.residential.title">Construction
+                                résidentielle</a></li>
+                        <li><a href="index.html#services" data-translate="services.items.commercial.title">Construction
+                                commerciale</a></li>
+                        <li><a href="index.html#services"
+                                data-translate="services.items.renovation.title">Rénovation</a></li>
+                        <li><a href="index.html#services" data-translate="services.items.public.title">Travaux
+                                publics</a></li>
+                        <li><a href="index.html#services" data-translate="services.items.management.title">Maîtrise
+                                d'œuvre</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact + Social -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title" data-translate="footer.contact.title">Contact</h4>
+                    <div class="footer-contact">
+                        <p data-translate="footer.contact.address">1, Av Kayaya Ilunga, Q/Daipn, C/ N'sele</p>
+                        <p data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867</p>
+                        <p data-translate="footer.contact.email">contact@kayayailungacontsruction.com</p>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="footer-social">
+                        <h4 class="footer-social-title" data-translate="footer.social.title">Suivez-nous</h4>
+                        <div class="footer-social-icons">
+                            <a href="https://www.facebook.com/" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="#" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <!-- Copyright Bar -->
+            <div class="footer-copyright">
+                <p data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga Construction. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
     <button id="back-to-top"
-        class="fixed bottom-8 right-8 bg-[#b78836] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
-        <i class="fas fa-arrow-up"></i>
+        class="fixed bottom-8 right-8 bg-[#b78836] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible"
+        aria-label="Retour en haut de la page">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
     <!-- Scripts -->
+    <!-- Core functionality scripts -->
     <script src="js/translations.js"></script>
     <script src="js/language-switcher.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/script.js"></script>
+
+    <!-- Note: mobile-menu.js, smooth-scroll.js, and lazy-loading.js functionality 
+         is now integrated into script.js to reduce HTTP requests -->
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function (event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+
+                // Close menu when clicking on a link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

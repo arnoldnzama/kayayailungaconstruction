@@ -1,0 +1,586 @@
+/* ========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ======================================== */
+
+/**
+ * Breakpoints:
+ * - Mobile: < 640px
+ * - Tablet: 640px - 1024px
+ * - Desktop: > 1024px
+ * 
+ * Standard breakpoints: 640px, 768px, 1024px, 1280px
+ */
+
+/* ========================================
+   EXTRA SMALL DEVICES (< 480px)
+   ======================================== */
+
+@media (max-width: 480px) {
+    /* Container */
+    .container,
+    .services-container,
+    .projects-container,
+    .blog-container,
+    .about-container,
+    .how-it-works-container,
+    .partners-container,
+    .contact-cta-container {
+        padding: 0 16px;
+    }
+
+    /* Typography - Further reduction for very small screens */
+    h1 {
+        font-size: 1.75rem; /* 28px */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    h3 {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    p, li, a {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    /* Spacing */
+    section {
+        padding: 40px 0;
+    }
+
+    /* Buttons */
+    .btn-primary,
+    .hero-cta,
+    .projects-cta-button,
+    .contact-cta-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+/* ========================================
+   SMALL DEVICES - MOBILE (< 640px)
+   ======================================== */
+
+@media (max-width: 640px) {
+    /* Grid Layouts - Force single column */
+    .services-grid,
+    .blog-grid,
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 24px;
+    }
+
+    /* Projects Grid - Simplified layout */
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .project-card-large,
+    .project-card-small {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Typography */
+    .hero-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .hero-description {
+        font-size: 0.875rem;
+    }
+
+    /* Spacing - Reduce padding/margins */
+    .about-section,
+    .services-section,
+    .projects-section,
+    .blog-section,
+    .how-it-works-section,
+    .partners-section {
+        padding: 48px 0;
+    }
+
+    /* Cards */
+    .service-card,
+    .blog-card {
+        padding: 24px;
+    }
+
+    /* How It Works - Vertical timeline */
+    .how-it-works-timeline {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .step-connector {
+        display: none;
+    }
+
+    /* Footer */
+    .footer-grid {
+        gap: 32px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* ========================================
+   MEDIUM DEVICES - TABLET (640px - 768px)
+   ======================================== */
+
+@media (min-width: 640px) and (max-width: 768px) {
+    /* Grid Layouts - 2 columns */
+    .services-grid,
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    /* Projects Grid - Mixed layout */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .project-card-large {
+        grid-column: span 2;
+    }
+
+    /* Typography */
+    .hero-title {
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Spacing */
+    section {
+        padding: 64px 0;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* ========================================
+   LARGE DEVICES - TABLET/SMALL DESKTOP (768px - 1024px)
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Container */
+    .container,
+    .services-container,
+    .projects-container,
+    .blog-container,
+    .about-container {
+        max-width: 960px;
+        padding: 0 32px;
+    }
+
+    /* Grid Layouts */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .project-card-large {
+        grid-column: span 2;
+        height: 500px;
+    }
+
+    .project-card-small {
+        height: 350px;
+    }
+
+    /* Typography */
+    .hero-title {
+        font-size: clamp(3rem, 5vw, 4rem);
+    }
+
+    .hero-description {
+        font-size: 1.125rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    /* About Section - Adjust image size */
+    .about-content {
+        gap: 48px;
+    }
+
+    .about-image {
+        max-width: 400px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px;
+    }
+
+    /* How It Works - Adjust spacing */
+    .how-it-works-timeline {
+        gap: 32px;
+    }
+
+    .step-number {
+        width: 70px;
+        height: 70px;
+        font-size: 28px;
+    }
+}
+
+/* ========================================
+   EXTRA LARGE DEVICES - DESKTOP (1024px - 1280px)
+   ======================================== */
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+    /* Container */
+    .container,
+    .services-container,
+    .projects-container,
+    .blog-container,
+    .about-container {
+        max-width: 1200px;
+        padding: 0 40px;
+    }
+
+    /* Grid Layouts - Full 3 columns */
+    .services-grid,
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    /* Projects Grid - Masonry layout */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .project-card-large {
+        grid-column: span 2;
+        height: 600px;
+    }
+
+    .project-card-small {
+        height: 400px;
+    }
+
+    /* Typography */
+    .hero-title {
+        font-size: clamp(4rem, 6vw, 5rem);
+    }
+
+    .hero-description {
+        font-size: 1.25rem;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 48px;
+    }
+}
+
+/* ========================================
+   EXTRA EXTRA LARGE DEVICES - LARGE DESKTOP (> 1280px)
+   ======================================== */
+
+@media (min-width: 1280px) {
+    /* Container */
+    .container,
+    .services-container,
+    .projects-container,
+    .blog-container,
+    .about-container,
+    .how-it-works-container,
+    .partners-container,
+    .contact-cta-container {
+        max-width: 1280px;
+        padding: 0 48px;
+    }
+
+    /* Grid Layouts - Optimal spacing */
+    .services-grid,
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 48px;
+    }
+
+    /* Projects Grid - Full masonry */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .project-card-large {
+        grid-column: span 2;
+        height: 600px;
+    }
+
+    .project-card-small {
+        height: 400px;
+    }
+
+    /* Typography - Maximum sizes */
+    .hero-title {
+        font-size: 5rem;
+    }
+
+    .hero-description {
+        font-size: 1.25rem;
+    }
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    /* Spacing - Maximum padding */
+    .about-section,
+    .services-section,
+    .projects-section,
+    .blog-section,
+    .how-it-works-section {
+        padding: 120px 0;
+    }
+
+    .partners-section {
+        padding: 80px 0;
+    }
+
+    .contact-cta-section {
+        padding: 100px 0;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 64px;
+    }
+}
+
+/* ========================================
+   LANDSCAPE ORIENTATION
+   ======================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    /* Hero Section - Reduce height in landscape */
+    .hero-section {
+        min-height: 400px;
+        height: 100vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        margin-bottom: 16px;
+    }
+
+    .hero-description {
+        font-size: 0.875rem;
+        margin-bottom: 24px;
+    }
+
+    .hero-cta {
+        padding: 12px 32px;
+        font-size: 14px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* Reduce section padding */
+    section {
+        padding: 40px 0;
+    }
+}
+
+/* ========================================
+   TOUCH DEVICES
+   ======================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .nav-link,
+    .mobile-nav-link,
+    .btn-primary,
+    .hero-cta,
+    .service-link,
+    .blog-read-more {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 24px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .service-card:hover,
+    .project-card:hover,
+    .blog-card:hover,
+    .partner-logo:hover {
+        transform: none;
+    }
+
+    /* Simplify animations */
+    .project-image:hover,
+    .blog-image:hover {
+        transform: none;
+    }
+}
+
+/* ========================================
+   HIGH RESOLUTION DISPLAYS
+   ======================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Use higher quality images for retina displays */
+    .hero-fallback-image {
+        background-image: url('../img/architecture@2x.webp');
+    }
+
+    /* Sharper borders and shadows */
+    .service-card,
+    .project-card,
+    .blog-card {
+        border-width: 0.5px;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    /* Hide non-essential elements */
+    .navbar,
+    .mobile-menu,
+    .mobile-menu-overlay,
+    .scroll-indicator,
+    .hero-video,
+    .language-switcher,
+    .back-to-top {
+        display: none !important;
+    }
+
+    /* Show fallback image */
+    .hero-fallback-image {
+        display: block !important;
+    }
+
+    /* Optimize colors for print */
+    body {
+        background: white;
+        color: black;
+    }
+
+    /* Remove shadows and effects */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Ensure proper page breaks */
+    section {
+        page-break-inside: avoid;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    /* Adjust spacing for print */
+    section {
+        padding: 20px 0;
+    }
+
+    /* Show URLs for links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    /* Don't show URLs for internal links */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY - REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    /* Disable all animations */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    /* Remove transforms */
+    .service-card:hover,
+    .project-card:hover,
+    .blog-card:hover {
+        transform: none !important;
+    }
+
+    /* Disable smooth scroll */
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    /* Show all animated elements immediately */
+    .animate-on-scroll {
+        opacity: 1 !important;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (Future Enhancement)
+   ======================================== */
+
+@media (prefers-color-scheme: light) {
+    /* Currently using dark theme by default */
+    /* This can be used for a light mode toggle in the future */
+}

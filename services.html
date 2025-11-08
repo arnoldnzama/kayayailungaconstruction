@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - Kayaya Ilunga Construction</title>
+    <link rel="icon" type="image/x-icon" href="images/icons/logo.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <meta name="description"
+        content="Découvrez nos services de construction clé en main, accompagnement personnalisé et expertise technique. Kayaya Ilunga Construction - Votre partenaire de confiance.">
+    <meta name="keywords"
+        content="services construction, maison clé en main, accompagnement construction, expertise bâtiment, construction sur mesure">
+    <style>
+        .services-hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card-modern {
+            background: #1e1e1e;
+            border: 1px solid rgba(198, 155, 73, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .service-card-modern:hover {
+            transform: translateY(-10px);
+            border-color: rgba(198, 155, 73, 0.6);
+            box-shadow: 0 20px 40px rgba(198, 155, 73, 0.2);
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #b78836, #d4a855);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-tag {
+            background: linear-gradient(135deg, #b78836, #d4a855);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+
+<!-- Loader -->
+<div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center" style="background-color: #000000;">
+    <div class="relative text-center">
+        <img src="images/logos/logo.png" alt="Logo" class="w-32 h-32 mx-auto mb-8 animate-bounce"
+            style="filter: brightness(1.2);" onerror="this.style.display='none'">
+        <div class="w-48 h-2 rounded-full overflow-hidden" style="background-color: #333333;">
+            <div class="loading-bar h-full rounded-full" style="background-color: #b78836; width: 0%"></div>
+        </div>
+        <div class="mt-4 font-semibold" style="color: #fffffe;">Chargement...</div>
+    </div>
+</div>
+
+<body class="bg-[#0a0a0a]" style="background-color: #0a0a0a;">
+    <!-- Navigation -->
+    <nav class="secondary-bg shadow-md sticky top-0 z-50" style="background-color: #0a0a0a;">
+        <div class="container mx-auto px-6 py-3" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction"
+                            class="h-24 w-auto object-contain">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.home">Accueil</a>
+                    <a href="equipe.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.about">Équipe</a>
+                    <a href="services.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-[#b78836] pb-1"
+                        data-translate="nav.services">Services</a>
+                    <a href="realisations.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.projects">Réalisations</a>
+                    <a href="blog.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.blog">Blog</a>
+                    <a href="contact.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.contact">Contact</a>
+
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="lang-btn-white">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">FR</span>
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div class="lang-dropdown">
+                            <div class="lang-option" data-lang="fr">
+                                <img src="images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                                <span>Français</span>
+                            </div>
+                            <div class="lang-option" data-lang="en">
+                                <img src="images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                                <span>English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-xl text-white"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-white border-opacity-20">
+                <a href="index.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.home">Accueil</a>
+                <a href="equipe.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.about">Équipe</a>
+                <a href="services.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white"
+                    data-translate="nav.services">Services</a>
+                <a href="realisations.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.projects">Réalisations</a>
+                <a href="blog.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.blog">Blog</a>
+                <a href="contact.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.contact">Contact</a>
+
+                <!-- Language Switcher Mobile -->
+                <div class="language-switcher px-4 mt-2">
+                    <button class="lang-btn-white-mobile">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-lang-mobile">FR</span>
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <div class="lang-option" data-lang="fr">
+                            <img src="images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                            <span>Français</span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <img src="images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="services-hero py-24 relative">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-[#b78836] rounded-full filter blur-3xl animate-pulse">
+            </div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#b78836] rounded-full filter blur-3xl animate-pulse"
+                style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div
+                    class="inline-block mb-6 px-6 py-2 bg-[#b78836] bg-opacity-10 border border-[#b78836] border-opacity-30 rounded-full">
+                    <span class="text-[#b78836] font-semibold text-sm uppercase tracking-wider"
+                        data-translate="nav.services">Nos Services</span>
+                </div>
+
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                    <i class="fas fa-tools mr-4 text-[#b78836]"></i>
+                    <span data-translate="servicesPage.hero.title">NOS SERVICES</span> 🏢
+                </h1>
+
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed" data-translate="servicesPage.hero.subtitle">
+                    Accompagnement complet de A à Z pour tous vos projets immobiliers
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accompagnement Section -->
+    <section class="py-20 bg-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="service-card-modern mb-12">
+                    <div class="icon-box">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">🏢 <span
+                            data-translate="servicesPage.accompagnement.title">Accompagnement de A à Z</span></h2>
+                    <p class="text-gray-300 text-lg leading-relaxed"
+                        data-translate="servicesPage.accompagnement.description">
+                        Nous vous accompagnons dans toutes les étapes de votre projet immobilier, de l'achat du terrain
+                        jusqu'à la livraison clé en main de votre maison. Nos experts étudient avec vous chaque aspect —
+                        administratif, technique et financier — afin de vous garantir une construction conforme, durable
+                        et personnalisée.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offres Clés en Main -->
+    <section class="py-20 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">💼 <span data-translate="servicesPage.offres.title">Nos
+                        Offres Clés en Main</span></h2>
+                <p class="text-gray-300 text-lg" data-translate="servicesPage.offres.subtitle">Des solutions complètes
+                    adaptées à vos besoins</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Offre 80m² -->
+                <div class="service-card-modern">
+                    <div class="icon-box">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">🏠 <span
+                            data-translate="servicesPage.offres.projet80.title">Projet sur terrain de 80 m²</span></h3>
+                    <div class="price-tag" data-translate="servicesPage.offres.projet80.price">35.000 $</div>
+                    <p class="text-gray-300 mb-6" data-translate="servicesPage.offres.projet80.description">Une maison
+                        moderne et fonctionnelle comprenant :</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🛏️ <span data-translate="servicesPage.offres.projet80.features.bedrooms">2 chambres
+                                    spacieuses</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🍽️ <span data-translate="servicesPage.offres.projet80.features.kitchen">Cuisine
+                                    équipée moderne</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🚿 <span data-translate="servicesPage.offres.projet80.features.bathroom">Salle de bain
+                                    complète</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🌅 <span data-translate="servicesPage.offres.projet80.features.veranda">Véranda
+                                    confortable</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🚗 <span data-translate="servicesPage.offres.projet80.features.parking">Espace
+                                    parking</span></span>
+                        </li>
+                    </ul>
+                    <div
+                        class="mt-6 p-4 bg-[#b78836] bg-opacity-10 rounded-lg border border-[#b78836] border-opacity-30">
+                        <p class="text-white font-semibold">👉 <span
+                                data-translate="servicesPage.offres.projet80.note">Vous recevez la clé une fois la
+                                construction terminée.</span></p>
+                    </div>
+                </div>
+
+                <!-- Offre 121m² -->
+                <div class="service-card-modern">
+                    <div class="icon-box">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">🏡 <span
+                            data-translate="servicesPage.offres.projet121.title">Projet sur terrain de 121 m²</span>
+                    </h3>
+                    <div class="price-tag" data-translate="servicesPage.offres.projet121.price">45.000 $</div>
+                    <p class="text-gray-300 mb-6" data-translate="servicesPage.offres.projet121.description">Une
+                        construction spacieuse et élégante composée de :</p>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🛏️ <span data-translate="servicesPage.offres.projet121.features.bedrooms">3 chambres
+                                    confortables</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🍽️ <span data-translate="servicesPage.offres.projet121.features.kitchen">Cuisine
+                                    moderne équipée</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🚿 <span data-translate="servicesPage.offres.projet121.features.bathroom">Salle de
+                                    bain premium</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🌅 <span data-translate="servicesPage.offres.projet121.features.veranda">Véranda
+                                    spacieuse</span></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#b78836] mr-3 mt-1"></i>
+                            <span>🚗 <span data-translate="servicesPage.offres.projet121.features.parking">Parking
+                                    privé</span></span>
+                        </li>
+                    </ul>
+                    <div
+                        class="mt-6 p-4 bg-[#b78836] bg-opacity-10 rounded-lg border border-[#b78836] border-opacity-30">
+                        <p class="text-white font-semibold">👉 <span
+                                data-translate="servicesPage.offres.projet121.note">Une maison livrée clé en main, prête
+                                à être habitée.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construction Adaptée au Budget -->
+    <section class="py-20 bg-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="service-card-modern">
+                    <div class="icon-box">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-white mb-4">💰 <span
+                            data-translate="servicesPage.budget.title">Construction adaptée à votre budget</span></h2>
+                    <p class="text-gray-300 text-lg mb-6" data-translate="servicesPage.budget.subtitle">Quel que soit
+                        votre budget, nous vous garantissons :</p>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-[#1a1a1a] rounded-lg border border-[#b78836] border-opacity-20">
+                            <i class="fas fa-hand-holding-usd text-4xl text-[#b78836] mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-2"
+                                data-translate="servicesPage.budget.transparent.title">Coût Transparent</h3>
+                            <p class="text-gray-400" data-translate="servicesPage.budget.transparent.description">Un
+                                coût raisonnable et transparent</p>
+                        </div>
+                        <div class="text-center p-6 bg-[#1a1a1a] rounded-lg border border-[#b78836] border-opacity-20">
+                            <i class="fas fa-gem text-4xl text-[#b78836] mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-2"
+                                data-translate="servicesPage.budget.quality.title">Qualité Premium</h3>
+                            <p class="text-gray-400" data-translate="servicesPage.budget.quality.description">Des
+                                matériaux de qualité</p>
+                        </div>
+                        <div class="text-center p-6 bg-[#1a1a1a] rounded-lg border border-[#b78836] border-opacity-20">
+                            <i class="fas fa-shield-alt text-4xl text-[#b78836] mb-4"></i>
+                            <h3 class="text-xl font-semibold text-white mb-2"
+                                data-translate="servicesPage.budget.durability.title">Durabilité</h3>
+                            <p class="text-gray-400" data-translate="servicesPage.budget.durability.description">Une
+                                structure durable et conforme aux normes</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-lg mt-6" data-translate="servicesPage.budget.note">
+                        Nos équipes ajustent les plans et les matériaux pour que votre maison reste solide, esthétique
+                        et économique.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rubrique Technique -->
+    <section class="py-20 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">⚙️ <span
+                        data-translate="servicesPage.technique.title">RUBRIQUE TECHNIQUE</span></h2>
+                <p class="text-gray-300 text-lg" data-translate="servicesPage.technique.subtitle">Des experts qualifiés
+                    à votre service</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="service-card-modern mb-8">
+                    <div class="icon-box">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">👷 <span
+                            data-translate="servicesPage.technique.subtitle">Des experts qualifiés à votre
+                            service</span></h3>
+                    <p class="text-gray-300 text-lg mb-6" data-translate="servicesPage.technique.description">
+                        Notre entreprise s'appuie sur une équipe d'ingénieurs, architectes et techniciens spécialisés
+                        dans tous les domaines du bâtiment :
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center p-4 bg-[#1a1a1a] rounded-lg">
+                            <i class="fas fa-hammer text-2xl text-[#b78836] mr-4"></i>
+                            <span class="text-white font-medium">🧱 <span
+                                    data-translate="servicesPage.technique.expertise.masonry">Maçonnerie &
+                                    charpente</span></span>
+                        </div>
+                        <div class="flex items-center p-4 bg-[#1a1a1a] rounded-lg">
+                            <i class="fas fa-bolt text-2xl text-[#b78836] mr-4"></i>
+                            <span class="text-white font-medium">🔌 <span
+                                    data-translate="servicesPage.technique.expertise.electrical">Électricité &
+                                    plomberie</span></span>
+                        </div>
+                        <div class="flex items-center p-4 bg-[#1a1a1a] rounded-lg">
+                            <i class="fas fa-paint-roller text-2xl text-[#b78836] mr-4"></i>
+                            <span class="text-white font-medium">🎨 <span
+                                    data-translate="servicesPage.technique.expertise.finishing">Finitions &
+                                    peinture</span></span>
+                        </div>
+                        <div class="flex items-center p-4 bg-[#1a1a1a] rounded-lg">
+                            <i class="fas fa-door-open text-2xl text-[#b78836] mr-4"></i>
+                            <span class="text-white font-medium">🚪 <span
+                                    data-translate="servicesPage.technique.expertise.carpentry">Menuiserie &
+                                    carrelage</span></span>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-lg mt-6" data-translate="servicesPage.technique.note">
+                        Chaque professionnel met son savoir-faire et son expérience au service de la qualité et de la
+                        satisfaction client.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rubrique Valeur -->
+    <section class="py-20 bg-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">💡 <span
+                        data-translate="servicesPage.valeur.title">RUBRIQUE VALEUR</span></h2>
+                <p class="text-gray-300 text-lg" data-translate="servicesPage.valeur.subtitle">Étude et conseils
+                    personnalisés</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="service-card-modern">
+                    <div class="icon-box">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">🧭 <span
+                            data-translate="servicesPage.valeur.subtitle">Étude et conseils personnalisés</span></h3>
+                    <p class="text-gray-300 text-lg mb-6" data-translate="servicesPage.valeur.description">
+                        Avant chaque projet, nous réalisons une étude complète du milieu :
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-[#1a1a1a] rounded-lg border-l-4 border-[#b78836]">
+                            <i class="fas fa-search text-2xl text-[#b78836] mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-semibold mb-2"
+                                    data-translate="servicesPage.valeur.analysis.title">Analyse complète</h4>
+                                <p class="text-gray-400" data-translate="servicesPage.valeur.analysis.description">
+                                    Analyse du sol, du climat et de l'environnement</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-[#1a1a1a] rounded-lg border-l-4 border-[#b78836]">
+                            <i class="fas fa-lightbulb text-2xl text-[#b78836] mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-semibold mb-2"
+                                    data-translate="servicesPage.valeur.advice.title">Conseils d'experts</h4>
+                                <p class="text-gray-400" data-translate="servicesPage.valeur.advice.description">
+                                    Conseils sur la meilleure méthode de construction selon votre terrain</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 bg-[#1a1a1a] rounded-lg border-l-4 border-[#b78836]">
+                            <i class="fas fa-tools text-2xl text-[#b78836] mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="text-white font-semibold mb-2"
+                                    data-translate="servicesPage.valeur.correction.title">Correction de malfaçons</h4>
+                                <p class="text-gray-400" data-translate="servicesPage.valeur.correction.description">
+                                    Correction de malfaçons sur des chantiers existants si nécessaire</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 p-6 bg-gradient-to-r from-[#b78836] to-[#d4a855] rounded-lg">
+                        <p class="text-white text-lg font-semibold text-center"
+                            data-translate="servicesPage.valeur.commitment">
+                            Nous nous engageons à construire dans le respect des normes et de la durabilité, pour une
+                            maison stable et pérenne.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autres Prestations -->
+    <section class="py-20 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">🧱 <span
+                        data-translate="servicesPage.prestations.title">NOS AUTRES PRESTATIONS</span></h2>
+                <p class="text-gray-300 text-lg" data-translate="servicesPage.prestations.subtitle">Une gamme complète
+                    de services pour tous vos besoins</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="service-card-modern text-center">
+                    <i class="fas fa-drafting-compass text-5xl text-[#b78836] mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">🔹 <span
+                            data-translate="servicesPage.prestations.items.architectural.title">Étude
+                            architecturale</span></h3>
+                    <p class="text-gray-400" data-translate="servicesPage.prestations.items.architectural.description">
+                        Conception de plans personnalisés</p>
+                </div>
+                <div class="service-card-modern text-center">
+                    <i class="fas fa-file-invoice-dollar text-5xl text-[#b78836] mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">🔹 <span
+                            data-translate="servicesPage.prestations.items.quote.title">Devis détaillés</span></h3>
+                    <p class="text-gray-400" data-translate="servicesPage.prestations.items.quote.description">
+                        Estimation budgétaire précise</p>
+                </div>
+                <div class="service-card-modern text-center">
+                    <i class="fas fa-sync-alt text-5xl text-[#b78836] mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">🔹 <span
+                            data-translate="servicesPage.prestations.items.rehabilitation.title">Réhabilitation</span>
+                    </h3>
+                    <p class="text-gray-400" data-translate="servicesPage.prestations.items.rehabilitation.description">
+                        Rénovation de bâtiments</p>
+                </div>
+                <div class="service-card-modern text-center">
+                    <i class="fas fa-city text-5xl text-[#b78836] mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">🔹 <span
+                            data-translate="servicesPage.prestations.items.construction.title">Construction</span></h3>
+                    <p class="text-gray-400" data-translate="servicesPage.prestations.items.construction.description">
+                        Résidentielle & commerciale</p>
+                </div>
+                <div class="service-card-modern text-center">
+                    <i class="fas fa-clipboard-check text-5xl text-[#b78836] mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">🔹 <span
+                            data-translate="servicesPage.prestations.items.monitoring.title">Suivi de chantier</span>
+                    </h3>
+                    <p class="text-gray-400" data-translate="servicesPage.prestations.items.monitoring.description">
+                        Contrôle qualité rigoureux</p>
+                </div>
+                <div class="service-card-modern text-center">
+                    <i class="fas fa-key text-5xl text-[#b78836] mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-2">🔹 <span
+                            data-translate="servicesPage.prestations.items.turnkey.title">Livraison clé en main</span>
+                    </h3>
+                    <p class="text-gray-400" data-translate="servicesPage.prestations.items.turnkey.description">Projet
+                        complet et finalisé</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi Nous Choisir -->
+    <section class="py-20 bg-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-white mb-4">🌟 <span
+                        data-translate="servicesPage.whyChoose.title">POURQUOI NOUS CHOISIR ?</span></h2>
+                <p class="text-gray-300 text-lg" data-translate="servicesPage.whyChoose.subtitle">Les raisons de faire
+                    confiance à Kayaya Ilunga Construction</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div
+                        class="flex items-start p-6 bg-[#1e1e1e] rounded-lg border border-[#b78836] border-opacity-20 hover:border-opacity-60 transition-all">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#b78836] to-[#d4a855] rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-check text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-2"
+                                data-translate="servicesPage.whyChoose.items.support.title">Accompagnement complet</h3>
+                            <p class="text-gray-400" data-translate="servicesPage.whyChoose.items.support.description">
+                                Du terrain à la remise des clés</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start p-6 bg-[#1e1e1e] rounded-lg border border-[#b78836] border-opacity-20 hover:border-opacity-60 transition-all">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#b78836] to-[#d4a855] rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-check text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-2"
+                                data-translate="servicesPage.whyChoose.items.custom.title">Construction sur mesure</h3>
+                            <p class="text-gray-400" data-translate="servicesPage.whyChoose.items.custom.description">
+                                Selon votre budget et vos besoins</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start p-6 bg-[#1e1e1e] rounded-lg border border-[#b78836] border-opacity-20 hover:border-opacity-60 transition-all">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#b78836] to-[#d4a855] rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-check text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-2"
+                                data-translate="servicesPage.whyChoose.items.standards.title">Respect des normes</h3>
+                            <p class="text-gray-400"
+                                data-translate="servicesPage.whyChoose.items.standards.description">Et des délais
+                                convenus</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start p-6 bg-[#1e1e1e] rounded-lg border border-[#b78836] border-opacity-20 hover:border-opacity-60 transition-all">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#b78836] to-[#d4a855] rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-check text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-2"
+                                data-translate="servicesPage.whyChoose.items.finishing.title">Finition impeccable</h3>
+                            <p class="text-gray-400"
+                                data-translate="servicesPage.whyChoose.items.finishing.description">Matériaux durables
+                                et de qualité</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start p-6 bg-[#1e1e1e] rounded-lg border border-[#b78836] border-opacity-20 hover:border-opacity-60 transition-all md:col-span-2">
+                        <div
+                            class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[#b78836] to-[#d4a855] rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-check text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg mb-2"
+                                data-translate="servicesPage.whyChoose.items.service.title">Service client à l'écoute
+                            </h3>
+                            <p class="text-gray-400" data-translate="servicesPage.whyChoose.items.service.description">
+                                Avant, pendant et après le chantier</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-[#b78836] to-[#d4a855]">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-translate="servicesPage.cta.title">
+                Prêt à démarrer votre projet ?
+            </h2>
+            <p class="text-xl text-white mb-8 max-w-2xl mx-auto opacity-90" data-translate="servicesPage.cta.subtitle">
+                Contactez-nous dès aujourd'hui pour une consultation gratuite et un devis personnalisé
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="contact.html"
+                    class="bg-white text-[#b78836] font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-flex items-center justify-center">
+                    <i class="fas fa-envelope mr-2"></i>
+                    <span data-translate="servicesPage.cta.quote">Demander un devis</span>
+                </a>
+                <a href="realisations.html"
+                    class="border-2 border-white text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-white hover:text-[#b78836] inline-flex items-center justify-center">
+                    <i class="fas fa-images mr-2"></i>
+                    <span data-translate="servicesPage.cta.projects">Voir nos réalisations</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="secondary-bg py-16" style="background-color: #0a0a0a;">
+        <div class="container mx-auto px-6">
+            <!-- Logo et description centrés -->
+            <div class="text-center mb-12">
+                <div class="mb-6">
+                    <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction"
+                        class="h-20 w-auto object-contain mx-auto">
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction
+                </h3>
+                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets,
+                    pierre après pierre depuis 2024 en Afrique et en Europe.</p>
+            </div>
+
+            <!-- Colonnes de navigation -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.home">Accueil</a></li>
+                        <li><a href="index.html#about" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.about">À propos</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.services">Services</a></li>
+                        <li><a href="realisations.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.projects">Réalisations</a></li>
+                        <li><a href="blog.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.blog">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.services.title">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.residential.title">Construction résidentielle</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.commercial.title">Construction commerciale</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.renovation.title">Rénovation</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.public.title">Travaux publics</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
+                    </ul>
+                </div>
+                <div class="text-center md:text-left">
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
+                    <div class="space-y-3">
+                        <p class="text-gray-200" data-translate="footer.contact.address">1, Av Kayaya Ilunga, Q/Daipn,
+                            C/ N'sele</p>
+                        <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512
+                            5025867</p>
+                        <p class="text-gray-200" data-translate="footer.contact.email">
+                            contact@kayayailungacontsruction.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Réseaux sociaux -->
+            <div class="text-center mb-8">
+                <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.social.title">Suivez-nous</h4>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://www.facebook.com/"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ligne de séparation et copyright -->
+            <div class="border-t border-white border-opacity-20 pt-8">
+                <div class="text-center">
+                    <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga
+                        Construction. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-[#b78836] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        if (backToTopButton) {
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('invisible');
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.add('invisible');
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+
+            backToTopButton.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Page loader animation
+        const loader = document.getElementById('loader');
+        const loadingBar = document.querySelector('.loading-bar');
+
+        if (loader && loadingBar) {
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                loadingBar.style.width = `${progress}%`;
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    loader.classList.add('fade-out');
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>

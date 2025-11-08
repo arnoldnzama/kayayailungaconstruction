@@ -1,0 +1,1514 @@
+/* ========================================
+   CONTACT PAGE - DARK THEME
+   Phase 2-3 Implementation
+   ======================================== */
+
+/* Import variables */
+@import url('../variables.css');
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body background */
+body {
+    background-color: var(--color-dark-bg-footer);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    line-height: var(--leading-normal);
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--accent-primary-30);
+    color: var(--color-text-primary);
+}
+
+::-moz-selection {
+    background-color: var(--accent-primary-30);
+    color: var(--color-text-primary);
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.contact-hero,
+section.py-20.bg-gradient-to-br {
+    background: linear-gradient(135deg, 
+        rgba(198, 155, 73, 0.08) 0%, 
+        rgba(198, 155, 73, 0.03) 40%,
+        var(--color-dark-bg-footer) 100%
+    );
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle animated glow effect */
+.contact-hero::before,
+section.py-20.bg-gradient-to-br::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(198, 155, 73, 0.05) 0%, transparent 70%);
+    animation: subtleGlow 8s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes subtleGlow {
+    0%, 100% {
+        opacity: 0.5;
+        transform: translate(0, 0);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translate(10px, 10px);
+    }
+}
+
+.contact-hero h1,
+section h1 {
+    color: var(--color-text-primary);
+}
+
+.contact-hero h1 .primary-color,
+section h1 .primary-color {
+    color: var(--color-accent-primary);
+    text-shadow: 0 0 20px rgba(198, 155, 73, 0.3);
+}
+
+.contact-hero p,
+section p.text-xl,
+section p.text-\[\#b0b0b0\] {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+}
+
+/* Hero buttons - Modern hover effects */
+.contact-hero .btn,
+section a.inline-flex {
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    z-index: 1;
+}
+
+/* Primary button (gold gradient) */
+.contact-hero .btn-primary,
+section a.primary-bg {
+    background: var(--gradient-primary);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-accent);
+}
+
+.contact-hero .btn-primary::before,
+section a.primary-bg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
+}
+
+.contact-hero .btn-primary:hover,
+section a.primary-bg:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-accent-hover);
+}
+
+.contact-hero .btn-primary:hover::before,
+section a.primary-bg:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.contact-hero .btn-primary:active,
+section a.primary-bg:active {
+    transform: translateY(-1px) scale(1);
+}
+
+/* Secondary button (outline) */
+.contact-hero .btn-secondary,
+section a.border-2.border-\[\#c69b49\] {
+    background: transparent;
+    border: 2px solid var(--color-accent-primary);
+    color: var(--color-accent-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-hero .btn-secondary::before,
+section a.border-2.border-\[\#c69b49\]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.contact-hero .btn-secondary:hover,
+section a.border-2.border-\[\#c69b49\]:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-accent-secondary);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-accent);
+}
+
+.contact-hero .btn-secondary:hover::before,
+section a.border-2.border-\[\#c69b49\]:hover::before {
+    left: 0;
+}
+
+.contact-hero .btn-secondary:active,
+section a.border-2.border-\[\#c69b49\]:active {
+    transform: translateY(-1px) scale(1);
+}
+
+/* Icon animation on hover */
+.contact-hero .btn i,
+section a.inline-flex i {
+    transition: transform 0.3s ease;
+}
+
+.contact-hero .btn:hover i,
+section a.inline-flex:hover i {
+    transform: scale(1.1);
+}
+
+/* Specific icon animations */
+.contact-hero .btn-primary:hover .fa-arrow-down,
+section a.primary-bg:hover .fa-arrow-down {
+    animation: bounce-down 0.6s ease infinite;
+}
+
+.contact-hero .btn-secondary:hover .fa-images,
+section a.border-2:hover .fa-images {
+    animation: pulse-icon 0.6s ease infinite;
+}
+
+@keyframes bounce-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+
+section.bg-gray-100 {
+    background-color: var(--color-dark-bg-alt);
+}
+
+/* ========================================
+   FORM CARD
+   ======================================== */
+
+.contact-form-card,
+.bg-white.p-8.rounded-lg.shadow-md,
+.bg-\[\#1e1e1e\].p-8.rounded-lg.shadow-md {
+    background-color: var(--color-dark-bg-card);
+    border: 1px solid var(--text-primary-10);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+}
+
+.contact-form-card:hover,
+.bg-white.p-8.rounded-lg.shadow-md:hover,
+.bg-\[\#1e1e1e\].p-8.rounded-lg.shadow-md:hover {
+    border-color: var(--accent-primary-20);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-form-card h3,
+.bg-white h3.primary-color,
+.bg-\[\#1e1e1e\] h3.primary-color {
+    color: var(--color-accent-primary);
+    text-shadow: 0 0 20px var(--accent-primary-20);
+}
+
+/* Form labels */
+.form-group label,
+label.text-gray-700 {
+    color: var(--color-text-muted);
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
+    margin-bottom: 0.5rem;
+    display: block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Form inputs - Modern dark theme with subtle borders */
+.form-group input,
+.form-group select,
+.form-group textarea,
+input.w-full,
+select.w-full,
+textarea.w-full {
+    background-color: rgba(26, 26, 26, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-text-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9375rem;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: rgba(176, 176, 176, 0.5);
+    font-weight: 400;
+}
+
+/* Hover state - Subtle border highlight */
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover,
+input:hover:not(:focus),
+select:hover:not(:focus),
+textarea:hover:not(:focus) {
+    border-color: rgba(198, 155, 73, 0.3);
+    background-color: rgba(26, 26, 26, 0.8);
+}
+
+/* Focus state - Enhanced Gold accent with animated glow */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: rgba(198, 155, 73, 0.8);
+    box-shadow: 
+        0 0 0 4px rgba(198, 155, 73, 0.2),
+        inset 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 6px 16px rgba(198, 155, 73, 0.15),
+        0 0 30px rgba(198, 155, 73, 0.1);
+    background-color: rgba(30, 30, 30, 0.95);
+    transform: translateY(-2px);
+    animation: focusPulse 2s ease-in-out infinite;
+}
+
+/* Animated focus pulse effect */
+@keyframes focusPulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 4px rgba(198, 155, 73, 0.2),
+            inset 0 1px 3px rgba(0, 0, 0, 0.3),
+            0 6px 16px rgba(198, 155, 73, 0.15),
+            0 0 30px rgba(198, 155, 73, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 4px rgba(198, 155, 73, 0.25),
+            inset 0 1px 3px rgba(0, 0, 0, 0.3),
+            0 6px 16px rgba(198, 155, 73, 0.2),
+            0 0 40px rgba(198, 155, 73, 0.15);
+    }
+}
+
+/* Focus label animation */
+.form-group:focus-within label,
+label:has(+ input:focus),
+label:has(+ select:focus),
+label:has(+ textarea:focus) {
+    color: var(--color-accent-primary);
+    transform: translateX(2px);
+    transition: all 0.3s ease;
+}
+
+/* Active/typing state */
+.form-group input:not(:placeholder-shown),
+.form-group textarea:not(:placeholder-shown),
+input:not(:placeholder-shown),
+textarea:not(:placeholder-shown) {
+    background-color: rgba(30, 30, 30, 0.8);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Focus-within container effect */
+.form-group:focus-within {
+    position: relative;
+}
+
+.form-group:focus-within::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 0.625rem;
+    background: linear-gradient(135deg, 
+        rgba(198, 155, 73, 0.1) 0%, 
+        rgba(198, 155, 73, 0.05) 50%,
+        rgba(198, 155, 73, 0.1) 100%);
+    opacity: 0;
+    animation: focusGlow 0.3s ease forwards;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes focusGlow {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Enhanced focus for select dropdown */
+select:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4a855' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+}
+
+/* Focus indicator for file input */
+input[type="file"]:focus {
+    outline: 2px solid rgba(198, 155, 73, 0.6);
+    outline-offset: 2px;
+}
+
+input[type="file"]:focus::file-selector-button {
+    background: var(--color-accent-secondary);
+    box-shadow: 0 0 0 3px rgba(198, 155, 73, 0.2);
+}
+
+/* Select dropdown styling */
+select.w-full,
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c69b49' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+select option {
+    background-color: #1a1a1a;
+    color: var(--color-text-primary);
+    padding: 0.5rem;
+}
+
+/* Textarea specific styling */
+textarea.w-full,
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+/* Disabled state */
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: rgba(26, 26, 26, 0.4);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* File input */
+input[type="file"] {
+    color: var(--color-text-muted);
+}
+
+input[type="file"]::file-selector-button {
+    background: var(--color-accent-primary);
+    color: var(--color-text-primary);
+    border: none;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    margin-right: var(--space-sm);
+    transition: var(--transition-base);
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: var(--color-accent-secondary);
+    transform: translateY(-1px);
+}
+
+/* Submit button - Modern Gold Gradient */
+.form-submit-btn,
+button[type="submit"].primary-bg {
+    background: linear-gradient(135deg, #c69b49 0%, #d4a855 50%, #c69b49 100%);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 24px rgba(198, 155, 73, 0.3), 0 4px 12px rgba(198, 155, 73, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
+/* Animated shine effect */
+.form-submit-btn::before,
+button[type="submit"].primary-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.form-submit-btn:hover::before,
+button[type="submit"].primary-bg:hover::before {
+    left: 100%;
+}
+
+/* Glow effect on hover */
+.form-submit-btn::after,
+button[type="submit"].primary-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, #d4a855 0%, #e6b966 50%, #d4a855 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.form-submit-btn:hover::after,
+button[type="submit"].primary-bg:hover::after {
+    opacity: 1;
+}
+
+.form-submit-btn:hover,
+button[type="submit"].primary-bg:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(198, 155, 73, 0.4), 
+                0 8px 16px rgba(198, 155, 73, 0.3),
+                0 0 40px rgba(198, 155, 73, 0.2);
+}
+
+.form-submit-btn:active,
+button[type="submit"].primary-bg:active {
+    transform: translateY(-1px) scale(1);
+    box-shadow: 0 4px 16px rgba(198, 155, 73, 0.3);
+}
+
+.form-submit-btn:disabled,
+button[type="submit"].primary-bg:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.form-submit-btn:disabled:hover,
+button[type="submit"].primary-bg:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Enhanced focus state for submit button */
+.form-submit-btn:focus,
+button[type="submit"].primary-bg:focus {
+    outline: none;
+    box-shadow: 
+        0 0 0 4px rgba(198, 155, 73, 0.3),
+        0 12px 32px rgba(198, 155, 73, 0.4), 
+        0 8px 16px rgba(198, 155, 73, 0.3),
+        0 0 50px rgba(198, 155, 73, 0.25);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.form-submit-btn:focus:not(:active),
+button[type="submit"].primary-bg:focus:not(:active) {
+    animation: buttonFocusPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes buttonFocusPulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 0 4px rgba(198, 155, 73, 0.3),
+            0 12px 32px rgba(198, 155, 73, 0.4), 
+            0 8px 16px rgba(198, 155, 73, 0.3),
+            0 0 50px rgba(198, 155, 73, 0.25);
+    }
+    50% {
+        box-shadow: 
+            0 0 0 6px rgba(198, 155, 73, 0.35),
+            0 14px 36px rgba(198, 155, 73, 0.45), 
+            0 10px 20px rgba(198, 155, 73, 0.35),
+            0 0 60px rgba(198, 155, 73, 0.3);
+    }
+}
+
+/* Loading spinner */
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   ENHANCED FORM VALIDATION STATES
+   ======================================== */
+
+/* Validation container */
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+/* Validation icons */
+.validation-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.125rem;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+/* For textarea, position icon at top right */
+.form-group:has(textarea) .validation-icon {
+    top: 3rem;
+    transform: translateY(0);
+}
+
+/* Success icon */
+.validation-icon.success {
+    color: #4ade80;
+    opacity: 1;
+}
+
+/* Error icon */
+.validation-icon.error {
+    color: #f87171;
+    opacity: 1;
+}
+
+/* Validation message */
+.validation-message {
+    display: block;
+    font-size: 0.8125rem;
+    margin-top: 0.375rem;
+    padding-left: 0.25rem;
+    min-height: 1.25rem;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.validation-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.validation-message.error {
+    color: #f87171;
+}
+
+.validation-message.success {
+    color: #4ade80;
+}
+
+/* Invalid state - Red accent */
+input.invalid:not(:focus),
+select.invalid:not(:focus),
+textarea.invalid:not(:focus),
+input:invalid:not(:placeholder-shown):not(:focus),
+select:invalid:not(:placeholder-shown):not(:focus),
+textarea:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: rgba(248, 113, 113, 0.6);
+    background-color: rgba(248, 113, 113, 0.05);
+    animation: shakeError 0.4s ease;
+}
+
+/* Valid state - Green accent */
+input.valid:not(:focus),
+select.valid:not(:focus),
+textarea.valid:not(:focus),
+input:valid:not(:placeholder-shown):not(:focus),
+select:valid:not(:placeholder-shown):not(:focus),
+textarea:valid:not(:placeholder-shown):not(:focus) {
+    border-color: rgba(74, 222, 128, 0.5);
+    background-color: rgba(74, 222, 128, 0.03);
+}
+
+/* Enhanced invalid focus state */
+input.invalid:focus,
+select.invalid:focus,
+textarea.invalid:focus,
+input:invalid:not(:placeholder-shown):focus,
+select:invalid:not(:placeholder-shown):focus,
+textarea:invalid:not(:placeholder-shown):focus {
+    border-color: rgba(248, 113, 113, 0.8);
+    box-shadow: 
+        0 0 0 4px rgba(248, 113, 113, 0.15),
+        inset 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 6px 16px rgba(248, 113, 113, 0.2);
+}
+
+/* Enhanced valid focus state */
+input.valid:focus,
+select.valid:focus,
+textarea.valid:focus,
+input:valid:not(:placeholder-shown):focus,
+select:valid:not(:placeholder-shown):focus,
+textarea:valid:not(:placeholder-shown):focus {
+    border-color: rgba(74, 222, 128, 0.6);
+    box-shadow: 
+        0 0 0 4px rgba(74, 222, 128, 0.15),
+        inset 0 1px 3px rgba(0, 0, 0, 0.3),
+        0 6px 16px rgba(74, 222, 128, 0.2);
+}
+
+/* Shake animation for errors */
+@keyframes shakeError {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-4px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(4px);
+    }
+}
+
+/* Pulse animation for validation icons */
+@keyframes validationPulse {
+    0% {
+        transform: translateY(-50%) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-50%) scale(1.1);
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.validation-icon.show {
+    animation: validationPulse 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* For textarea validation icon */
+.form-group:has(textarea) .validation-icon.show {
+    animation: validationPulseTextarea 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes validationPulseTextarea {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Required field indicator */
+label.required::after {
+    content: ' *';
+    color: #f87171;
+    font-weight: 600;
+}
+
+/* Form group with error state */
+.form-group.has-error label {
+    color: #f87171;
+}
+
+/* Form group with success state */
+.form-group.has-success label {
+    color: #4ade80;
+}
+
+/* Adjust input padding to make room for validation icon */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding-right: 3rem;
+}
+
+/* File input doesn't need extra padding */
+input[type="file"] {
+    padding-right: 1rem;
+}
+
+/* Select dropdown arrow positioning with validation icon */
+.form-group select {
+    background-position: right 2.5rem center;
+}
+
+/* Enhanced validation for required fields on blur */
+input[required]:invalid:not(:focus):not(:placeholder-shown),
+select[required]:invalid:not(:focus):not(:placeholder-shown),
+textarea[required]:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: rgba(248, 113, 113, 0.6);
+}
+
+/* Email specific validation */
+input[type="email"]:not(:placeholder-shown):not(:focus) {
+    background-image: none;
+}
+
+input[type="email"].invalid:not(:placeholder-shown):not(:focus) {
+    border-color: rgba(248, 113, 113, 0.6);
+}
+
+input[type="email"].valid:not(:placeholder-shown):not(:focus) {
+    border-color: rgba(74, 222, 128, 0.5);
+}
+
+/* Phone validation pattern indicator */
+input[type="tel"]:not(:placeholder-shown):not(:focus) {
+    background-image: none;
+}
+
+/* Validation summary */
+.validation-summary {
+    background-color: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.validation-summary.show {
+    display: block;
+    animation: slideInDown 0.3s ease;
+}
+
+.validation-summary-title {
+    color: #f87171;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.validation-summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.validation-summary-list li {
+    color: #fca5a5;
+    font-size: 0.875rem;
+    padding: 0.25rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.validation-summary-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0.5rem;
+    color: #f87171;
+}
+
+/* Success state for entire form */
+.form-validated .form-group.has-success {
+    animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+}
+
+/* ========================================
+   CONTACT INFO CARD
+   ======================================== */
+
+.contact-info-card,
+.lg\:w-1\/2 .bg-\[\#1e1e1e\].p-8.rounded-lg.shadow-md {
+    background-color: var(--color-dark-bg-card);
+    border: 1px solid var(--text-primary-10);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-base);
+}
+
+.contact-info-card:hover,
+.lg\:w-1\/2 .bg-\[\#1e1e1e\].p-8.rounded-lg.shadow-md:hover {
+    border-color: var(--accent-primary-20);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.contact-info-card h3,
+.lg\:w-1\/2 .bg-\[\#1e1e1e\] h3.primary-color {
+    color: var(--color-accent-primary);
+    text-shadow: 0 0 20px var(--accent-primary-20);
+}
+
+/* Contact info items */
+.contact-info-item,
+.space-y-4 > div.flex.items-start {
+    transition: var(--transition-base);
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+}
+
+.contact-info-item:hover,
+.space-y-4 > div.flex.items-start:hover {
+    background-color: rgba(198, 155, 73, 0.05);
+    border-color: var(--accent-primary-20);
+    transform: translateX(4px);
+}
+
+.contact-info-item h4,
+.space-y-4 h4 {
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+    margin-bottom: 0.25rem;
+}
+
+.contact-info-item p,
+.space-y-4 p.text-gray-700 {
+    color: var(--color-text-muted) !important;
+    line-height: 1.6;
+}
+
+.contact-info-item p a,
+.space-y-4 p a {
+    color: var(--color-text-muted);
+    transition: var(--transition-base);
+    text-decoration: none;
+}
+
+.contact-info-item p a:hover,
+.space-y-4 p a:hover {
+    color: var(--color-accent-primary);
+    text-decoration: underline;
+}
+
+/* Contact info icons - Gold with glow effect */
+.contact-info-icon,
+.fas.primary-color,
+.space-y-4 .fas.primary-color {
+    color: #c69b49 !important;
+    font-size: 1.25rem;
+    transition: var(--transition-base);
+    filter: drop-shadow(0 0 4px rgba(198, 155, 73, 0.3));
+}
+
+.contact-info-item:hover .contact-info-icon,
+.contact-info-item:hover .fas.primary-color,
+.space-y-4 > div.flex.items-start:hover .fas.primary-color {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 0 12px rgba(198, 155, 73, 0.6));
+    color: #d4a855 !important;
+}
+
+/* Specific icon animations */
+.fa-map-marker-alt {
+    animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.fa-phone-alt {
+    animation: ring-subtle 4s ease-in-out infinite;
+}
+
+.fa-envelope {
+    animation: float-subtle 3s ease-in-out infinite;
+}
+
+.fa-clock {
+    animation: tick-subtle 2s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes ring-subtle {
+    0%, 90%, 100% {
+        transform: rotate(0deg);
+    }
+    92%, 96% {
+        transform: rotate(-10deg);
+    }
+    94%, 98% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes float-subtle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes tick-subtle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+/* ========================================
+   MAP CONTAINER
+   ======================================== */
+
+.map-container,
+.h-64.rounded-lg.overflow-hidden.shadow-md {
+    border: 1px solid var(--text-primary-10);
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition-base);
+}
+
+.map-container:hover,
+.h-64.rounded-lg.overflow-hidden.shadow-md:hover {
+    border-color: var(--accent-primary-30);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Iframe styling */
+iframe {
+    filter: grayscale(0.2) contrast(1.1);
+    transition: var(--transition-base);
+}
+
+iframe:hover {
+    filter: grayscale(0) contrast(1);
+}
+
+/* ========================================
+   WHY CHOOSE US SECTION
+   ======================================== */
+
+.why-choose-section,
+section.bg-gradient-to-br.from-white.to-gray-50,
+section.bg-gradient-to-br.from-\[\#0a0a0a\].to-\[\#1a1a1a\] {
+    background: linear-gradient(135deg, var(--color-dark-bg-footer) 0%, var(--color-dark-bg-alt) 100%);
+    position: relative;
+}
+
+.why-choose-section h2,
+section h2.primary-color {
+    color: var(--color-accent-primary);
+    text-shadow: 0 0 30px rgba(198, 155, 73, 0.3);
+}
+
+.why-choose-section .subtitle,
+section p.text-gray-600,
+section p.text-xl.text-gray-600 {
+    color: var(--color-text-muted) !important;
+}
+
+/* Why choose cards - Enhanced with modern effects */
+.why-choose-card,
+.bg-white.rounded-lg.shadow-lg,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg {
+    background-color: var(--color-dark-bg-card);
+    border: 1px solid var(--text-primary-10);
+    box-shadow: var(--shadow-md);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle gradient overlay on cards */
+.why-choose-card::before,
+.bg-white.rounded-lg.shadow-lg::before,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top, rgba(198, 155, 73, 0.03) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.why-choose-card:hover::before,
+.bg-white.rounded-lg.shadow-lg:hover::before,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced hover effect with translateY and shadow */
+.why-choose-card:hover,
+.bg-white.rounded-lg.shadow-lg:hover,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(198, 155, 73, 0.3), 
+                0 12px 24px rgba(0, 0, 0, 0.4);
+    border-color: rgba(198, 155, 73, 0.4);
+}
+
+/* Icon circles - Gold gradient with glow effect */
+.why-choose-icon,
+.w-20.h-20.primary-bg.rounded-full {
+    background: linear-gradient(135deg, #c69b49 0%, #d4a855 50%, #c69b49 100%);
+    box-shadow: 0 0 30px rgba(198, 155, 73, 0.5),
+                0 8px 16px rgba(198, 155, 73, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* Animated glow ring effect */
+.why-choose-icon::before,
+.w-20.h-20.primary-bg.rounded-full::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c69b49, #d4a855);
+    opacity: 0;
+    filter: blur(8px);
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.why-choose-card:hover .why-choose-icon::before,
+.bg-white.rounded-lg.shadow-lg:hover .w-20.h-20.primary-bg.rounded-full::before,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg:hover .w-20.h-20.primary-bg.rounded-full::before {
+    opacity: 0.6;
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* Enhanced icon hover effect */
+.why-choose-card:hover .why-choose-icon,
+.bg-white.rounded-lg.shadow-lg:hover .w-20.h-20.primary-bg.rounded-full,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg:hover .w-20.h-20.primary-bg.rounded-full {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 50px rgba(198, 155, 73, 0.8),
+                0 12px 24px rgba(198, 155, 73, 0.4);
+}
+
+/* Icon inside the circle */
+.why-choose-icon i,
+.w-20.h-20.primary-bg.rounded-full i {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.why-choose-card:hover .why-choose-icon i,
+.bg-white.rounded-lg.shadow-lg:hover .w-20.h-20.primary-bg.rounded-full i,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg:hover .w-20.h-20.primary-bg.rounded-full i {
+    transform: scale(1.1);
+}
+
+/* Card titles */
+.why-choose-card h3,
+.bg-white h3.primary-color,
+.bg-\[\#1e1e1e\] h3.primary-color {
+    color: var(--color-accent-primary);
+    transition: all 0.3s ease;
+}
+
+.why-choose-card:hover h3,
+.bg-white.rounded-lg.shadow-lg:hover h3.primary-color,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg:hover h3.primary-color {
+    color: #d4a855;
+    text-shadow: 0 0 20px rgba(198, 155, 73, 0.4);
+}
+
+/* Card descriptions */
+.why-choose-card p,
+.bg-white p.text-gray-600,
+.bg-\[\#1e1e1e\] p.text-gray-600 {
+    color: var(--color-text-muted) !important;
+    transition: color 0.3s ease;
+}
+
+.why-choose-card:hover p,
+.bg-white.rounded-lg.shadow-lg:hover p.text-gray-600,
+.bg-\[\#1e1e1e\].rounded-lg.shadow-lg:hover p.text-gray-600 {
+    color: var(--color-text-secondary) !important;
+}
+
+/* ========================================
+   FORM MESSAGES
+   ======================================== */
+
+.form-message {
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    animation: slideInDown var(--transition-smooth);
+}
+
+.form-message.success {
+    background-color: var(--accent-secondary-15);
+    color: var(--color-accent-secondary);
+    border: 1px solid var(--accent-secondary-30);
+}
+
+.form-message.error {
+    background-color: var(--accent-primary-15);
+    color: var(--color-accent-primary);
+    border: 1px solid var(--accent-primary-30);
+}
+
+.form-message i {
+    font-size: 1.25rem;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(var(--space-md));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn var(--transition-slow) ease-out forwards;
+}
+
+/* Stagger animation for cards */
+.why-choose-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.why-choose-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.why-choose-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+    .contact-hero h1,
+    section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-form-card,
+    .contact-info-card,
+    .bg-white.p-8 {
+        padding: 1.5rem;
+    }
+    
+    .why-choose-icon,
+    .w-20.h-20 {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero h1,
+    section h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-hero .btn-group {
+        flex-direction: column;
+    }
+    
+    .contact-hero .btn,
+    section a.inline-flex {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ========================================
+   LOADER STYLES
+   ======================================== */
+
+#loader {
+    background-color: var(--color-dark-bg-footer);
+}
+
+#loader img {
+    filter: brightness(1.2);
+}
+
+#loader .loading-bar {
+    background-color: var(--color-accent-primary);
+}
+
+#loader div[style*="color"] {
+    color: var(--color-text-primary) !important;
+}
+
+/* ========================================
+   NAVIGATION OVERRIDES
+   ======================================== */
+
+nav.secondary-bg {
+    background-color: var(--color-dark-bg-card);
+    border-bottom: 1px solid var(--text-primary-10);
+}
+
+nav a {
+    color: var(--color-text-primary);
+}
+
+nav a:hover {
+    color: var(--color-accent-primary);
+}
+
+nav a.border-b-2.border-\[\#c69b49\] {
+    border-bottom-color: var(--color-accent-primary);
+}
+
+/* Mobile menu */
+.mobile-menu {
+    background-color: var(--color-dark-bg-card);
+}
+
+.mobile-menu a {
+    color: var(--color-text-primary);
+}
+
+.mobile-menu a:hover {
+    background-color: var(--text-primary-10);
+}
+
+.mobile-menu a.border-l-4.border-white {
+    border-left-color: var(--color-accent-primary);
+}
+
+/* ========================================
+   FOOTER OVERRIDES
+   ======================================== */
+
+footer.secondary-bg {
+    background-color: var(--color-dark-bg-footer);
+    border-top: 1px solid var(--text-primary-10);
+}
+
+footer h3,
+footer h4 {
+    color: var(--color-text-primary);
+}
+
+footer p,
+footer a {
+    color: var(--color-text-secondary);
+}
+
+footer a:hover {
+    color: var(--color-accent-primary);
+}
+
+footer .border-t.border-white {
+    border-top-color: var(--text-primary-10);
+}
+
+/* Social media icons */
+footer .bg-white.bg-opacity-20 {
+    background-color: var(--text-primary-20);
+}
+
+footer .bg-white.bg-opacity-20:hover {
+    background-color: var(--accent-primary-30);
+}
+
+/* ========================================
+   BACK TO TOP BUTTON
+   ======================================== */
+
+#back-to-top {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-accent);
+}
+
+#back-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent-hover);
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Text colors */
+.text-dark-primary {
+    color: var(--color-text-primary);
+}
+
+.text-dark-secondary {
+    color: var(--color-text-secondary);
+}
+
+.text-dark-muted {
+    color: var(--color-text-muted);
+}
+
+.text-gold {
+    color: var(--color-accent-primary);
+}
+
+/* Background colors */
+.bg-dark-primary {
+    background-color: var(--color-dark-bg-footer);
+}
+
+.bg-dark-secondary {
+    background-color: var(--color-dark-bg-alt);
+}
+
+.bg-dark-card {
+    background-color: var(--color-dark-bg-card);
+}
+
+.bg-dark-card-hover {
+    background-color: var(--color-dark-bg-card);
+}
+
+/* Border colors */
+.border-dark {
+    border-color: var(--text-primary-10);
+}
+
+.border-gold {
+    border-color: var(--color-accent-primary);
+}
+
+/* Glow effect */
+.glow-gold {
+    box-shadow: 0 0 30px var(--accent-primary-50);
+}
+
+.glow-gold-hover:hover {
+    box-shadow: 0 0 40px var(--accent-primary-80);
+}
+
+/* ========================================
+   ACCESSIBILITY & FOCUS STATES
+   ======================================== */
+
+/* Enhanced focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

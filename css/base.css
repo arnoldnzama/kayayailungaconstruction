@@ -1,0 +1,246 @@
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+/* Reset & Base */
+* {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+body {
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+    padding-top: 80px;
+    margin: 0;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-primary);
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Hover Effects */
+.hover-zoom {
+    overflow: hidden;
+}
+
+.hover-zoom img {
+    transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   COMMON COMPONENTS
+   ======================================== */
+
+/* Section Titles */
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background-color: var(--color-accent-primary);
+}
+
+/* Cards */
+.card {
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-accent-primary);
+    color: var(--color-text-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: var(--z-fixed);
+    box-shadow: var(--shadow-md);
+}
+
+#back-to-top:hover {
+    background-color: var(--color-accent-secondary);
+    transform: translateY(-5px);
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Loader */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-dark-bg);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loader.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+.loading-bar {
+    height: 4px;
+    background-color: var(--color-accent-primary);
+    width: 0;
+    transition: width var(--transition-base);
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ========================================
+   SMOOTH SCROLL
+   ======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Disable smooth scroll for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Scroll padding to account for fixed navbar */
+html {
+    scroll-padding-top: 80px;
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--color-accent-primary);
+    color: var(--color-dark-bg);
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10000;
+    border-radius: 0 0 4px 0;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid var(--color-accent-secondary);
+    outline-offset: 2px;
+}
+
+/* Focus Visible Styles */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Ensure icons don't interfere with screen readers */
+/* Icons should have aria-hidden="true" in HTML */

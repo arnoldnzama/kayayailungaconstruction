@@ -1,0 +1,122 @@
+/* ========================================
+   PARTNERS SECTION
+   ======================================== */
+
+.partners-section {
+    background: var(--color-dark-bg);
+    padding: 80px 0;
+}
+
+.partners-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.partners-title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+.partners-logo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 48px;
+}
+
+.partner-logo {
+    width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(100%) brightness(0.7);
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .partners-section {
+        padding: 60px 0;
+    }
+
+    .partners-title {
+        font-size: 32px;
+        margin-bottom: 48px;
+    }
+
+    .partners-logo-container {
+        gap: 40px;
+    }
+
+    .partner-logo {
+        width: 160px;
+        height: 90px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 48px 0;
+    }
+
+    .partners-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .partners-logo-container {
+        gap: 32px;
+        justify-content: center;
+    }
+
+    .partner-logo {
+        width: 140px;
+        height: 80px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .partners-section {
+        padding: 40px 0;
+    }
+
+    .partners-title {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
+
+    .partners-logo-container {
+        gap: 24px;
+    }
+
+    .partner-logo {
+        width: 120px;
+        height: 70px;
+    }
+}

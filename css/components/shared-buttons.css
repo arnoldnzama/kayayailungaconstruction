@@ -1,0 +1,56 @@
+/* ========================================
+   BUTTONS COMPONENT - Shared across all pages
+   Modern dark theme button styles
+   ======================================== */
+
+/* ========================================
+   BASE BUTTON
+   ======================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    text-align: center;
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    user-select: none;
+    line-height: 1;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ========================================
+   PRIMARY BUTTON
+   ======================================== */
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-accent-primary), #FF7A7E);
+    color: white;
+    box-shadow: 0 4px 15px var(--accent-primary-20);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--accent-primary-30);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px var(--accent-primary-20);
+}
+
+/* =============================

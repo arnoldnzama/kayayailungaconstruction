@@ -18,13 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle language dropdown
     const toggleDropdown = (e) => {
-        const dropdown = e.currentTarget.nextElementSibling;
+        const button = e.currentTarget;
+        const dropdown = button.nextElementSibling;
+        const isActive = dropdown.classList.contains('active');
+        
         dropdown.classList.toggle('active');
+        
+        // Update ARIA attribute
+        button.setAttribute('aria-expanded', !isActive);
         
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.language-switcher')) {
                 dropdown.classList.remove('active');
+                button.setAttribute('aria-expanded', 'false');
             }
         });
     };
@@ -50,6 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close dropdown
         document.querySelectorAll('.lang-dropdown').forEach(dropdown => {
             dropdown.classList.remove('active');
+        });
+        
+        // Update ARIA attributes
+        document.querySelectorAll('.lang-btn, .lang-btn-white, .lang-btn-white-mobile').forEach(btn => {
+            btn.setAttribute('aria-expanded', 'false');
         });
 
         // Translate content
@@ -94,7 +106,35 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                 } else {
-                    element.textContent = translation;
+                    // Check if element has child nodes (like icons, emojis, or nested spans)
+                    const hasChildElements = element.children.length > 0;
+                    
+                    if (hasChildElements) {
+                        // Find text nodes and update only the text content
+                        const walker = document.createTreeWalker(
+                            element,
+                            NodeFilter.SHOW_TEXT,
+                            null,
+                            false
+                        );
+                        
+                        let textNode;
+                        let textNodes = [];
+                        while (textNode = walker.nextNode()) {
+                            // Skip empty text nodes
+                            if (textNode.nodeValue.trim()) {
+                                textNodes.push(textNode);
+                            }
+                        }
+                        
+                        // Update the first significant text node
+                        if (textNodes.length > 0) {
+                            textNodes[0].nodeValue = translation;
+                        }
+                    } else {
+                        // Simple text content, just replace it
+                        element.textContent = translation;
+                    }
                 }
                 
                 // Remove animation class after animation ends

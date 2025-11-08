@@ -1,0 +1,217 @@
+/* Design System Variables - Kayaya Ilunga Construction */
+/* Nouvelle charte graphique - Thème sombre inspiré d'Avcı Architects */
+
+:root {
+   /* ========================================
+       COLOR PALETTE
+       ======================================== */
+
+   /* Primary Dark Theme Colors */
+   --color-dark-bg: #121212;
+   --color-dark-bg-alt: #1a1a1a;
+   --color-dark-bg-card: #1e1e1e;
+   --color-dark-bg-footer: #0a0a0a;
+
+   /* Text Colors */
+   --color-text-primary: #f5f5f5;
+   --color-text-secondary: rgba(245, 245, 245, 0.85);
+   --color-text-muted: rgba(245, 245, 245, 0.6);
+
+   /* Accent Colors */
+   --color-accent-primary: #b78836;
+   --color-accent-secondary: #0a0a0a;
+
+   /* Accent Colors with Transparency */
+   --accent-primary-10: rgba(255, 90, 95, 0.1);
+   --accent-primary-15: rgba(255, 90, 95, 0.15);
+   --accent-primary-20: rgba(255, 90, 95, 0.2);
+   --accent-primary-30: rgba(255, 90, 95, 0.3);
+   --accent-primary-50: rgba(255, 90, 95, 0.5);
+   --accent-primary-80: rgba(255, 90, 95, 0.8);
+
+   --accent-secondary-10: rgba(0, 193, 178, 0.1);
+   --accent-secondary-15: rgba(0, 193, 178, 0.15);
+   --accent-secondary-20: rgba(0, 193, 178, 0.2);
+   --accent-secondary-30: rgba(0, 193, 178, 0.3);
+   --accent-secondary-50: rgba(0, 193, 178, 0.5);
+   --accent-secondary-80: rgba(0, 193, 178, 0.8);
+
+   /* Dark Background with Transparency */
+   --dark-bg-10: rgba(18, 18, 18, 0.1);
+   --dark-bg-20: rgba(18, 18, 18, 0.2);
+   --dark-bg-30: rgba(18, 18, 18, 0.3);
+   --dark-bg-40: rgba(18, 18, 18, 0.4);
+   --dark-bg-50: rgba(18, 18, 18, 0.5);
+   --dark-bg-60: rgba(18, 18, 18, 0.6);
+   --dark-bg-80: rgba(18, 18, 18, 0.8);
+   --dark-bg-90: rgba(18, 18, 18, 0.9);
+
+   /* Text with Transparency */
+   --text-primary-10: rgba(245, 245, 245, 0.1);
+   --text-primary-20: rgba(245, 245, 245, 0.2);
+   --text-primary-30: rgba(245, 245, 245, 0.3);
+   --text-primary-50: rgba(245, 245, 245, 0.5);
+   --text-primary-70: rgba(245, 245, 245, 0.7);
+   --text-primary-80: rgba(245, 245, 245, 0.8);
+   --text-primary-85: rgba(245, 245, 245, 0.85);
+
+   /* ========================================
+       GRADIENTS
+       ======================================== */
+
+   --gradient-primary: linear-gradient(135deg, #FF5A5F, #00C1B2);
+   --gradient-overlay: linear-gradient(180deg, rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.4));
+   --gradient-overlay-bottom: linear-gradient(180deg, transparent, rgba(18, 18, 18, 0.9));
+
+   /* ========================================
+       SHADOWS
+       ======================================== */
+
+   --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+   --shadow-md: 0 12px 24px rgba(0, 0, 0, 0.3);
+   --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.4);
+   --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.5);
+   --shadow-accent: 0 24px 48px rgba(255, 90, 95, 0.15);
+   --shadow-accent-hover: 0 24px 48px rgba(255, 90, 95, 0.25);
+
+   /* ========================================
+       TRANSITIONS
+       ======================================== */
+
+   --transition-fast: 0.2s ease;
+   --transition-base: 0.3s ease;
+   --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   --transition-slow: 0.6s ease-out;
+
+   /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+
+   /* Font Families */
+   --font-heading: 'Montserrat', sans-serif;
+   --font-body: 'Montserrat', sans-serif;
+
+   /* Font Sizes - Desktop */
+   --text-xs: 12px;
+   --text-sm: 14px;
+   --text-base: 16px;
+   --text-lg: 18px;
+   --text-xl: 20px;
+   --text-2xl: 24px;
+   --text-3xl: 32px;
+   --text-4xl: 48px;
+   --text-5xl: 64px;
+   --text-6xl: 72px;
+
+   /* Line Heights */
+   --leading-tight: 1.2;
+   --leading-normal: 1.5;
+   --leading-relaxed: 1.6;
+   --leading-loose: 1.8;
+
+   /* Font Weights */
+   --font-light: 300;
+   --font-normal: 400;
+   --font-medium: 500;
+   --font-semibold: 600;
+   --font-bold: 700;
+
+   /* Letter Spacing */
+   --tracking-tight: -0.025em;
+   --tracking-normal: 0;
+   --tracking-wide: 0.025em;
+   --tracking-wider: 0.05em;
+
+   /* ========================================
+       SPACING SYSTEM
+       ======================================== */
+
+   --space-xs: 8px;
+   --space-sm: 16px;
+   --space-md: 24px;
+   --space-lg: 32px;
+   --space-xl: 48px;
+   --space-2xl: 64px;
+   --space-3xl: 80px;
+   --space-4xl: 120px;
+
+   /* ========================================
+       LAYOUT
+       ======================================== */
+
+   /* Container */
+   --container-max-width: 1280px;
+   --container-padding: 24px;
+
+   /* Border Radius */
+   --radius-sm: 4px;
+   --radius-md: 8px;
+   --radius-lg: 12px;
+   --radius-xl: 16px;
+   --radius-2xl: 20px;
+   --radius-full: 9999px;
+
+   /* Z-Index Scale */
+   --z-base: 1;
+   --z-dropdown: 100;
+   --z-sticky: 200;
+   --z-fixed: 300;
+   --z-modal-backdrop: 400;
+   --z-modal: 500;
+   --z-popover: 600;
+   --z-tooltip: 700;
+
+   /* ========================================
+       BREAKPOINTS (for reference in JS)
+       ======================================== */
+
+   --breakpoint-sm: 640px;
+   --breakpoint-md: 768px;
+   --breakpoint-lg: 1024px;
+   --breakpoint-xl: 1280px;
+   --breakpoint-2xl: 1536px;
+}
+
+/* ========================================
+   RESPONSIVE TYPOGRAPHY
+   ======================================== */
+
+@media (max-width: 768px) {
+   :root {
+      /* Reduce font sizes by 20-30% on mobile */
+      --text-xs: 11px;
+      --text-sm: 13px;
+      --text-base: 14px;
+      --text-lg: 16px;
+      --text-xl: 18px;
+      --text-2xl: 20px;
+      --text-3xl: 24px;
+      --text-4xl: 36px;
+      --text-5xl: 48px;
+      --text-6xl: 56px;
+
+      /* Adjust spacing for mobile */
+      --space-xs: 6px;
+      --space-sm: 12px;
+      --space-md: 18px;
+      --space-lg: 24px;
+      --space-xl: 36px;
+      --space-2xl: 48px;
+      --space-3xl: 60px;
+      --space-4xl: 80px;
+
+      /* Adjust container padding */
+      --container-padding: 16px;
+   }
+}
+
+@media (max-width: 480px) {
+   :root {
+      /* Further reduce for very small screens */
+      --text-4xl: 32px;
+      --text-5xl: 40px;
+      --text-6xl: 48px;
+
+      --container-padding: 12px;
+   }
+}

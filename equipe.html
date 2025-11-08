@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Équipe - Kayaya Ilunga Construction</title>
+    <link rel="icon" type="image/x-icon" href="images/icons/logo.ico">
+
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
+        as="style">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Nouvelle architecture CSS modulaire -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/fallbacks.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <!-- Ajout des meta tags SEO -->
+    <meta name="description"
+        content="Découvrez l'équipe passionnée de Kayaya Ilunga Construction - Des professionnels expérimentés au service de vos projets de construction en Afrique et en Europe.">
+    <meta name="keywords"
+        content="équipe construction, professionnels bâtiment, ingénieurs, architectes, Kayaya Ilunga, équipe qualifiée, construction Afrique">
+    <meta name="author" content="Kayaya Ilunga Construction">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Notre Équipe - Kayaya Ilunga Construction">
+    <meta property="og:description"
+        content="Découvrez l'équipe passionnée de Kayaya Ilunga Construction - Des professionnels expérimentés au service de vos projets">
+    <meta property="og:image" content="images/logos/logo.png">
+    <meta property="og:url" content="https://arnoldnzama.github.io/KAYAYA-CONSTRUCTION/equipe.html">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        :root {
+            --color-primary: #b78836;
+            --color-primary-dark: #b78836;
+            --color-accent: #d4a855;
+            --color-gray-50: #f9fafb;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-600: #4b5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-gray-800);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .primary-color {
+            color: var(--color-primary);
+        }
+
+        .primary-bg {
+            background-color: var(--color-primary);
+        }
+
+        /* Section Styles */
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: #b0b0b0;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        /* History Section */
+        .history-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #d0d0d0;
+        }
+
+        /* Mission & Values */
+        .mission-values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: #1e1e1e;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(198, 155, 73, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(198, 155, 73, 0.3);
+            border-color: rgba(198, 155, 73, 0.4);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #b78836, #d4a855);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-icon i {
+            font-size: 1.75rem;
+            color: white;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+        }
+
+        .value-description {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .director-card {
+            background: #1e1e1e;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border: 2px solid var(--color-primary);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .team-members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .member-card {
+            background: #1e1e1e;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(198, 155, 73, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(198, 155, 73, 0.3);
+            border-color: rgba(198, 155, 73, 0.4);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
+            border: 4px solid #b78836;
+            box-shadow: 0 4px 12px rgba(198, 155, 73, 0.3);
+        }
+
+        .director-photo {
+            width: 150px;
+            height: 150px;
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            font-size: 1rem;
+            color: var(--color-primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .member-description {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* Hero animations */
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .team-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .team-section {
+                padding: 60px 0;
+            }
+
+            .team-members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<!-- Loader -->
+<div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center" style="background-color: #000000;">
+    <div class="relative text-center">
+        <img src="images/logos/logo.png" alt="Logo" class="w-32 h-32 mx-auto mb-8 animate-bounce"
+            style="filter: brightness(1.2);" onerror="this.style.display='none'">
+        <div class="w-48 h-2 rounded-full overflow-hidden" style="background-color: #333333;">
+            <div class="loading-bar h-full rounded-full" style="background-color: #b78836; width: 0%"></div>
+        </div>
+        <div class="mt-4 font-semibold" style="color: #fffffe;">Chargement...</div>
+    </div>
+</div>
+
+
+
+<body class="bg-[#0a0a0a]" style="background-color: #0a0a0a;" oncontextmenu="return false">
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Navigation -->
+    <nav class="secondary-bg shadow-md sticky top-0 z-50" style="background-color: #0a0a0a;">
+        <div class="container mx-auto px-6 py-3" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction"
+                            class="h-24 w-auto object-contain">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.home">Accueil</a>
+                    <a href="equipe.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-[#b78836] pb-1"
+                        data-translate="nav.about">Équipe</a>
+                    <a href="services.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.services">Services</a>
+                    <a href="realisations.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.projects">Réalisations</a>
+                    <a href="blog.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.blog">Blog</a>
+                    <a href="contact.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.contact">Contact</a>
+
+                    <!-- Language Switcher -->
+                    <div class="language-switcher">
+                        <button class="lang-btn-white">
+                            <i class="fas fa-globe"></i>
+                            <span id="current-lang">FR</span>
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div class="lang-dropdown">
+                            <div class="lang-option" data-lang="fr">
+                                <img src="images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                                <span>Français</span>
+                            </div>
+                            <div class="lang-option" data-lang="en">
+                                <img src="images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                                <span>English</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-xl text-white"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-white border-opacity-20">
+                <a href="index.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.home">Accueil</a>
+                <a href="equipe.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white"
+                    data-translate="nav.about">Équipe</a>
+                <a href="services.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.services">Services</a>
+                <a href="realisations.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.projects">Réalisations</a>
+                <a href="blog.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.blog">Blog</a>
+                <a href="contact.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.contact">Contact</a>
+
+                <!-- Language Switcher Mobile -->
+                <div class="language-switcher px-4 mt-2">
+                    <button class="lang-btn-white-mobile">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-lang-mobile">FR</span>
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <div class="lang-option" data-lang="fr">
+                            <img src="images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                            <span>Français</span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <img src="images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="hero-section py-10 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-[#b78836] rounded-full filter blur-3xl animate-pulse">
+            </div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#b78836] rounded-full filter blur-3xl animate-pulse"
+                style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto fade-in">
+                <div
+                    class="inline-block mb-6 px-6 py-2 bg-[#b78836] bg-opacity-10 border border-[#b78836] border-opacity-30 rounded-full">
+                    <span class="text-[#b78836] font-semibold text-sm uppercase tracking-wider">Notre Équipe</span>
+                </div>
+
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                    <i class="fas fa-users mr-4 text-[#b78836]"></i>
+                    <span data-translate="team.hero.title">Notre Équipe</span>
+                </h1>
+
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed" data-translate="team.hero.subtitle">
+                    Des professionnels passionnés au service de vos projets
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="realisations.html"
+                        class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#b78836] to-[#d4a855] text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#b78836]/50 hover:scale-105">
+                        <i class="fas fa-images mr-2"></i>
+                        <span data-translate="team.hero.btn_projects">Voir nos réalisations</span>
+                    </a>
+
+                    <a href="contact.html"
+                        class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-[#b78836] text-[#b78836] font-semibold rounded-full transition-all duration-300 hover:bg-[#b78836] hover:text-white hover:scale-105">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span data-translate="team.hero.btn_contact">Nous contacter</span>
+                    </a>
+                </div>
+
+
+    </section>
+
+    <main id="main-content">
+        <!-- Histoire Section -->
+        <section class="team-section bg-[#0a0a0a]">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title" data-translate="team.history.title">Notre Histoire</h2>
+                <div class="history-content">
+                    <p data-translate="team.history.p1">
+                        Fondée par des passionnés du bâtiment, notre société est née de la volonté d'offrir des
+                        solutions de construction modernes, accessibles et durables. Depuis sa création en 2024, Kayaya
+                        Ilunga Construction a su s'imposer comme un acteur de confiance dans le secteur de la
+                        construction en Afrique et en Europe.
+                    </p>
+                    <p class="mt-4" data-translate="team.history.p2">
+                        Combinant savoir-faire local et standards internationaux, notre équipe réalise des projets de
+                        qualité, dans le respect des délais et du budget de chaque client. Notre expérience couvre tous
+                        les corps d'état : génie civil, CVC, électricité, menuiserie, revêtements, plâtrerie, peinture,
+                        architecture intérieure et extérieure.
+                    </p>
+                    <p class="mt-4" data-translate="team.history.p3">
+                        Notre objectif est de bâtir des projets durables et accessibles, en transformant vos visions en
+                        réalité et en créant des espaces qui allient esthétique, fonctionnalité et pérennité.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Valeurs Section -->
+        <section class="team-section bg-[#1a1a1a]">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title" data-translate="team.mission.title">Notre Mission & Nos Valeurs</h2>
+                <p class="section-subtitle" data-translate="team.mission.subtitle">
+                    Nous nous engageons à construire des habitations solides, à accompagner nos clients du terrain à la
+                    clé, et à garantir durabilité et innovation dans chaque projet.
+                </p>
+
+                <div class="mission-values-grid">
+                    <!-- Qualité -->
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h3 class="value-title" data-translate="team.values.quality.title">Qualité</h3>
+                        <p class="value-description" data-translate="team.values.quality.description">
+                            Des constructions durables et conformes aux normes, avec des matériaux premium et un
+                            savoir-faire irréprochable.
+                        </p>
+                    </div>
+
+                    <!-- Transparence -->
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="value-title" data-translate="team.values.transparency.title">Transparence</h3>
+                        <p class="value-description" data-translate="team.values.transparency.description">
+                            Une communication claire à chaque étape du projet, avec des devis détaillés et un suivi
+                            régulier.
+                        </p>
+                    </div>
+
+                    <!-- Innovation -->
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="value-title" data-translate="team.values.innovation.title">Innovation</h3>
+                        <p class="value-description" data-translate="team.values.innovation.description">
+                            Des solutions modernes et efficaces, intégrant les dernières technologies et méthodes de
+                            construction.
+                        </p>
+                    </div>
+
+                    <!-- Responsabilité -->
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="value-title" data-translate="team.values.responsibility.title">Responsabilité</h3>
+                        <p class="value-description" data-translate="team.values.responsibility.description">
+                            Un engagement envers l'environnement et la société, pour un développement durable et
+                            harmonieux.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organigramme Section -->
+        <section class="team-section bg-[#0a0a0a]">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title" data-translate="team.org.title">Notre Équipe</h2>
+                <p class="section-subtitle" data-translate="team.org.subtitle">
+                    Une équipe de professionnels expérimentés et passionnés, dédiée à la réussite de vos projets.
+                </p>
+
+                <div class="team-grid">
+                    <!-- Directeur Général -->
+                    <div class="director-card">
+                        <img src="images/equipes/DG.jpeg" alt="Kayaya Ilunga" class="member-photo director-photo"
+                            onerror="this.src='images/placeholder.svg'">
+                        <h3 class="member-name" data-translate="team.members.director.name">Kayaya Ilunga</h3>
+                        <p class="member-role" data-translate="team.members.director.role">Fondateur & Directeur Général
+                        </p>
+                        <p class="member-description" data-translate="team.members.director.description">
+                            Bâtisseur expérimenté avec plus de 10 ans d'expérience, il supervise la stratégie et le
+                            développement global de l'entreprise, garantissant l'excellence dans chaque projet.
+                        </p>
+                    </div>
+
+                    <!-- Agents -->
+                    <div class="team-members-grid">
+                        <!-- Agent 1 -->
+                        <div class="member-card">
+                            <img src="images/equipes/Arnold.jpeg" alt="Arnold Atatala" class="member-photo"
+                                onerror="this.src='images/placeholder.svg'">
+                            <h3 class="member-name" data-translate="team.members.engineer.name">Arnold Atatala</h3>
+                            <p class="member-role" data-translate="team.members.engineer.role">Secrétaire et
+                                administratif</p>
+                            <p class="member-description" data-translate="team.members.engineer.description">
+                                Expert en conception structurelle et gestion de projets complexes.
+                            </p>
+                        </div>
+
+                        <!-- Agent 2 -->
+                        <div class="member-card">
+                            <img src="images/equipes/Nzaula.jpeg" alt="Christ Nzaula Kasongo." class="member-photo"
+                                onerror="this.src='images/placeholder.svg'">
+                            <h3 class="member-name" data-translate="team.members.siteManager.name">Christ Nzaula Kasongo
+                            </h3>
+                            <p class="member-role" data-translate="team.members.siteManager.role">Ingénieur</p>
+                            <p class="member-description" data-translate="team.members.siteManager.description">
+                                Coordination et supervision des travaux avec rigueur et efficacité.
+                            </p>
+                        </div>
+
+                        <!-- Agent 3 -->
+                        <div class="member-card">
+                            <img src="images/equipes/Christian.jpeg" alt="Christian Isenda Temene" class="member-photo"
+                                onerror="this.src='images/placeholder.svg'">
+                            <h3 class="member-name" data-translate="team.members.mason.name">Christian Isenda Temene
+                            </h3>
+                            <p class="member-role" data-translate="team.members.mason.role">Architecte</p>
+                            <p class="member-description" data-translate="team.members.mason.description">
+                                Maître artisan spécialisé dans les travaux de maçonnerie de haute qualité.
+                            </p>
+                        </div>
+
+                        <!-- Agent 4 -->
+                        <div class="member-card">
+                            <img src="images/equipes/MBUYA.jpeg" alt="Becker MBUYA MFUMU" class="member-photo"
+                                onerror="this.src='images/placeholder.svg'">
+                            <h3 class="member-name" data-translate="team.members.finishing.name">Becker MBUYA MFUMU</h3>
+                            <p class="member-role" data-translate="team.members.finishing.role">Ingénieur</p>
+                            <p class="member-description" data-translate="team.members.finishing.description">
+                                Conception, planification et réalisation des projets pour garantir leur qualité,
+                                sécurité et conformité aux normes.
+                            </p>
+                        </div>
+
+                        <!-- Agent 5 -->
+                        <div class="member-card">
+                            <img src="images/equipes/Mbuyi.jpeg" alt="Mbuyi John " class="member-photo"
+                                onerror="this.src='images/placeholder.svg'">
+                            <h3 class="member-name" data-translate="team.members.electrician.name">Mbuyi John</h3>
+                            <p class="member-role" data-translate="team.members.electrician.role">Architecte</p>
+                            <p class="member-description" data-translate="team.members.electrician.description">
+                                Conçoit et planifie les projets de construction en alliant esthétique, fonctionnalité et
+                                respect des normes techniques.
+                            </p>
+                        </div>
+
+                        <!-- Agent 6 -->
+                        <div class="member-card">
+                            <img src="images/equipes/Jonathan.jpeg" alt="Jonathan Loyeke" class="member-photo"
+                                onerror="this.src='images/placeholder.svg'">
+                            <h3 class="member-name" data-translate="team.members.plumber.name">Jonathan Loyeke</h3>
+                            <p class="member-role" data-translate="team.members.plumber.role">Gérant</p>
+                            <p class="member-description" data-translate="team.members.plumber.description">
+                                Veille à la bonne exécution des projets et assure la rentabilité ainsi que la
+                                satisfaction des clients.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="team-section"
+            style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);">
+            <div class="container mx-auto px-6 text-center text-white">
+                <h2 class="text-4xl font-bold mb-4" data-translate="team.cta.title">Prêt à démarrer votre projet ?</h2>
+                <p class="text-xl mb-8 opacity-90" data-translate="team.cta.subtitle">
+                    Notre équipe est à votre disposition pour discuter de vos besoins
+                </p>
+                <a href="contact.html"
+                    class="inline-block bg-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+                    style="color: #b78836;" data-translate="team.cta.button">
+                    Contactez-nous
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #0a0a0a;">
+        <div class="footer-container">
+            <!-- Footer Grid -->
+            <div class="footer-grid">
+                <!-- Column 1: Logo + Description -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" loading="lazy"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <h3 class="footer-brand" data-translate="footer.title">Kayaya Ilunga Construction</h3>
+                    <p class="footer-description" data-translate="footer.description">
+                        Bâtissons vos projets, pierre après pierre depuis 2024 en Afrique et en Europe.
+                    </p>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title" data-translate="footer.navigation.title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-translate="nav.home">Accueil</a></li>
+                        <li><a href="index.html#about" data-translate="nav.about">À propos</a></li>
+                        <li><a href="index.html#services" data-translate="nav.services">Services</a></li>
+                        <li><a href="realisations.html" data-translate="nav.projects">Réalisations</a></li>
+                        <li><a href="blog.html" data-translate="nav.blog">Blog</a></li>
+                        <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title" data-translate="footer.services.title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services" data-translate="services.items.residential.title">Construction
+                                résidentielle</a></li>
+                        <li><a href="index.html#services" data-translate="services.items.commercial.title">Construction
+                                commerciale</a></li>
+                        <li><a href="index.html#services"
+                                data-translate="services.items.renovation.title">Rénovation</a></li>
+                        <li><a href="index.html#services" data-translate="services.items.public.title">Travaux
+                                publics</a></li>
+                        <li><a href="index.html#services" data-translate="services.items.management.title">Maîtrise
+                                d'œuvre</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact + Social -->
+                <div class="footer-column">
+                    <h4 class="footer-column-title" data-translate="footer.contact.title">Contact</h4>
+                    <div class="footer-contact">
+                        <p data-translate="footer.contact.address">1, Av Kayaya Ilunga, Q/Daipn, C/ N'sele</p>
+                        <p data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867</p>
+                        <p data-translate="footer.contact.email">contact@kayayailungacontsruction.com</p>
+                    </div>
+
+                    <!-- Social Icons -->
+                    <div class="footer-social">
+                        <h4 class="footer-social-title" data-translate="footer.social.title">Suivez-nous</h4>
+                        <div class="footer-social-icons">
+                            <a href="https://www.facebook.com/" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="#" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="footer-copyright">
+                <p data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga Construction. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-[#b78836] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible"
+        aria-label="Retour en haut de la page">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- Core functionality scripts -->
+    <script src="js/translations.js"></script>
+    <script src="js/language-switcher.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Note: mobile-menu.js, smooth-scroll.js, and lazy-loading.js functionality 
+         is now integrated into script.js to reduce HTTP requests -->
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function (event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+
+                // Close menu when clicking on a link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

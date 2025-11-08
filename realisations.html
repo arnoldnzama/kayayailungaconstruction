@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/pages/realisations-dark.css">
     <!-- Ajout des meta tags SEO -->
     <meta name="description"
         content="Nos Réalisations - Kayaya Ilunga Construction. Découvrez nos projets de construction, rénovation et aménagement en RDC. Plus de 10 projets réalisés avec passion et expertise.">
@@ -94,55 +95,53 @@
             font-weight: 600;
         }
 
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .filter-btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            border: 2px solid #c69b49;
-            background: white;
-            color: #c69b49;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: #c69b49;
-            color: white;
-        }
-
         .project-folder {
             position: relative;
-            background: white;
+            background: #1e1e1e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+        }
+
+        .project-folder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top, rgba(198, 155, 73, 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 1;
         }
 
         .project-folder:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(39, 40, 122, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(198, 155, 73, 0.3),
+                0 12px 24px rgba(0, 0, 0, 0.5);
+            border-color: rgba(198, 155, 73, 0.4);
+        }
+
+        .project-folder:hover::before {
+            opacity: 1;
         }
 
         .project-folder-image {
             width: 100%;
             height: 280px;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: brightness(0.9);
         }
 
         .project-folder:hover .project-folder-image {
-            transform: scale(1.05);
+            transform: scale(1.1);
+            filter: brightness(1);
         }
 
         .project-folder-info {
@@ -150,33 +149,64 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.7) 60%, transparent 100%);
             padding: 1.5rem;
             color: white;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .project-folder:hover .project-folder-info {
+            padding: 2rem 1.5rem;
+            background: linear-gradient(to top, rgba(10, 10, 10, 0.98) 0%, rgba(10, 10, 10, 0.85) 70%, transparent 100%);
         }
 
         .project-folder-title {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+            color: #ffffff;
+            transition: color 0.3s ease;
+        }
+
+        .project-folder:hover .project-folder-title {
+            color: #b78836;
         }
 
         .project-folder-count {
             font-size: 0.875rem;
             opacity: 0.9;
+            color: #b0b0b0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-folder-count::before {
+            content: '📸';
+            font-size: 1rem;
         }
 
         .project-category-badge {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: rgba(198, 155, 73, 0.9);
+            background: linear-gradient(135deg, #b78836 0%, #d4a855 100%);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 1rem;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(198, 155, 73, 0.4);
+            z-index: 3;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .project-folder:hover .project-category-badge {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(198, 155, 73, 0.6);
         }
 
         .modal-image {
@@ -197,7 +227,7 @@
         }
 
         .project-folder.image-error {
-            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            background: linear-gradient(135deg, #1a1a1a, #252525);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -207,7 +237,8 @@
         .project-folder.image-error::before {
             content: "📁";
             font-size: 3rem;
-            color: #9ca3af;
+            color: #808080;
+            z-index: 2;
         }
 
         @media (max-width: 768px) {
@@ -230,11 +261,22 @@
         }
     </style>
 </head>
+<!-- Loader -->
+<div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center" style="background-color: #000000;">
+    <div class="relative text-center">
+        <img src="images/logos/logo.png" alt="Logo" class="w-32 h-32 mx-auto mb-8 animate-bounce"
+            style="filter: brightness(1.2);" onerror="this.style.display='none'">
+        <div class="w-48 h-2 rounded-full overflow-hidden" style="background-color: #333333;">
+            <div class="loading-bar h-full rounded-full" style="background-color: #b78836; width: 0%"></div>
+        </div>
+        <div class="mt-4 font-semibold" style="color: #fffffe;">Chargement...</div>
+    </div>
+</div>
 
-<body class="bg-gray-50">
+<body class="bg-[#0a0a0a]" style="background-color: #0a0a0a;">
     <!-- Navigation -->
-    <nav class="secondary-bg shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3">
+    <nav class="secondary-bg shadow-md sticky top-0 z-50" style="background-color: #0a0a0a;">
+        <div class="container mx-auto px-6 py-3" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2">
@@ -244,22 +286,22 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
                         data-translate="nav.home">Accueil</a>
-                    <a href="index.html#about"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
-                        data-translate="nav.about">À propos</a>
-                    <a href="index.html#services"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                    <a href="equipe.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.about">Équipe</a>
+                    <a href="services.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
                         data-translate="nav.services">Services</a>
                     <a href="realisations.html"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-[#c69b49] pb-1"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-[#b78836] pb-1"
                         data-translate="nav.projects">Réalisations</a>
                     <a href="blog.html"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
                         data-translate="nav.blog">Blog</a>
                     <a href="contact.html"
-                        class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
                         data-translate="nav.contact">Contact</a>
 
                     <!-- Language Switcher -->
@@ -292,10 +334,10 @@
                 <a href="index.html"
                     class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
                     data-translate="nav.home">Accueil</a>
-                <a href="index.html#about"
+                <a href="equipe.html"
                     class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
-                    data-translate="nav.about">À propos</a>
-                <a href="index.html#services"
+                    data-translate="nav.about">Équipe</a>
+                <a href="services.html"
                     class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
                     data-translate="nav.services">Services</a>
                 <a href="realisations.html"
@@ -331,66 +373,53 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 primary-color">
-                    <i class="fas fa-building mr-4"></i><span data-translate="realisations.hero.title">Nos
-                        Réalisations</span>
+    <section
+        class="hero-section py-10 bg-gradient-to-br from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] relative overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-[#b78836] rounded-full filter blur-3xl animate-pulse">
+            </div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#b78836] rounded-full filter blur-3xl animate-pulse"
+                style="animation-delay: 1s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto fade-in">
+                <div
+                    class="inline-block mb-6 px-6 py-2 bg-[#b78836] bg-opacity-10 border border-[#b78836] border-opacity-30 rounded-full">
+                    <span class="text-[#b78836] font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+                </div>
+
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+                    <i class="fas fa-building mr-4 text-[#b78836]"></i>
+                    <span data-translate="realisations.hero.title">Nos Réalisations</span>
                 </h1>
-                <p class="text-xl text-gray-700 mb-8" data-translate="realisations.hero.subtitle">
+
+                <p class="text-xl text-gray-300 mb-10 leading-relaxed" data-translate="realisations.hero.subtitle">
                     Découvrez nos projets de construction, rénovation et aménagement réalisés avec passion et expertise.
                     Chaque projet est une histoire unique que nous avons eu le plaisir de bâtir.
                 </p>
-                <div class="flex justify-center items-center gap-4 text-gray-600">
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-check-circle primary-color"></i>
-                        <span class="font-semibold" data-translate="realisations.hero.stats.projects">3 Projets</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-images primary-color"></i>
-                        <span class="font-semibold" data-translate="realisations.hero.stats.photos">15 Photos</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-star primary-color"></i>
-                        <span class="font-semibold" data-translate="realisations.hero.stats.satisfaction">100%
-                            Satisfaction</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Filters -->
-    <section class="py-8 bg-white sticky top-[88px] z-40 shadow-sm">
-        <div class="container mx-auto px-6">
-            <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterProjects('all')">
-                    <i class="fas fa-th mr-2"></i><span data-translate="realisations.filters.all">Tous les
-                        projets</span>
-                </button>
-                <button class="filter-btn" onclick="filterProjects('residence')">
-                    <i class="fas fa-home mr-2"></i><span
-                        data-translate="realisations.filters.residence">Résidentiel</span>
-                </button>
-                <button class="filter-btn" onclick="filterProjects('commercial')">
-                    <i class="fas fa-building mr-2"></i><span
-                        data-translate="realisations.filters.commercial">Commercial</span>
-                </button>
-                <button class="filter-btn" onclick="filterProjects('amenagement')">
-                    <i class="fas fa-couch mr-2"></i><span
-                        data-translate="realisations.filters.amenagement">Aménagement</span>
-                </button>
-                <button class="filter-btn" onclick="filterProjects('infrastructure')">
-                    <i class="fas fa-city mr-2"></i><span
-                        data-translate="realisations.filters.infrastructure">Infrastructure</span>
-                </button>
-            </div>
-        </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#projects-grid"
+                        class="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#b78836] to-[#d4a855] text-white font-semibold rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-[#b78836]/50 hover:scale-105">
+                        <i class="fas fa-images mr-2"></i>
+                        <span>Voir les projets</span>
+                        <i class="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform"></i>
+                    </a>
+
+                    <a href="contact.html"
+                        class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-[#b78836] text-[#b78836] font-semibold rounded-full transition-all duration-300 hover:bg-[#b78836] hover:text-white hover:scale-105">
+                        <i class="fas fa-envelope mr-2"></i>
+                        <span>Démarrer un projet</span>
+                    </a>
+                </div>
+
+
     </section>
 
     <!-- Projects Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-[#0a0a0a]">
         <div class="container mx-auto px-6">
             <!-- Projects Grid -->
             <div id="projects-grid" class="gallery-grid">
@@ -399,15 +428,19 @@
 
             <!-- Project Modal -->
             <div id="project-modal"
-                class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
-                <div class="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden">
-                    <div class="flex justify-between items-center p-6 border-b">
-                        <h3 id="modal-title" class="text-2xl font-bold primary-color"></h3>
-                        <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl">
+                class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
+                style="display: none;">
+                <div
+                    class="bg-[#1e1e1e] border border-[#b78836] border-opacity-30 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+                    <div class="flex justify-between items-center p-6 border-b border-gray-700">
+                        <h3 id="modal-title" class="text-2xl font-bold text-[#b78836]"></h3>
+                        <button id="close-modal"
+                            class="text-gray-400 hover:text-[#b78836] text-2xl transition-colors duration-300 w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#b78836] hover:bg-opacity-10"
+                            type="button">
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
-                    <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                    <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-120px)] bg-[#1a1a1a]">
                         <div id="modal-gallery" class="gallery-grid">
                             <!-- Project images will be loaded here -->
                         </div>
@@ -417,23 +450,60 @@
 
             <!-- Image Lightbox -->
             <div id="image-lightbox"
-                class="fixed inset-0 bg-black bg-opacity-90 z-60 hidden flex items-center justify-center p-4">
-                <div class="relative max-w-full max-h-full">
+                class="fixed inset-0 bg-black bg-opacity-90 hidden items-center justify-center p-4"
+                style="z-index: 1000; display: none; overflow: auto;">
+                <div class="relative w-full h-full flex items-center justify-center">
+                    <!-- Close Button -->
                     <button id="close-lightbox"
-                        class="absolute top-4 right-4 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75">
+                        class="absolute top-4 right-4 text-white text-2xl z-20 bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all"
+                        type="button" title="Fermer (Esc)">
                         <i class="fas fa-times"></i>
                     </button>
+                    
+                    <!-- Navigation Buttons -->
                     <button id="prev-image"
-                        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75">
+                        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-20 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75 transition-all"
+                        type="button" title="Image précédente (←)">
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <button id="next-image"
-                        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-10 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75">
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-2xl z-20 bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center hover:bg-opacity-75 transition-all"
+                        type="button" title="Image suivante (→)">
                         <i class="fas fa-chevron-right"></i>
                     </button>
-                    <img id="lightbox-image" class="max-w-full max-h-full object-contain" src="" alt="">
+                    
+                    <!-- Zoom Controls -->
+                    <div class="absolute top-4 left-4 z-20 flex flex-col gap-2">
+                        <button id="zoom-in"
+                            class="text-white text-xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all"
+                            type="button" title="Zoom avant (+)">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                        <button id="zoom-out"
+                            class="text-white text-xl bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all"
+                            type="button" title="Zoom arrière (-)">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <button id="zoom-reset"
+                            class="text-white text-sm bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all"
+                            type="button" title="Réinitialiser (0)">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                        </button>
+                        <div id="zoom-level"
+                            class="text-white text-xs bg-black bg-opacity-50 rounded-full px-2 py-1 text-center">
+                            100%
+                        </div>
+                    </div>
+                    
+                    <!-- Image Container -->
+                    <div id="image-container" class="relative" style="cursor: grab;">
+                        <img id="lightbox-image" class="max-w-none" src="" alt="" 
+                            style="transition: opacity 0.3s ease; transform-origin: center center; user-select: none;">
+                    </div>
+                    
+                    <!-- Image Counter -->
                     <div id="image-counter"
-                        class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full">
+                        class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white bg-black bg-opacity-50 px-4 py-2 rounded-full z-20">
                         <span id="current-image">1</span> / <span id="total-images">1</span>
                     </div>
                 </div>
@@ -453,12 +523,12 @@
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
                 <a href="contact.html"
-                    class="bg-white text-[#c69b49] font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block">
+                    class="bg-white text-[#b78836] font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block">
                     <i class="fas fa-envelope mr-2"></i><span data-translate="realisations.cta.contact">Nous
                         Contacter</span>
                 </a>
                 <a href="index.html"
-                    class="border-2 border-white text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-white hover:text-[#c69b49] inline-block">
+                    class="border-2 border-white text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-white hover:text-[#b78836] inline-block">
                     <i class="fas fa-home mr-2"></i><span data-translate="realisations.cta.home">Retour à
                         l'Accueil</span>
                 </a>
@@ -467,7 +537,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="secondary-bg py-16">
+    <footer class="secondary-bg py-16" style="background-color: #0a0a0a;">
         <div class="container mx-auto px-6">
             <!-- Logo et description centrés -->
             <div class="text-center mb-12">
@@ -478,7 +548,7 @@
                 <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction
                 </h3>
                 <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets,
-                    pierre après pierre depuis 2019 en Afrique et en Europe.</p>
+                    pierre après pierre depuis 2024 en Afrique et en Europe.</p>
             </div>
 
             <!-- Colonnes de navigation -->
@@ -519,8 +589,8 @@
                 <div class="text-center md:text-left">
                     <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
                     <div class="space-y-3">
-                        <p class="text-gray-200" data-translate="footer.contact.address">12, N'sele Boulevard Lumumba,
-                            Kinshasa, République Démocratique du Congo</p>
+                        <p class="text-gray-200" data-translate="footer.contact.address">1, Av Kayaya Ilunga, Q/Daipn,
+                            C/ N'sele</p>
                         <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512
                             5025867</p>
                         <p class="text-gray-200" data-translate="footer.contact.email">
@@ -533,7 +603,8 @@
             <div class="text-center mb-8">
                 <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.social.title">Suivez-nous</h4>
                 <div class="flex justify-center space-x-4">
-                    <a href="https://www.facebook.com/" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                    <a href="https://www.facebook.com/"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="#"
@@ -542,7 +613,7 @@
                     </a>
                     <a href="#"
                         class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
-                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-tiktok"></i>
                     </a>
                     <a href="#"
                         class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
@@ -563,7 +634,7 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top"
-        class="fixed bottom-8 right-8 bg-[#c69b49] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
+        class="fixed bottom-8 right-8 bg-[#b78836] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -600,12 +671,52 @@
                 images: ['r1.jpg', 'r10.jpg', 'r2.jpg', 'r3.jpg', 'r4.jpg', 'r5.jpg', 'r6.jpg', 'r7.jpg', 'r8.jpg', 'r9.jpg'],
                 description: 'Construction d\'une résidence privée de luxe',
                 descriptionEn: 'Luxury private residence construction'
+            },
+            {
+                id: 'Immeuble R+2 NGALIEMA',
+                title: 'Immeuble R+2 NGALIEMA',
+                titleEn: 'R+2 Building NGALIEMA',
+                category: 'residence',
+                images: [
+                    'WhatsApp Image 2025-11-05 at 16.19.01.jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.01 (1).jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.01 (2).jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.02.jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.02 (1).jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.02 (2).jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.02 (3).jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.02 (4).jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.02 (5).jpeg',
+                    'WhatsApp Image 2025-11-05 at 16.19.02 (6).jpeg'
+                ],
+                description: 'Construction d\'un immeuble résidentiel R+2 à Ngaliema',
+                descriptionEn: 'Construction of a R+2 residential building in Ngaliema'
+            },
+            {
+                id: 'Immeuble ABC',
+                title: 'Immeuble ABC',
+                titleEn: 'ABC Building',
+                category: 'residence',
+                images: [
+                    'a_1 - Photo-4~2.jpg',
+                    'a_10 - Photo-1.jpeg',
+                    'a_10 - Photo-3.jpg',
+                    'a_7 - Photo-5.jpg',
+                    'a_8 - Photo-5.jpg'
+                ],
+                description: 'Construction d\'un immeuble résidentiel moderne ABC',
+                descriptionEn: 'Construction of a modern ABC residential building'
             }
         ];
 
-        let currentFilter = 'all';
         let currentImages = [];
         let currentImageIndex = 0;
+        let zoomLevel = 1;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let translateX = 0;
+        let translateY = 0;
 
         // Initialize projects on page load
         document.addEventListener('DOMContentLoaded', function () {
@@ -617,11 +728,10 @@
         // Load and display projects
         function loadProjects() {
             const projectsGrid = document.getElementById('projects-grid');
-            const filteredProjects = currentFilter === 'all' ? projects : projects.filter(p => p.category === currentFilter);
 
             projectsGrid.innerHTML = '';
 
-            filteredProjects.forEach(project => {
+            projects.forEach(project => {
                 const projectElement = createProjectElement(project);
                 projectsGrid.appendChild(projectElement);
             });
@@ -637,12 +747,11 @@
             const title = currentLang === 'en' ? project.titleEn : project.title;
             const description = currentLang === 'en' ? project.descriptionEn : project.description;
 
-            // Get category label from translations
-            const categoryLabels = getCategoryLabels(currentLang);
+            // Encode the image path properly
+            const imagePath = `projets/${encodeURIComponent(project.id)}/${encodeURIComponent(project.images[0])}`;
 
             div.innerHTML = `
-                <div class="project-category-badge">${categoryLabels[project.category]}</div>
-                <img src="projets/${project.id}/${project.images[0]}" alt="${title}" class="project-folder-image" onerror="this.style.display='none'; this.parentNode.classList.add('image-error');">
+                <img src="${imagePath}" alt="${title}" class="project-folder-image" onerror="console.error('Failed to load:', this.src); this.style.display='none'; this.parentNode.classList.add('image-error');">
                 <div class="project-folder-info">
                     <div class="project-folder-title">${title}</div>
                     <div class="project-folder-count">${project.images.length} ${currentLang === 'en' ? 'photos' : 'photos'}</div>
@@ -652,17 +761,6 @@
             div.addEventListener('click', () => openProjectModal(project));
 
             return div;
-        }
-
-        // Filter projects
-        function filterProjects(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            currentFilter = category;
-            loadProjects();
         }
 
         // Open project modal
@@ -680,8 +778,12 @@
             project.images.forEach((image, index) => {
                 const imgElement = document.createElement('div');
                 imgElement.className = 'gallery-item';
+                
+                // Encode the image path properly
+                const imagePath = `projets/${encodeURIComponent(project.id)}/${encodeURIComponent(image)}`;
+                
                 imgElement.innerHTML = `
-                    <img src="projets/${project.id}/${image}" alt="${title} - Image ${index + 1}" class="modal-image" onerror="this.style.display='none'; this.parentNode.style.display='none';">
+                    <img src="${imagePath}" alt="${title} - Image ${index + 1}" class="modal-image" onerror="console.error('Failed to load:', this.src); this.style.display='none'; this.parentNode.style.display='none';">
                 `;
 
                 imgElement.addEventListener('click', () => openLightbox(project.images, index, project.id));
@@ -689,12 +791,14 @@
             });
 
             modal.classList.remove('hidden');
+            modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
         // Open image lightbox
         function openLightbox(images, startIndex, projectId) {
-            currentImages = images.map(img => `projets/${projectId}/${img}`);
+            // Encode the image paths properly
+            currentImages = images.map(img => `projets/${encodeURIComponent(projectId)}/${encodeURIComponent(img)}`);
             currentImageIndex = startIndex;
 
             const lightbox = document.getElementById('image-lightbox');
@@ -702,11 +806,15 @@
             const currentImageSpan = document.getElementById('current-image');
             const totalImagesSpan = document.getElementById('total-images');
 
+            // Reset zoom and position
+            resetZoom();
+
             lightboxImage.src = currentImages[currentImageIndex];
             currentImageSpan.textContent = currentImageIndex + 1;
             totalImagesSpan.textContent = currentImages.length;
 
             lightbox.classList.remove('hidden');
+            lightbox.style.display = 'flex';
         }
 
         // Setup modal events
@@ -715,16 +823,40 @@
             const closeModal = document.getElementById('close-modal');
 
             closeModal.addEventListener('click', () => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
+                closeModalWithAnimation(modal);
             });
 
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
-                    modal.classList.add('hidden');
-                    document.body.style.overflow = 'auto';
+                    closeModalWithAnimation(modal);
                 }
             });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModalWithAnimation(modal);
+                }
+            });
+        }
+
+        // Close modal with smooth animation
+        function closeModalWithAnimation(modal) {
+            const modalContent = modal.querySelector('> div');
+            if (modalContent) {
+                modalContent.style.animation = 'modalSlideDown 0.3s ease-out';
+            }
+            modal.style.animation = 'fadeOut 0.3s ease-out';
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                if (modalContent) {
+                    modalContent.style.animation = '';
+                }
+                modal.style.animation = '';
+            }, 300);
         }
 
         // Setup lightbox events
@@ -733,39 +865,110 @@
             const closeLightbox = document.getElementById('close-lightbox');
             const prevImage = document.getElementById('prev-image');
             const nextImage = document.getElementById('next-image');
+            const zoomIn = document.getElementById('zoom-in');
+            const zoomOut = document.getElementById('zoom-out');
+            const zoomReset = document.getElementById('zoom-reset');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const imageContainer = document.getElementById('image-container');
 
             closeLightbox.addEventListener('click', () => {
-                lightbox.classList.add('hidden');
+                closeLightboxWithAnimation(lightbox);
             });
 
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) {
-                    lightbox.classList.add('hidden');
+                    closeLightboxWithAnimation(lightbox);
                 }
             });
 
             prevImage.addEventListener('click', () => {
-                currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
-                updateLightboxImage();
+                navigateImage(-1);
             });
 
             nextImage.addEventListener('click', () => {
-                currentImageIndex = (currentImageIndex + 1) % currentImages.length;
-                updateLightboxImage();
+                navigateImage(1);
             });
+
+            // Zoom controls
+            zoomIn.addEventListener('click', () => {
+                adjustZoom(0.2);
+            });
+
+            zoomOut.addEventListener('click', () => {
+                adjustZoom(-0.2);
+            });
+
+            zoomReset.addEventListener('click', () => {
+                resetZoom();
+            });
+
+            // Mouse wheel zoom
+            imageContainer.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? -0.1 : 0.1;
+                adjustZoom(delta);
+            });
+
+            // Drag to pan when zoomed
+            imageContainer.addEventListener('mousedown', startDrag);
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', endDrag);
+
+            // Touch events for mobile
+            imageContainer.addEventListener('touchstart', handleTouchStart);
+            imageContainer.addEventListener('touchmove', handleTouchMove);
+            imageContainer.addEventListener('touchend', endDrag);
 
             // Keyboard navigation
             document.addEventListener('keydown', (e) => {
                 if (!lightbox.classList.contains('hidden')) {
                     if (e.key === 'ArrowLeft') {
-                        prevImage.click();
+                        navigateImage(-1);
                     } else if (e.key === 'ArrowRight') {
-                        nextImage.click();
+                        navigateImage(1);
                     } else if (e.key === 'Escape') {
-                        closeLightbox.click();
+                        closeLightboxWithAnimation(lightbox);
+                    } else if (e.key === '+' || e.key === '=') {
+                        adjustZoom(0.2);
+                    } else if (e.key === '-') {
+                        adjustZoom(-0.2);
+                    } else if (e.key === '0') {
+                        resetZoom();
                     }
                 }
             });
+        }
+
+        // Close lightbox with smooth animation
+        function closeLightboxWithAnimation(lightbox) {
+            lightbox.style.animation = 'fadeOut 0.3s ease-out';
+
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.style.display = 'none';
+                lightbox.style.animation = '';
+            }, 300);
+        }
+
+        // Navigate between images with smooth transition
+        function navigateImage(direction) {
+            const lightboxImage = document.getElementById('lightbox-image');
+
+            // Reset zoom when changing images
+            resetZoom();
+
+            // Fade out current image
+            lightboxImage.style.opacity = '0';
+
+            setTimeout(() => {
+                // Update image index
+                currentImageIndex = (currentImageIndex + direction + currentImages.length) % currentImages.length;
+                updateLightboxImage();
+
+                setTimeout(() => {
+                    lightboxImage.style.opacity = '1';
+                }, 50);
+            }, 200);
         }
 
         // Update lightbox image
@@ -775,6 +978,97 @@
 
             lightboxImage.src = currentImages[currentImageIndex];
             currentImageSpan.textContent = currentImageIndex + 1;
+        }
+
+        // Zoom functions
+        function adjustZoom(delta) {
+            zoomLevel = Math.max(0.5, Math.min(5, zoomLevel + delta));
+            applyZoom();
+        }
+
+        function resetZoom() {
+            zoomLevel = 1;
+            translateX = 0;
+            translateY = 0;
+            applyZoom();
+        }
+
+        function applyZoom() {
+            const lightboxImage = document.getElementById('lightbox-image');
+            const zoomLevelDisplay = document.getElementById('zoom-level');
+            const imageContainer = document.getElementById('image-container');
+
+            lightboxImage.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+            zoomLevelDisplay.textContent = `${Math.round(zoomLevel * 100)}%`;
+
+            // Change cursor based on zoom level
+            if (zoomLevel > 1) {
+                imageContainer.style.cursor = isDragging ? 'grabbing' : 'grab';
+            } else {
+                imageContainer.style.cursor = 'grab';
+                translateX = 0;
+                translateY = 0;
+            }
+        }
+
+        // Drag functions
+        function startDrag(e) {
+            if (zoomLevel <= 1) return;
+            
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            
+            const imageContainer = document.getElementById('image-container');
+            imageContainer.style.cursor = 'grabbing';
+            
+            e.preventDefault();
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            
+            e.preventDefault();
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            
+            applyZoom();
+        }
+
+        function endDrag() {
+            if (!isDragging) return;
+            
+            isDragging = false;
+            const imageContainer = document.getElementById('image-container');
+            if (zoomLevel > 1) {
+                imageContainer.style.cursor = 'grab';
+            }
+        }
+
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        function handleTouchStart(e) {
+            if (zoomLevel <= 1) return;
+            
+            const touch = e.touches[0];
+            isDragging = true;
+            touchStartX = touch.clientX - translateX;
+            touchStartY = touch.clientY - translateY;
+            
+            e.preventDefault();
+        }
+
+        function handleTouchMove(e) {
+            if (!isDragging) return;
+            
+            const touch = e.touches[0];
+            translateX = touch.clientX - touchStartX;
+            translateY = touch.clientY - touchStartY;
+            
+            applyZoom();
+            e.preventDefault();
         }
 
         // Get current language
@@ -810,6 +1104,106 @@
                 updateProjectsLanguage();
             }
         });
+
+        // ========================================
+        // PAGE LOADER ANIMATION
+        // ========================================
+
+        /**
+         * Animates page loading progress bar
+         * Fades out loader when complete
+         */
+        const loader = document.getElementById('loader');
+        const loadingBar = document.querySelector('.loading-bar');
+
+        if (loader && loadingBar) {
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                loadingBar.style.width = `${progress}%`;
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    loader.classList.add('fade-out');
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                        // Trigger stagger animations after loader
+                        triggerStaggerAnimations();
+                    }, 500);
+                }
+            }, 100);
+        }
+
+        // ========================================
+        // STAGGER ANIMATIONS ON SCROLL
+        // ========================================
+
+        /**
+         * Adds stagger animation classes to elements as they enter viewport
+         */
+        function triggerStaggerAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe gallery items
+            const galleryItems = document.querySelectorAll('.gallery-grid > *');
+            galleryItems.forEach(item => {
+                observer.observe(item);
+            });
+
+            // Observe hero elements
+            const heroElements = document.querySelectorAll('.hero-section .fade-in');
+            heroElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Trigger animations immediately if loader doesn't exist
+        if (!loader) {
+            triggerStaggerAnimations();
+        }
+
+        // ========================================
+        // MOBILE MENU TOGGLE
+        // ========================================
+
+        /**
+         * Toggle mobile menu visibility
+         */
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Close menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
     </script>
 </body>
 

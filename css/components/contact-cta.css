@@ -1,0 +1,107 @@
+/* ========================================
+   CONTACT CTA SECTION
+   ======================================== */
+
+.contact-cta-section {
+    background: var(--gradient-primary);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-cta-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Title */
+.contact-cta-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    line-height: var(--leading-tight);
+}
+
+/* Subtitle */
+.contact-cta-subtitle {
+    font-family: var(--font-body);
+    font-size: var(--text-xl);
+    color: var(--color-text-primary);
+    opacity: 0.9;
+    margin-bottom: var(--space-2xl);
+    line-height: var(--leading-normal);
+}
+
+/* CTA Button */
+.contact-cta-button {
+    display: inline-block;
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-primary);
+    padding: 18px 56px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    text-decoration: none;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-cta-button:hover {
+    background-color: var(--color-dark-bg-card);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .contact-cta-section {
+        padding: 80px 0;
+    }
+
+    .contact-cta-title {
+        font-size: var(--text-3xl);
+        margin-bottom: var(--space-sm);
+    }
+
+    .contact-cta-subtitle {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-xl);
+    }
+
+    .contact-cta-button {
+        padding: 16px 48px;
+        font-size: var(--text-base);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .contact-cta-section {
+        padding: 60px 0;
+    }
+
+    .contact-cta-title {
+        font-size: var(--text-2xl);
+    }
+
+    .contact-cta-subtitle {
+        font-size: var(--text-base);
+        margin-bottom: var(--space-lg);
+    }
+
+    .contact-cta-button {
+        padding: 14px 40px;
+        font-size: var(--text-sm);
+        width: 100%;
+        max-width: 280px;
+    }
+}

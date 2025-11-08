@@ -6,6 +6,7 @@ const translations = {
             about: "À propos",
             services: "Services",
             projects: "Réalisations",
+            team: "Équipe",
             blog: "Blog",
             contact: "Contact"
         },
@@ -14,14 +15,19 @@ const translations = {
             title: "Bâtissons vos projets,",
             subtitle: "pierre après pierre",
             description: "Votre partenaire en construction résidentielle et commerciale en Afrique et en Europe",
-            cta: "Poser vos questions"
+            cta: "Démarrer un projet",
+            scroll: "Découvrir"
         },
         // About Section
         about: {
-            title: "À propos de nous",
+            title: "Notre Philosophie",
             story: {
                 title: "Notre histoire",
-                content: "Fondée en 2019, Kayaya Ilunga Construction est une société pour les travaux de constructions, rénovation, réaménagement et décorations. tout corps d'état : génie civil, CVC, électricité, bois, revêtements , plâtre, peinture, architecture intérieure et extérieure. Nous vous construisons votre maison de rêve."
+                content: "Fondée en 2024, Kayaya Ilunga Construction est une société pour les travaux de constructions, rénovation, réaménagement et décorations. tout corps d'état : génie civil, CVC, électricité, bois, revêtements , plâtre, peinture, architecture intérieure et extérieure. Nous vous construisons votre maison de rêve."
+            },
+            philosophy: {
+                intro: "Fondée en 2024, Kayaya Ilunga Construction est une société dédiée aux travaux de construction, rénovation, réaménagement et décorations. Nous maîtrisons tous les corps d'état : génie civil, CVC, électricité, bois, revêtements, plâtre, peinture, architecture intérieure et extérieure.",
+                mission: "Notre mission est de transformer vos visions en réalité, en créant des espaces qui allient esthétique, fonctionnalité et durabilité. Nous vous construisons votre maison de rêve, pierre après pierre, avec passion et expertise."
             },
             values: {
                 title: "Nos valeurs",
@@ -41,6 +47,9 @@ const translations = {
                     title: "Équipe qualifiée",
                     content: "Des professionnels expérimentés et certifiés pour chaque spécialité."
                 }
+            },
+            cta: {
+                team: "Découvrir notre équipe"
             }
         },
         // Mission Section
@@ -54,6 +63,7 @@ const translations = {
         services: {
             title: "Une gamme complète de services",
             subtitle: "Nos solutions couvrent tous les aspects de la construction, de la planification à la réalisation clé en main.",
+            viewAll: "Découvrir tous nos services",
             items: {
                 residential: {
                     title: "Construction résidentielle",
@@ -118,7 +128,7 @@ const translations = {
                 title: "Nos coordonnées",
                 address: {
                     title: "Adresse",
-                    content: "12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo"
+                    content: "1, Av Kayaya Ilunga, Q/Daipn, C/ N'sele"
                 },
                 phone: {
                     title: "Téléphone",
@@ -153,7 +163,7 @@ const translations = {
         // Footer
         footer: {
             title: "Kayaya Ilunga Construction",
-            description: "Bâtissons vos projets, pierre après pierre depuis 2019 en Afrique et en Europe.",
+            description: "Bâtissons vos projets, pierre après pierre depuis 2024 en Afrique et en Europe.",
             navigation: {
                 title: "Navigation"
             },
@@ -162,7 +172,7 @@ const translations = {
             },
             contact: {
                 title: "Contact",
-                address: "12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo",
+                address: "1, Av Kayaya Ilunga, Q/Daipn, C/ N'sele",
                 phone: "+243 858 673 529 / +49 1512 5025867",
                 email: "contact@kayayailungacontsruction.com"
             },
@@ -178,6 +188,33 @@ const translations = {
                 }
             }
         },
+        // How It Works Section
+        howItWorks: {
+            title: "Notre processus",
+            subtitle: "De la conception à la réalisation, découvrez les étapes clés de votre projet",
+            steps: {
+                consultation: {
+                    title: "Consultation initiale",
+                    description: "Nous écoutons vos besoins, analysons votre projet et définissons ensemble vos objectifs et contraintes."
+                },
+                design: {
+                    title: "Conception & Design",
+                    description: "Nos architectes créent des plans détaillés et des visualisations 3D pour donner vie à votre vision."
+                },
+                planning: {
+                    title: "Planification",
+                    description: "Établissement du calendrier, budget détaillé et coordination des équipes pour un démarrage optimal."
+                },
+                construction: {
+                    title: "Construction",
+                    description: "Réalisation des travaux avec un suivi rigoureux de la qualité et du respect des délais."
+                },
+                delivery: {
+                    title: "Livraison & Suivi",
+                    description: "Réception des travaux, formation et accompagnement post-livraison pour votre satisfaction totale."
+                }
+            }
+        },
         // Projects Section
         projects: {
             title: "Nos réalisations",
@@ -188,7 +225,15 @@ const translations = {
                 commercial: "Commercial",
                 renovation: "Rénovation"
             },
-            cta: "Voir plus de réalisations",
+            categories: {
+                residential: "Résidentiel",
+                commercial: "Commercial",
+                renovation: "Rénovation",
+                religious: "Religieux",
+                decoration: "Décoration",
+                infrastructure: "Infrastructure"
+            },
+            cta: "Voir tous les projets",
             items: {
                 residence_privee: {
                     title: "Résidence collective",
@@ -261,6 +306,162 @@ const translations = {
         partners: {
             title: "Ils nous font confiance"
         },
+        // Contact CTA Section
+        contactCta: {
+            title: "Prêt à démarrer votre projet ?",
+            subtitle: "Discutons de votre vision et transformons-la en réalité",
+            button: "Contactez-nous"
+        },
+        // Services Page
+        servicesPage: {
+            hero: {
+                title: "NOS SERVICES",
+                subtitle: "Accompagnement complet de A à Z pour tous vos projets immobiliers"
+            },
+            accompagnement: {
+                title: "Accompagnement de A à Z",
+                description: "Nous vous accompagnons dans toutes les étapes de votre projet immobilier, de l'achat du terrain jusqu'à la livraison clé en main de votre maison. Nos experts étudient avec vous chaque aspect — administratif, technique et financier — afin de vous garantir une construction conforme, durable et personnalisée."
+            },
+            offres: {
+                title: "Nos Offres Clés en Main",
+                subtitle: "Des solutions complètes adaptées à vos besoins",
+                projet80: {
+                    title: "Projet sur terrain de 80 m²",
+                    price: "35.000 $",
+                    description: "Une maison moderne et fonctionnelle comprenant :",
+                    features: {
+                        bedrooms: "2 chambres spacieuses",
+                        kitchen: "Cuisine équipée moderne",
+                        bathroom: "Salle de bain complète",
+                        veranda: "Véranda confortable",
+                        parking: "Espace parking"
+                    },
+                    note: "Vous recevez la clé une fois la construction terminée."
+                },
+                projet121: {
+                    title: "Projet sur terrain de 121 m²",
+                    price: "45.000 $",
+                    description: "Une construction spacieuse et élégante composée de :",
+                    features: {
+                        bedrooms: "3 chambres confortables",
+                        kitchen: "Cuisine moderne équipée",
+                        bathroom: "Salle de bain premium",
+                        veranda: "Véranda spacieuse",
+                        parking: "Parking privé"
+                    },
+                    note: "Une maison livrée clé en main, prête à être habitée."
+                }
+            },
+            budget: {
+                title: "Construction adaptée à votre budget",
+                subtitle: "Quel que soit votre budget, nous vous garantissons :",
+                transparent: {
+                    title: "Coût Transparent",
+                    description: "Un coût raisonnable et transparent"
+                },
+                quality: {
+                    title: "Qualité Premium",
+                    description: "Des matériaux de qualité"
+                },
+                durability: {
+                    title: "Durabilité",
+                    description: "Une structure durable et conforme aux normes"
+                },
+                note: "Nos équipes ajustent les plans et les matériaux pour que votre maison reste solide, esthétique et économique."
+            },
+            technique: {
+                title: "RUBRIQUE TECHNIQUE",
+                subtitle: "Des experts qualifiés à votre service",
+                description: "Notre entreprise s'appuie sur une équipe d'ingénieurs, architectes et techniciens spécialisés dans tous les domaines du bâtiment :",
+                expertise: {
+                    masonry: "Maçonnerie & charpente",
+                    electrical: "Électricité & plomberie",
+                    finishing: "Finitions & peinture",
+                    carpentry: "Menuiserie & carrelage"
+                },
+                note: "Chaque professionnel met son savoir-faire et son expérience au service de la qualité et de la satisfaction client."
+            },
+            valeur: {
+                title: "RUBRIQUE VALEUR",
+                subtitle: "Étude et conseils personnalisés",
+                description: "Avant chaque projet, nous réalisons une étude complète du milieu :",
+                analysis: {
+                    title: "Analyse complète",
+                    description: "Analyse du sol, du climat et de l'environnement"
+                },
+                advice: {
+                    title: "Conseils d'experts",
+                    description: "Conseils sur la meilleure méthode de construction selon votre terrain"
+                },
+                correction: {
+                    title: "Correction de malfaçons",
+                    description: "Correction de malfaçons sur des chantiers existants si nécessaire"
+                },
+                commitment: "Nous nous engageons à construire dans le respect des normes et de la durabilité, pour une maison stable et pérenne."
+            },
+            prestations: {
+                title: "NOS AUTRES PRESTATIONS",
+                subtitle: "Une gamme complète de services pour tous vos besoins",
+                items: {
+                    architectural: {
+                        title: "Étude architecturale",
+                        description: "Conception de plans personnalisés"
+                    },
+                    quote: {
+                        title: "Devis détaillés",
+                        description: "Estimation budgétaire précise"
+                    },
+                    rehabilitation: {
+                        title: "Réhabilitation",
+                        description: "Rénovation de bâtiments"
+                    },
+                    construction: {
+                        title: "Construction",
+                        description: "Résidentielle & commerciale"
+                    },
+                    monitoring: {
+                        title: "Suivi de chantier",
+                        description: "Contrôle qualité rigoureux"
+                    },
+                    turnkey: {
+                        title: "Livraison clé en main",
+                        description: "Projet complet et finalisé"
+                    }
+                }
+            },
+            whyChoose: {
+                title: "POURQUOI NOUS CHOISIR ?",
+                subtitle: "Les raisons de faire confiance à Kayaya Ilunga Construction",
+                items: {
+                    support: {
+                        title: "Accompagnement complet",
+                        description: "Du terrain à la remise des clés"
+                    },
+                    custom: {
+                        title: "Construction sur mesure",
+                        description: "Selon votre budget et vos besoins"
+                    },
+                    standards: {
+                        title: "Respect des normes",
+                        description: "Et des délais convenus"
+                    },
+                    finishing: {
+                        title: "Finition impeccable",
+                        description: "Matériaux durables et de qualité"
+                    },
+                    service: {
+                        title: "Service client à l'écoute",
+                        description: "Avant, pendant et après le chantier"
+                    }
+                }
+            },
+            cta: {
+                title: "Prêt à démarrer votre projet ?",
+                subtitle: "Contactez-nous dès aujourd'hui pour une consultation gratuite et un devis personnalisé",
+                quote: "Demander un devis",
+                projects: "Voir nos réalisations"
+            }
+        },
         // Realisations Page
         realisations: {
             hero: {
@@ -283,7 +484,11 @@ const translations = {
                 residence: "Résidentiel",
                 commercial: "Commercial",
                 amenagement: "Aménagement",
-                infrastructure: "Infrastructure"
+                infrastructure: "Infrastructure",
+                residential: "Résidentiel",
+                renovation: "Rénovation",
+                religious: "Religieux",
+                decoration: "Décoration"
             },
             projects: {
                 arch_interieur: {
@@ -457,6 +662,89 @@ const translations = {
                     }
                 }
             }
+        },
+        // Team Page
+        team: {
+            hero: {
+                title: "Notre Équipe",
+                subtitle: "Des professionnels passionnés au service de vos projets",
+                btn_projects: "Voir nos réalisations",
+                btn_contact: "Nous contacter"
+            },
+            history: {
+                title: "Notre Histoire",
+                p1: "Fondée par des passionnés du bâtiment, notre société est née de la volonté d'offrir des solutions de construction modernes, accessibles et durables. Depuis sa création en 2024, Kayaya Ilunga Construction a su s'imposer comme un acteur de confiance dans le secteur de la construction en Afrique et en Europe.",
+                p2: "Combinant savoir-faire local et standards internationaux, notre équipe réalise des projets de qualité, dans le respect des délais et du budget de chaque client. Notre expérience couvre tous les corps d'état : génie civil, CVC, électricité, menuiserie, revêtements, plâtrerie, peinture, architecture intérieure et extérieure.",
+                p3: "Notre objectif est de bâtir des projets durables et accessibles, en transformant vos visions en réalité et en créant des espaces qui allient esthétique, fonctionnalité et pérennité."
+            },
+            mission: {
+                title: "Notre Mission & Nos Valeurs",
+                subtitle: "Nous nous engageons à construire des habitations solides, à accompagner nos clients du terrain à la clé, et à garantir durabilité et innovation dans chaque projet."
+            },
+            values: {
+                quality: {
+                    title: "Qualité",
+                    description: "Des constructions durables et conformes aux normes, avec des matériaux premium et un savoir-faire irréprochable."
+                },
+                transparency: {
+                    title: "Transparence",
+                    description: "Une communication claire à chaque étape du projet, avec des devis détaillés et un suivi régulier."
+                },
+                innovation: {
+                    title: "Innovation",
+                    description: "Des solutions modernes et efficaces, intégrant les dernières technologies et méthodes de construction."
+                },
+                responsibility: {
+                    title: "Responsabilité",
+                    description: "Un engagement envers l'environnement et la société, pour un développement durable et harmonieux."
+                }
+            },
+            org: {
+                title: "Notre Équipe",
+                subtitle: "Une équipe de professionnels expérimentés et passionnés, dédiée à la réussite de vos projets."
+            },
+            members: {
+                director: {
+                    name: "Kayaya Ilunga",
+                    role: "Fondateur & Directeur Général",
+                    description: "Bâtisseur expérimenté avec plus de 10 ans d'expérience, il supervise la stratégie et le développement global de l'entreprise, garantissant l'excellence dans chaque projet."
+                },
+                engineer: {
+                    name: "Arnold Atatala",
+                    role: "Secrétaire et administratif",
+                    description: "Assure la gestion administrative, la rédaction des documents et la coordination des activités de bureau pour soutenir le bon fonctionnement de l’entreprise de construction."
+                },
+                siteManager: {
+                    name: "Christ Nzaula Kasongo.",
+                    role: "Ingénieur",
+                    description: "Conception, planification et réalisation des projets pour garantir leur qualité, sécurité et conformité aux normes."
+                },
+                mason: {
+                    name: "Christian Isenda Temene",
+                    role: "Architecte",
+                    description: "Conçoit et planifie les projets de construction en alliant esthétique, fonctionnalité et respect des normes techniques."
+                },
+                finishing: {
+                    name: "Becker MBUYA MFUMU",
+                    role: "Ingénieur",
+                    description: "Conception, planification et réalisation des projets pour garantir leur qualité, sécurité et conformité aux normes."
+                },
+                electrician: {
+                    name: "Mbuyi John",
+                    role: "Architecte",
+                    description: "Conçoit et planifie les projets de construction en alliant esthétique, fonctionnalité et respect des normes techniques."
+                },
+                plumber: {
+                    name: "Jonathan Loyeke",
+                    role: "Gérant",
+                    description: "Veille à la bonne exécution des projets et assure la rentabilité ainsi que la satisfaction des clients."
+                }
+            },
+            cta: {
+                title: "Prêt à démarrer votre projet ?",
+                subtitle: "Notre équipe est à votre disposition pour discuter de vos besoins",
+                button: "Contactez-nous"
+            }
         }
     },
     en: {
@@ -466,6 +754,7 @@ const translations = {
             about: "About",
             services: "Services",
             projects: "Projects",
+            team: "Team",
             blog: "Blog",
             contact: "Contact"
         },
@@ -474,14 +763,19 @@ const translations = {
             title: "Building your projects,",
             subtitle: "stone by stone",
             description: "Your partner in residential and commercial construction in Africa and Europe",
-            cta: "Ask your questions"
+            cta: "Start a project",
+            scroll: "Discover"
         },
         // About Section
         about: {
-            title: "About Us",
+            title: "Our Philosophy",
             story: {
                 title: "Our Story",
-                content: "Founded in 2019, Kayaya Ilunga Construction is a company for construction, renovation, redevelopment and decoration works. All trades: civil engineering, HVAC, electricity, wood, coatings, plaster, painting, interior and exterior architecture. We build your dream home."
+                content: "Founded in 2024, Kayaya Ilunga Construction is a company for construction, renovation, redevelopment and decoration works. All trades: civil engineering, HVAC, electricity, wood, coatings, plaster, painting, interior and exterior architecture. We build your dream home."
+            },
+            philosophy: {
+                intro: "Founded in 2024, Kayaya Ilunga Construction is a company dedicated to construction, renovation, redevelopment and decoration works. We master all trades: civil engineering, HVAC, electricity, wood, coatings, plaster, painting, interior and exterior architecture.",
+                mission: "Our mission is to transform your visions into reality, creating spaces that combine aesthetics, functionality and sustainability. We build your dream home, stone by stone, with passion and expertise."
             },
             values: {
                 title: "Our Values",
@@ -501,6 +795,9 @@ const translations = {
                     title: "Qualified Team",
                     content: "Experienced and certified professionals for each specialty."
                 }
+            },
+            cta: {
+                team: "Discover our team"
             }
         },
         // Mission Section
@@ -514,6 +811,7 @@ const translations = {
         services: {
             title: "A Complete Range of Services",
             subtitle: "Our solutions cover all aspects of construction, from planning to turnkey delivery.",
+            viewAll: "Discover all our services",
             items: {
                 residential: {
                     title: "Residential Construction",
@@ -578,7 +876,7 @@ const translations = {
                 title: "Our Contact Information",
                 address: {
                     title: "Address",
-                    content: "12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo"
+                    content: "1, Av Kayaya Ilunga, Q/Daipn, C/ N'sele"
                 },
                 phone: {
                     title: "Phone",
@@ -613,7 +911,7 @@ const translations = {
         // Footer
         footer: {
             title: "Kayaya Ilunga Construction",
-            description: "Building your projects, stone by stone since 2019 in Africa and Europe.",
+            description: "Building your projects, stone by stone since 2024 in Africa and Europe.",
             navigation: {
                 title: "Navigation"
             },
@@ -622,7 +920,7 @@ const translations = {
             },
             contact: {
                 title: "Contact",
-                address: "12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo",
+                address: "1, Av Kayaya Ilunga, Q/Daipn, C/ N'sele",
                 phone: "+243 858 673 529 / +49 1512 5025867",
                 email: "contact@kayayailungacontsruction.com"
             },
@@ -638,6 +936,33 @@ const translations = {
                 }
             }
         },
+        // How It Works Section
+        howItWorks: {
+            title: "Our Process",
+            subtitle: "From design to completion, discover the key stages of your project",
+            steps: {
+                consultation: {
+                    title: "Initial Consultation",
+                    description: "We listen to your needs, analyze your project and define your objectives and constraints together."
+                },
+                design: {
+                    title: "Design & Planning",
+                    description: "Our architects create detailed plans and 3D visualizations to bring your vision to life."
+                },
+                planning: {
+                    title: "Planning",
+                    description: "Establishing the schedule, detailed budget and team coordination for an optimal start."
+                },
+                construction: {
+                    title: "Construction",
+                    description: "Execution of works with rigorous monitoring of quality and compliance with deadlines."
+                },
+                delivery: {
+                    title: "Delivery & Follow-up",
+                    description: "Handover of works, training and post-delivery support for your complete satisfaction."
+                }
+            }
+        },
         // Projects Section
         projects: {
             title: "Our Projects",
@@ -648,7 +973,15 @@ const translations = {
                 commercial: "Commercial",
                 renovation: "Renovation"
             },
-            cta: "View more projects",
+            categories: {
+                residential: "Residential",
+                commercial: "Commercial",
+                renovation: "Renovation",
+                religious: "Religious",
+                decoration: "Decoration",
+                infrastructure: "Infrastructure"
+            },
+            cta: "View all projects",
             items: {
                 residence_privee: {
                     title: "Collective Residence",
@@ -721,6 +1054,162 @@ const translations = {
         partners: {
             title: "They Trust Us"
         },
+        // Contact CTA Section
+        contactCta: {
+            title: "Ready to start your project?",
+            subtitle: "Let's discuss your vision and turn it into reality",
+            button: "Contact us"
+        },
+        // Services Page
+        servicesPage: {
+            hero: {
+                title: "OUR SERVICES",
+                subtitle: "Complete A to Z support for all your real estate projects"
+            },
+            accompagnement: {
+                title: "A to Z Support",
+                description: "We support you through all stages of your real estate project, from land purchase to turnkey delivery of your home. Our experts study every aspect with you — administrative, technical and financial — to guarantee you a compliant, durable and personalized construction."
+            },
+            offres: {
+                title: "Our Turnkey Offers",
+                subtitle: "Complete solutions tailored to your needs",
+                projet80: {
+                    title: "Project on 80 m² land",
+                    price: "$35,000",
+                    description: "A modern and functional house including:",
+                    features: {
+                        bedrooms: "2 spacious bedrooms",
+                        kitchen: "Modern equipped kitchen",
+                        bathroom: "Complete bathroom",
+                        veranda: "Comfortable veranda",
+                        parking: "Parking space"
+                    },
+                    note: "You receive the key once construction is complete."
+                },
+                projet121: {
+                    title: "Project on 121 m² land",
+                    price: "$45,000",
+                    description: "A spacious and elegant construction consisting of:",
+                    features: {
+                        bedrooms: "3 comfortable bedrooms",
+                        kitchen: "Modern equipped kitchen",
+                        bathroom: "Premium bathroom",
+                        veranda: "Spacious veranda",
+                        parking: "Private parking"
+                    },
+                    note: "A turnkey house, ready to move in."
+                }
+            },
+            budget: {
+                title: "Construction adapted to your budget",
+                subtitle: "Whatever your budget, we guarantee you:",
+                transparent: {
+                    title: "Transparent Cost",
+                    description: "Reasonable and transparent cost"
+                },
+                quality: {
+                    title: "Premium Quality",
+                    description: "Quality materials"
+                },
+                durability: {
+                    title: "Durability",
+                    description: "Durable structure compliant with standards"
+                },
+                note: "Our teams adjust plans and materials so your home remains solid, aesthetic and economical."
+            },
+            technique: {
+                title: "TECHNICAL SECTION",
+                subtitle: "Qualified experts at your service",
+                description: "Our company relies on a team of engineers, architects and technicians specialized in all building trades:",
+                expertise: {
+                    masonry: "Masonry & framing",
+                    electrical: "Electricity & plumbing",
+                    finishing: "Finishing & painting",
+                    carpentry: "Carpentry & tiling"
+                },
+                note: "Each professional puts their expertise and experience at the service of quality and customer satisfaction."
+            },
+            valeur: {
+                title: "VALUE SECTION",
+                subtitle: "Personalized study and advice",
+                description: "Before each project, we conduct a complete environmental study:",
+                analysis: {
+                    title: "Complete analysis",
+                    description: "Soil, climate and environment analysis"
+                },
+                advice: {
+                    title: "Expert advice",
+                    description: "Advice on the best construction method for your land"
+                },
+                correction: {
+                    title: "Defect correction",
+                    description: "Correction of defects on existing sites if necessary"
+                },
+                commitment: "We are committed to building in compliance with standards and sustainability, for a stable and lasting home."
+            },
+            prestations: {
+                title: "OUR OTHER SERVICES",
+                subtitle: "A complete range of services for all your needs",
+                items: {
+                    architectural: {
+                        title: "Architectural study",
+                        description: "Personalized plan design"
+                    },
+                    quote: {
+                        title: "Detailed quotes",
+                        description: "Accurate budget estimation"
+                    },
+                    rehabilitation: {
+                        title: "Rehabilitation",
+                        description: "Building renovation"
+                    },
+                    construction: {
+                        title: "Construction",
+                        description: "Residential & commercial"
+                    },
+                    monitoring: {
+                        title: "Site monitoring",
+                        description: "Rigorous quality control"
+                    },
+                    turnkey: {
+                        title: "Turnkey delivery",
+                        description: "Complete and finalized project"
+                    }
+                }
+            },
+            whyChoose: {
+                title: "WHY CHOOSE US?",
+                subtitle: "Reasons to trust Kayaya Ilunga Construction",
+                items: {
+                    support: {
+                        title: "Complete support",
+                        description: "From land to key handover"
+                    },
+                    custom: {
+                        title: "Custom construction",
+                        description: "According to your budget and needs"
+                    },
+                    standards: {
+                        title: "Standards compliance",
+                        description: "And agreed deadlines"
+                    },
+                    finishing: {
+                        title: "Impeccable finishing",
+                        description: "Durable and quality materials"
+                    },
+                    service: {
+                        title: "Attentive customer service",
+                        description: "Before, during and after construction"
+                    }
+                }
+            },
+            cta: {
+                title: "Ready to start your project?",
+                subtitle: "Contact us today for a free consultation and personalized quote",
+                quote: "Request a quote",
+                projects: "View our projects"
+            }
+        },
         // Realisations Page
         realisations: {
             hero: {
@@ -736,14 +1225,18 @@ const translations = {
                 all: "All projects",
                 residence: "Residential",
                 commercial: "Commercial",
-                amenagement: "Development",
+                amenagement: "Interior Design",
                 infrastructure: "Infrastructure"
             },
             categories: {
                 residence: "Residential",
                 commercial: "Commercial",
-                amenagement: "Interior",
-                infrastructure: "Infrastructure"
+                amenagement: "Interior Design",
+                infrastructure: "Infrastructure",
+                residential: "Residential",
+                renovation: "Renovation",
+                religious: "Religious",
+                decoration: "Decoration"
             },
             projects: {
                 arch_interieur: {
@@ -916,6 +1409,89 @@ const translations = {
                         conclusion: "These principles guide our approach to projects at Kayaya Ilunga Construction, where we constantly seek to create spaces that inspire, function perfectly and tell the unique story of each client."
                     }
                 }
+            }
+        },
+        // Team Page
+        team: {
+            hero: {
+                title: "Our Team",
+                subtitle: "Passionate professionals at the service of your projects",
+                btn_projects: "View our projects",
+                btn_contact: "Contact us"
+            },
+            history: {
+                title: "Our History",
+                p1: "Founded by building enthusiasts, our company was born from the desire to offer modern, accessible and sustainable construction solutions. Since its creation in 2024, Kayaya Ilunga Construction has established itself as a trusted player in the construction sector in Africa and Europe.",
+                p2: "Combining local expertise and international standards, our team delivers quality projects, respecting the deadlines and budget of each client. Our experience covers all trades: civil engineering, HVAC, electricity, carpentry, coatings, plastering, painting, interior and exterior architecture.",
+                p3: "Our goal is to build sustainable and accessible projects, transforming your visions into reality and creating spaces that combine aesthetics, functionality and durability."
+            },
+            mission: {
+                title: "Our Mission & Our Values",
+                subtitle: "We are committed to building solid homes, supporting our clients from land to key, and guaranteeing sustainability and innovation in every project."
+            },
+            values: {
+                quality: {
+                    title: "Quality",
+                    description: "Durable constructions compliant with standards, with premium materials and impeccable craftsmanship."
+                },
+                transparency: {
+                    title: "Transparency",
+                    description: "Clear communication at every stage of the project, with detailed quotes and regular follow-up."
+                },
+                innovation: {
+                    title: "Innovation",
+                    description: "Modern and efficient solutions, integrating the latest technologies and construction methods."
+                },
+                responsibility: {
+                    title: "Responsibility",
+                    description: "A commitment to the environment and society, for sustainable and harmonious development."
+                }
+            },
+            org: {
+                title: "Our Team",
+                subtitle: "A team of experienced and passionate professionals, dedicated to the success of your projects."
+            },
+            members: {
+                director: {
+                    name: "Kayaya Ilunga",
+                    role: "Founder & CEO",
+                    description: "Experienced builder with over 15 years of experience, he oversees the strategy and overall development of the company, ensuring excellence in every project."
+                },
+                engineer: {
+                    name: "Arnold Atatala",
+                    role: "Secretary and administrative",
+                    description: "Ensures administrative management, drafting of documents and coordination of office activities to support the smooth running of the construction company."
+                },
+                siteManager: {
+                    name: "Christ Nzaula Kasongo",
+                    role: "Engineer",
+                    description: "design, planning and implementation of projects to guarantee their quality, safety and compliance with standards."
+                },
+                mason: {
+                    name: "Christian Isenda Temene",
+                    role: "Architect",
+                    description: "Designs and plans construction projects by combining aesthetics, functionality and compliance with technical standards."
+                },
+                finishing: {
+                    name: "Becker MBUYA MFUMU",
+                    role: "Engineer",
+                    description: "design, planning and implementation of projects to guarantee their quality, safety and compliance with standards."
+                },
+                electrician: {
+                    name: "Mbuyi John",
+                    role: "Architect",
+                    description: "Designs and plans construction projects by combining aesthetics, functionality and compliance with technical standards."
+                },
+                plumber: {
+                    name: "Jonathan Loyeke",
+                    role: "Manager",
+                    description: "Ensures the proper execution of projects and ensures profitability and customer satisfaction."
+                }
+            },
+            cta: {
+                title: "Ready to start your project?",
+                subtitle: "Our team is at your disposal to discuss your needs",
+                button: "Contact us"
             }
         }
     }

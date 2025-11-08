@@ -1,0 +1,8 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#1e1e1e"/>
+  <text x="50%" y="50%" font-family="Inter, sans-serif" font-size="24" fill="rgba(245, 245, 245, 0.5)" text-anchor="middle" dominant-baseline="middle">
+    Image non disponible
+  </text>
+  <circle cx="400" cy="280" r="40" fill="none" stroke="rgba(255, 90, 95, 0.3)" stroke-width="3"/>
+  <path d="M 380 280 L 390 290 L 420 260" fill="none" stroke="rgba(255, 90, 95, 0.5)" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,74 +1,191 @@
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    const menuIcon = mobileMenuButton?.querySelector('i');
+/**
+ * ========================================
+ * KAYAYA ILUNGA CONSTRUCTION
+ * Main JavaScript - Homepage Interactions
+ * ========================================
+ * 
+ * This file handles all interactive functionality for the homepage including:
+ * - Mobile menu toggle and navigation
+ * - Scroll effects and animations
+ * - Hero section video fallback
+ * - Project filtering
+ * - Before/after image slider
+ * - Form handling
+ * - Back to top button
+ * 
+ * @author Kayaya Ilunga Construction
+ * @version 2.0.0
+ */
+
+/**
+ * Main initialization function
+ * Runs when DOM is fully loaded
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    // ========================================
+    // MOBILE MENU FUNCTIONALITY
+    // ========================================
     
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', (e) => {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+
+    /**
+     * Opens the mobile navigation menu
+     * - Adds active classes to menu elements
+     * - Disables body scroll
+     * - Animates menu slide-in from right
+     */
+    function openMobileMenu() {
+        mobileMenu.classList.add('active');
+        mobileMenuOverlay.classList.add('active');
+        mobileMenuToggle.classList.add('active');
+        body.classList.add('mobile-menu-open');
+    }
+
+    /**
+     * Closes the mobile navigation menu
+     * - Removes active classes from menu elements
+     * - Re-enables body scroll
+     * - Animates menu slide-out to right
+     */
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+        body.classList.remove('mobile-menu-open');
+    }
+
+    // Toggle menu on button click
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            
-            // Toggle menu
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('active');
-            
-            // Animate icon
-            if (menuIcon) {
-                if (mobileMenu.classList.contains('active')) {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-times');
-                } else {
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
+
+            if (mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
             }
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
-                if (mobileMenu.classList.contains('active')) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.classList.remove('active');
-                    if (menuIcon) {
-                        menuIcon.classList.remove('fa-times');
-                        menuIcon.classList.add('fa-bars');
-                    }
-                }
-            }
-        });
-        
-        // Close menu when clicking on a link
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('active');
-                if (menuIcon) {
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
-            });
         });
     }
 
-    // Filter projects
+    // Close menu when clicking overlay
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    }
+
+    // Close menu when clicking on a link
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // Close menu on ESC key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // ========================================
+    // NAVBAR SCROLL EFFECTS
+    // ========================================
+    
+    /**
+     * Adds glassmorphism effect to navbar on scroll
+     * Adds 'scrolled' class when user scrolls past 50px
+     */
+    const navbar = document.querySelector('.navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+
+        lastScroll = currentScroll;
+    });
+
+    // ========================================
+    // HERO SECTION - SCROLL INDICATOR
+    // ========================================
+    
+    /**
+     * Handles smooth scroll to about section when clicking scroll indicator
+     */
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            const aboutSection = document.querySelector('#about');
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    // ========================================
+    // HERO SECTION - VIDEO FALLBACK
+    // ========================================
+    
+    /**
+     * Handles video loading errors and mobile fallback
+     * - Shows fallback image if video fails to load
+     * - Uses fallback image on mobile to save bandwidth
+     */
+    const heroVideo = document.querySelector('.hero-video');
+    const heroFallback = document.querySelector('.hero-fallback-image');
+    
+    if (heroVideo && heroFallback) {
+        // Check if video can play
+        heroVideo.addEventListener('error', () => {
+            heroFallback.style.display = 'block';
+        });
+
+        // Check if video loaded successfully
+        heroVideo.addEventListener('loadeddata', () => {
+            heroFallback.style.display = 'none';
+        });
+
+        // For mobile devices, use fallback image to save bandwidth
+        if (window.innerWidth <= 768) {
+            heroVideo.style.display = 'none';
+            heroFallback.style.display = 'block';
+        }
+    }
+
+    // ========================================
+    // PROJECT FILTERING
+    // ========================================
+    
+    /**
+     * Filters project gallery items based on category
+     * Updates active button styling
+     */
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
-    
+
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all buttons
             filterButtons.forEach(btn => btn.classList.remove('active', 'primary-bg', 'text-white'));
             filterButtons.forEach(btn => btn.classList.add('border', 'border-gray-300', 'hover:bg-gray-100'));
-            
+
             // Add active class to clicked button
             button.classList.add('active', 'primary-bg', 'text-white');
             button.classList.remove('border', 'border-gray-300', 'hover:bg-gray-100');
-            
+
             const filterValue = button.getAttribute('data-filter');
-            
+
             galleryItems.forEach(item => {
                 if (filterValue === 'all' || item.classList.contains(filterValue)) {
                     item.style.display = 'block';
@@ -79,82 +196,103 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Before-after slider
-    const beforeAfterContainers = document.querySelectorAll('.before-after');
+    // ========================================
+    // BEFORE/AFTER IMAGE SLIDER
+    // ========================================
     
+    /**
+     * Interactive before/after image comparison slider
+     * Supports both mouse and touch events
+     */
+    const beforeAfterContainers = document.querySelectorAll('.before-after');
+
     beforeAfterContainers.forEach(container => {
         const slider = container.querySelector('.slider');
         const after = container.querySelector('.after');
         let isDragging = false;
-        
+
         if (slider && after) {
             slider.addEventListener('mousedown', (e) => {
                 isDragging = true;
                 e.preventDefault();
             });
-            
+
             window.addEventListener('mouseup', () => {
                 isDragging = false;
             });
-            
+
             window.addEventListener('mousemove', (e) => {
                 if (!isDragging) return;
-                
+
                 const containerRect = container.getBoundingClientRect();
                 let x = e.clientX - containerRect.left;
-                
+
                 // Limit x to container boundaries
                 x = Math.max(0, Math.min(x, containerRect.width));
-                
+
                 const percent = (x / containerRect.width) * 100;
-                
+
                 after.style.width = `${100 - percent}%`;
                 slider.style.left = `${percent}%`;
             });
-            
+
             // Touch events for mobile
             slider.addEventListener('touchstart', (e) => {
                 isDragging = true;
                 e.preventDefault();
             });
-            
+
             window.addEventListener('touchend', () => {
                 isDragging = false;
             });
-            
+
             window.addEventListener('touchmove', (e) => {
                 if (!isDragging) return;
-                
+
                 const containerRect = container.getBoundingClientRect();
                 let x = e.touches[0].clientX - containerRect.left;
-                
+
                 // Limit x to container boundaries
                 x = Math.max(0, Math.min(x, containerRect.width));
-                
+
                 const percent = (x / containerRect.width) * 100;
-                
+
                 after.style.width = `${100 - percent}%`;
                 slider.style.left = `${percent}%`;
             });
         }
     });
 
-    // Form submission
-    const contactForm = document.getElementById('contactForm');
+    // ========================================
+    // CONTACT FORM HANDLING
+    // ========================================
     
+    /**
+     * Handles contact form submission
+     * TODO: Integrate with backend API
+     */
+    const contactForm = document.getElementById('contactForm');
+
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
+
             // Here you would typically send the form data to a server
             alert('Merci pour votre message ! Nous vous contacterons bientôt.');
             contactForm.reset();
         });
     }
 
-    // Back to top button
-    const backToTopButton = document.getElementById('back-to-top');
+    // ========================================
+    // BACK TO TOP BUTTON
+    // ========================================
     
+    /**
+     * Shows/hides back to top button based on scroll position
+     * Appears after scrolling 300px down
+     */
+    const backToTopButton = document.getElementById('back-to-top');
+
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
@@ -165,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 backToTopButton.classList.add('invisible');
             }
         });
-        
+
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
@@ -174,16 +312,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Loader animation
+    // ========================================
+    // PAGE LOADER ANIMATION
+    // ========================================
+    
+    /**
+     * Animates page loading progress bar
+     * Fades out loader when complete
+     */
     const loader = document.getElementById('loader');
     const loadingBar = document.querySelector('.loading-bar');
-    
+
     if (loader && loadingBar) {
         let progress = 0;
         const interval = setInterval(() => {
             progress += 5;
             loadingBar.style.width = `${progress}%`;
-            
+
             if (progress >= 100) {
                 clearInterval(interval);
                 loader.classList.add('fade-out');
@@ -194,7 +339,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
 
-    // Smooth scroll for navigation links
+    // ========================================
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ========================================
+    
+    /**
+     * Enables smooth scrolling for all anchor links
+     * Handles navigation offset for fixed navbar
+     */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -208,7 +360,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animation des éléments au scroll
+    // ========================================
+    // SCROLL ANIMATIONS - INTERSECTION OBSERVER
+    // ========================================
+    
+    /**
+     * Observes elements and triggers fade-in animations when they enter viewport
+     * Uses Intersection Observer API for performance
+     */
     const fadeElements = document.querySelectorAll('.fade-in');
     const serviceCards = document.querySelectorAll('.service-card');
     const projectCards = document.querySelectorAll('.project-card');
@@ -236,7 +395,16 @@ document.addEventListener('DOMContentLoaded', function() {
     testimonialCards.forEach(card => observer.observe(card));
 });
 
-// Animation observer
+// ========================================
+// GLOBAL ANIMATION OBSERVER
+// ========================================
+
+/**
+ * Global Intersection Observer for all animated elements
+ * Adds 'visible' class when elements enter viewport
+ * 
+ * @param {IntersectionObserverEntry[]} entries - Array of observed elements
+ */
 const animationObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {

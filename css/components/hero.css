@@ -1,0 +1,284 @@
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video Background */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: var(--z-base);
+}
+
+/* Fallback Image */
+.hero-fallback-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fallback for browsers that don't support WebP */
+    background-image: url('../images/hero-fallback.jpg');
+    /* Modern WebP format */
+    background-image: url('../img/architecture.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    display: none;
+}
+
+/* Error state - show fallback if video fails to load */
+.hero-video.error ~ .hero-fallback-image {
+    display: block;
+}
+
+/* Show fallback if video fails */
+.hero-video:not([src])~.hero-fallback-image,
+.hero-video[src=""]~.hero-fallback-image {
+    display: block;
+}
+
+/* Dark Overlay with Gradient */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fallback for browsers that don't support CSS variables */
+    background: rgba(18, 18, 18, 0.7);
+    /* Modern gradient with CSS variables */
+    background: linear-gradient(135deg,
+            var(--dark-bg-80, rgba(18, 18, 18, 0.8)) 0%,
+            var(--dark-bg-60, rgba(18, 18, 18, 0.6)) 50%,
+            var(--dark-bg-80, rgba(18, 18, 18, 0.8)) 100%);
+    z-index: 2;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: var(--container-max-width);
+    padding: 0 var(--container-padding);
+    text-align: center;
+}
+
+.hero-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Hero Title */
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.hero-title-main {
+    display: block;
+}
+
+.hero-title-accent {
+    display: block;
+    color: var(--color-accent-primary);
+    font-style: italic;
+}
+
+/* Hero Description */
+.hero-description {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero CTA Button */
+.hero-cta {
+    display: inline-block;
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: var(--text-base, 16px);
+    font-weight: var(--font-semibold, 600);
+    letter-spacing: 0.5px;
+    color: var(--color-text-primary, #f5f5f5);
+    /* Fallback color */
+    background-color: #FF5A5F;
+    /* Modern CSS variable */
+    background-color: var(--color-accent-primary, #FF5A5F);
+    padding: 18px 48px;
+    /* Fallback border-radius */
+    border-radius: 50px;
+    border-radius: var(--radius-full, 50px);
+    text-decoration: none;
+    /* Fallback transition */
+    transition: all 0.3s ease;
+    transition: all var(--transition-base, 0.3s ease);
+    /* Fallback box-shadow */
+    box-shadow: 0 24px 48px rgba(255, 90, 95, 0.15);
+    box-shadow: var(--shadow-accent, 0 24px 48px rgba(255, 90, 95, 0.15));
+}
+
+.hero-cta:hover {
+    background-color: var(--color-accent-secondary);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-accent-hover);
+}
+
+.hero-cta:active {
+    transform: translateY(0) scale(1);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.scroll-indicator:hover {
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.scroll-indicator-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent-primary);
+    font-size: 20px;
+    animation: bounce-scroll 2s infinite;
+}
+
+.scroll-indicator-text {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-primary-80);
+}
+
+/* Bounce Animation for Scroll Indicator */
+@keyframes bounce-scroll {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 500px;
+        height: 100vh;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: var(--space-sm);
+    }
+
+    .hero-description {
+        font-size: clamp(0.875rem, 3vw, 1rem);
+        margin-bottom: var(--space-lg);
+    }
+
+    .hero-cta {
+        padding: 14px 36px;
+        font-size: var(--text-sm);
+    }
+
+    .scroll-indicator {
+        bottom: 24px;
+    }
+
+    /* Keep video visible on mobile */
+    .hero-video {
+        display: block;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    /* Fallback image only if video fails */
+    .hero-fallback-image {
+        display: none;
+    }
+    
+    .hero-video.error ~ .hero-fallback-image,
+    .hero-video:not([src]) ~ .hero-fallback-image {
+        display: block;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-title {
+        font-size: clamp(3rem, 5vw, 4rem);
+    }
+
+    .hero-description {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+    }
+}
+
+/* Accessibility - Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-indicator-icon {
+        animation: none;
+    }
+
+    .hero-cta:hover {
+        transform: none;
+    }
+
+    .scroll-indicator:hover {
+        transform: translateX(-50%);
+    }
+}

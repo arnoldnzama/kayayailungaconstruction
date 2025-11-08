@@ -1,0 +1,238 @@
+/* ========================================
+   HOW IT WORKS SECTION
+   ======================================== */
+
+.how-it-works-section {
+    background-color: var(--color-dark-bg);
+    padding: 100px 0;
+    position: relative;
+}
+
+.how-it-works-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Header */
+.how-it-works-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.how-it-works-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.how-it-works-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Timeline Container */
+.how-it-works-timeline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    position: relative;
+}
+
+/* Step Card */
+.how-it-works-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    max-width: 220px;
+}
+
+/* Step Number Circle */
+.step-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+    box-shadow: var(--shadow-accent);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.step-number span {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-text-primary);
+}
+
+.how-it-works-step:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-accent-hover);
+}
+
+/* Step Content */
+.step-content {
+    width: 100%;
+}
+
+.step-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+    line-height: var(--leading-tight);
+}
+
+.step-description {
+    font-family: var(--font-body);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: var(--leading-relaxed);
+    color: var(--color-text-secondary);
+}
+
+/* Connector Line */
+.step-connector {
+    width: 100px;
+    height: 2px;
+    background: var(--gradient-primary);
+    flex-shrink: 0;
+    position: relative;
+    top: -60px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .how-it-works-section {
+        padding: 80px 0;
+    }
+
+    .how-it-works-header {
+        margin-bottom: 60px;
+    }
+
+    .how-it-works-timeline {
+        gap: var(--space-sm);
+    }
+
+    .how-it-works-step {
+        max-width: 180px;
+    }
+
+    .step-number {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+
+    .step-number span {
+        font-size: 28px;
+    }
+
+    .step-connector {
+        width: 60px;
+        top: -55px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .how-it-works-section {
+        padding: 60px 0;
+    }
+
+    .how-it-works-header {
+        margin-bottom: var(--space-xl);
+    }
+
+    /* Vertical Timeline on Mobile */
+    .how-it-works-timeline {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .how-it-works-step {
+        max-width: 100%;
+        flex-direction: row;
+        text-align: left;
+        gap: var(--space-md);
+        padding: var(--space-lg) 0;
+        position: relative;
+    }
+
+    .how-it-works-step::after {
+        content: '';
+        position: absolute;
+        left: 40px;
+        top: 100%;
+        width: 2px;
+        height: var(--space-lg);
+        background: var(--gradient-primary);
+    }
+
+    .how-it-works-step:last-child::after {
+        display: none;
+    }
+
+    .step-number {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .step-number span {
+        font-size: var(--text-3xl);
+    }
+
+    .step-content {
+        flex: 1;
+    }
+
+    /* Hide horizontal connectors on mobile */
+    .step-connector {
+        display: none;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .how-it-works-section {
+        padding: var(--space-xl) 0;
+    }
+
+    .how-it-works-step {
+        gap: var(--space-sm);
+        padding: var(--space-md) 0;
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+    }
+
+    .step-number span {
+        font-size: var(--text-2xl);
+    }
+
+    .how-it-works-step::after {
+        left: 30px;
+        height: var(--space-md);
+    }
+}

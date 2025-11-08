@@ -1,0 +1,392 @@
+/* ========================================
+   CSS FALLBACKS & BROWSER SUPPORT
+   ======================================== */
+
+/**
+ * Ce fichier contient les fallbacks pour les propriétés CSS modernes
+ * qui ne sont pas supportées par tous les navigateurs
+ */
+
+/* ========================================
+   BACKDROP-FILTER FALLBACK
+   ======================================== */
+
+/* Détection de support pour backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+
+    /* Fallback pour la navigation avec effet glassmorphism */
+    .navbar {
+        background-color: rgba(18, 18, 18, 0.95) !important;
+        /* Ajouter une bordure subtile pour compenser l'absence de blur */
+        border-bottom: 1px solid rgba(245, 245, 245, 0.1);
+    }
+
+    /* Fallback pour les modals ou overlays avec blur */
+    .modal-backdrop,
+    .overlay-blur {
+        background-color: rgba(18, 18, 18, 0.9) !important;
+    }
+}
+
+/* ========================================
+   CSS GRID FALLBACK
+   ======================================== */
+
+/* Fallback pour les navigateurs qui ne supportent pas CSS Grid */
+@supports not (display: grid) {
+
+    .services-grid,
+    .projects-grid,
+    .blog-grid,
+    .partners-logo-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+    }
+
+    .service-card,
+    .project-card,
+    .blog-card {
+        flex: 1 1 calc(33.333% - 32px);
+        min-width: 280px;
+    }
+
+    @media (max-width: 768px) {
+
+        .service-card,
+        .project-card,
+        .blog-card {
+            flex: 1 1 100%;
+        }
+    }
+}
+
+/* ========================================
+   CSS VARIABLES FALLBACK
+   ======================================== */
+
+/* Fallback pour les navigateurs qui ne supportent pas les CSS variables */
+@supports not (--css: variables) {
+
+    /* Colors */
+    body {
+        background-color: #121212;
+        color: #f5f5f5;
+    }
+
+    /* Typography */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Playfair Display', serif;
+    }
+
+    p,
+    a,
+    span,
+    div {
+        font-family: 'Inter', sans-serif;
+    }
+
+    /* Accent colors */
+    .btn-primary,
+    .hero-cta,
+    .projects-cta-button {
+        background-color: #FF5A5F;
+    }
+
+    .service-link,
+    .blog-read-more {
+        color: #FF5A5F;
+    }
+}
+
+/* ========================================
+   OBJECT-FIT FALLBACK
+   ======================================== */
+
+/* Fallback pour object-fit (IE11) */
+@supports not (object-fit: cover) {
+
+    .hero-video,
+    .project-image,
+    .blog-image {
+        /* Utiliser background-image à la place */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ========================================
+   CLAMP() FALLBACK
+   ======================================== */
+
+/* Fallback pour clamp() */
+@supports not (font-size: clamp(1rem, 2vw, 2rem)) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-description {
+        font-size: 1.125rem;
+    }
+
+    .about-title,
+    .services-title,
+    .projects-title {
+        font-size: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1rem;
+        }
+
+        .about-title,
+        .services-title,
+        .projects-title {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+/* ========================================
+   WEBP IMAGE FALLBACK
+   ======================================== */
+
+/* Fallback pour les images WebP */
+@supports not (background-image: url('image.webp')) {
+    .hero-fallback-image {
+        background-image: url('../images/hero-fallback.jpg');
+    }
+
+    .about-image img[src$=".webp"] {
+        content: url('../images/about-fallback.jpg');
+    }
+}
+
+/* ========================================
+   ASPECT-RATIO FALLBACK
+   ======================================== */
+
+/* Fallback pour aspect-ratio */
+@supports not (aspect-ratio: 16/9) {
+
+    .project-image-wrapper,
+    .blog-image-wrapper {
+        position: relative;
+        padding-bottom: 66.67%;
+        /* 3:2 ratio */
+        height: 0;
+        overflow: hidden;
+    }
+
+    .project-image-wrapper img,
+    .blog-image-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* ========================================
+   GAP FALLBACK (for Flexbox)
+   ======================================== */
+
+/* Fallback pour gap dans flexbox (Safari < 14.1) */
+@supports not (gap: 1rem) {
+
+    .services-grid,
+    .projects-grid,
+    .blog-grid {
+        margin: -16px;
+    }
+
+    .service-card,
+    .project-card,
+    .blog-card {
+        margin: 16px;
+    }
+
+    .footer-columns {
+        margin: -24px;
+    }
+
+    .footer-column {
+        margin: 24px;
+    }
+}
+
+/* ========================================
+   SCROLL-BEHAVIOR FALLBACK
+   ======================================== */
+
+/* Fallback pour scroll-behavior: smooth */
+@supports not (scroll-behavior: smooth) {
+
+    /* Le smooth scroll sera géré par JavaScript */
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ========================================
+   POSITION: STICKY FALLBACK
+   ======================================== */
+
+/* Fallback pour position: sticky */
+@supports not (position: sticky) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    /* Ajouter un padding-top au body pour compenser */
+    body {
+        padding-top: 80px;
+    }
+}
+
+/* ========================================
+   FILTER FALLBACK
+   ======================================== */
+
+/* Fallback pour filter: grayscale */
+@supports not (filter: grayscale(100%)) {
+    .partner-logo img {
+        opacity: 0.7;
+    }
+
+    .partner-logo:hover img {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   TRANSFORM FALLBACK
+   ======================================== */
+
+/* Fallback pour transform (très rare, mais pour IE9) */
+@supports not (transform: translateY(-10px)) {
+
+    .service-card:hover,
+    .blog-card:hover {
+        /* Utiliser margin à la place */
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* ========================================
+   CUSTOM PROPERTIES IN MEDIA QUERIES
+   ======================================== */
+
+/* Fallback pour les custom properties dans les media queries */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 16px;
+        --space-section: 60px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --container-padding: 24px;
+        --space-section: 80px;
+    }
+}
+
+@media (min-width: 1025px) {
+    :root {
+        --container-padding: 32px;
+        --space-section: 120px;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+/* Optimisations pour l'impression */
+@media print {
+
+    /* Masquer les éléments non nécessaires */
+    .navbar,
+    .mobile-menu,
+    .scroll-indicator,
+    .hero-video,
+    .language-switcher {
+        display: none !important;
+    }
+
+    /* Afficher le fallback image */
+    .hero-fallback-image {
+        display: block !important;
+    }
+
+    /* Optimiser les couleurs pour l'impression */
+    body {
+        background: white;
+        color: black;
+    }
+
+    /* Éviter les sauts de page dans les sections */
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ========================================
+   BROWSER-SPECIFIC HACKS (Use sparingly!)
+   ======================================== */
+
+/* IE11 specific fixes */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+
+    /* Fix flexbox bugs in IE11 */
+    .services-grid,
+    .projects-grid,
+    .blog-grid {
+        display: -ms-flexbox;
+        -ms-flex-wrap: wrap;
+    }
+
+    .service-card,
+    .project-card,
+    .blog-card {
+        -ms-flex: 1 1 calc(33.333% - 32px);
+    }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance: none) {
+
+    /* Fix for Safari's rendering of backdrop-filter */
+    .navbar {
+        -webkit-backdrop-filter: blur(10px);
+    }
+}
+
+/* Firefox-specific fixes */
+@-moz-document url-prefix() {
+
+    /* Fix for Firefox's scrollbar styling */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #FF5A5F #1e1e1e;
+    }
+}

@@ -1,0 +1,27 @@
+/* ========================================
+   KAYAYA ILUNGA CONSTRUCTION
+   Main CSS - Modular Architecture
+   ======================================== */
+
+/* 1. Design System Variables */
+@import url('variables.css');
+
+/* 2. Base Styles & Utilities */
+@import url('base.css');
+@import url('animations.css');
+
+/* 3. Components */
+@import url('components/navbar.css');
+@import url('components/hero.css');
+@import url('components/services.css');
+@import url('components/about.css');
+@import url('components/projects.css');
+@import url('components/how-it-works.css');
+@import url('components/blog.css');
+@import url('components/partners.css');
+@import url('components/contact-cta.css');
+@import url('components/footer.css');
+
+/* 4. Legacy Support (temporary - to be removed) */
+/* Uncomment if you need backward compatibility */
+/* @import url('legacy.css'); */

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Kayaya Ilunga Construction</title>
     <link rel="icon" type="image/x-icon" href="images/icons/logo.ico">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/pages/contact-dark.css">
     <!-- Ajout des meta tags SEO -->
-    <meta name="description" content="Contactez Kayaya Ilunga Construction pour vos projets de construction. Devis gratuit et conseils personnalisés.">
+    <meta name="description"
+        content="Contactez Kayaya Ilunga Construction pour vos projets de construction. Devis gratuit et conseils personnalisés.">
     <meta name="keywords" content="contact, construction, devis, Kayaya Ilunga Construction, Kinshasa, RDC">
     <meta name="author" content="Kayaya Ilunga Construction">
     <meta name="robots" content="index, follow">
@@ -23,24 +27,49 @@
     <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-[#0a0a0a]" style="background-color: #0a0a0a;">
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center" style="background-color: #000000;">
+        <div class="relative text-center">
+            <img src="images/logos/logo.png" alt="Logo" class="w-32 h-32 mx-auto mb-8 animate-bounce"
+                style="filter: brightness(1.2);" onerror="this.style.display='none'">
+            <div class="w-48 h-2 rounded-full overflow-hidden" style="background-color: #333333;">
+                <div class="loading-bar h-full rounded-full" style="background-color: #b78836; width: 0%"></div>
+            </div>
+            <div class="mt-4 font-semibold" style="color: #fffffe;">Chargement...</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="secondary-bg shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3">
+    <nav class="secondary-bg shadow-md sticky top-0 z-50" style="background-color: #0a0a0a;">
+        <div class="container mx-auto px-6 py-3" style="padding-top: 0.75rem; padding-bottom: 0.75rem;">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-24 w-auto object-contain">
+                        <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction"
+                            class="h-24 w-auto object-contain">
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.home">Accueil</a>
-                    <a href="index.html#about" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.about">À propos</a>
-                    <a href="index.html#services" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.services">Services</a>
-                    <a href="realisations.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.projects">Réalisations</a>
-                    <a href="blog.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-transparent hover:border-[#c69b49] pb-1" data-translate="nav.blog">Blog</a>
-                    <a href="contact.html" class="text-white text-lg font-medium hover:text-[#c69b49] transition-colors duration-300 border-b-2 border-[#c69b49] pb-1" data-translate="nav.contact">Contact</a>
-                    
+                    <a href="index.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.home">Accueil</a>
+                    <a href="equipe.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.about">Équipe</a>
+                    <a href="services.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.services">Services</a>
+                    <a href="realisations.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.projects">Réalisations</a>
+                    <a href="blog.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1"
+                        data-translate="nav.blog">Blog</a>
+                    <a href="contact.html"
+                        class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-[#b78836] pb-1"
+                        data-translate="nav.contact">Contact</a>
+
                     <!-- Language Switcher -->
                     <div class="language-switcher">
                         <button class="lang-btn-white">
@@ -66,53 +95,70 @@
                     </button>
                 </div>
             </div>
-                        <!-- Mobile menu -->
-                        <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-white border-opacity-20">
-                            <a href="index.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.home">Accueil</a>
-                            <a href="index.html#about" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.about">À propos</a>
-                            <a href="index.html#services" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.services">Services</a>
-                            <a href="realisations.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.projects">Réalisations</a>
-                            <a href="blog.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.blog">Blog</a>
-                            <a href="contact.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white" data-translate="nav.contact">Contact</a>
-                            
-                            <!-- Language Switcher Mobile -->
-                            <div class="language-switcher px-4 mt-2">
-                                <button class="lang-btn-white-mobile">
-                                    <i class="fas fa-globe"></i>
-                                    <span id="current-lang-mobile">FR</span>
-                                    <i class="fas fa-chevron-down text-sm"></i>
-                                </button>
-                                <div class="lang-dropdown">
-                                    <div class="lang-option" data-lang="fr">
-                                        <img src="images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
-                                        <span>Français</span>
-                                    </div>
-                                    <div class="lang-option" data-lang="en">
-                                        <img src="images/flags/eng.png" alt="English" onerror="this.style.display='none'">
-                                        <span>English</span>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Mobile menu -->
+            <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-white border-opacity-20">
+                <a href="index.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.home">Accueil</a>
+                <a href="equipe.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.about">Équipe</a>
+                <a href="services.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.services">Services</a>
+                <a href="realisations.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.projects">Réalisations</a>
+                <a href="blog.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white"
+                    data-translate="nav.blog">Blog</a>
+                <a href="contact.html"
+                    class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white"
+                    data-translate="nav.contact">Contact</a>
+
+                <!-- Language Switcher Mobile -->
+                <div class="language-switcher px-4 mt-2">
+                    <button class="lang-btn-white-mobile">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-lang-mobile">FR</span>
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <div class="lang-option" data-lang="fr">
+                            <img src="images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                            <span>Français</span>
                         </div>
+                        <div class="lang-option" data-lang="en">
+                            <img src="images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section Contact -->
-    <section class="py-20 bg-gradient-to-br from-[#c69b49]/5 to-white">
+    <section class="py-20 bg-gradient-to-br from-[#b78836]/10 to-[#0a0a0a] animate-on-scroll"
+        data-animation="fade-in-up">
         <div class="container mx-auto px-6">
             <div class="text-center mb-8">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    <span class="primary-color"><i class="fas fa-envelope mr-4"></i><span data-translate="contact.hero.title">Contactez-nous</span></span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+                    <span class="primary-color"><i class="fas fa-envelope mr-4"></i><span
+                            data-translate="contact.hero.title">Contactez-nous</span></span>
                 </h1>
-                <p class="text-xl text-gray-700 max-w-3xl mx-auto mb-8" data-translate="contact.hero.description">
-                    Prêt à concrétiser votre projet ? Notre équipe d'experts est à votre écoute pour vous accompagner dans toutes vos démarches de construction.
+                <p class="text-xl text-[#b0b0b0] max-w-3xl mx-auto mb-8" data-translate="contact.hero.description">
+                    Prêt à concrétiser votre projet ? Notre équipe d'experts est à votre écoute pour vous accompagner
+                    dans toutes vos démarches de construction.
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="realisations.html" class="inline-flex items-center gap-2 bg-white border-2 border-[#c69b49] text-[#c69b49] font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-[#c69b49] hover:text-white">
+                    <a href="realisations.html"
+                        class="inline-flex items-center gap-2 bg-transparent border-2 border-[#b78836] text-[#b78836] font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-[#b78836] hover:text-white">
                         <i class="fas fa-images"></i>
                         <span data-translate="contact.hero.btn_projects">Voir nos réalisations</span>
                     </a>
-                    <a href="#contactForm" class="inline-flex items-center gap-2 primary-bg text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-opacity-90">
+                    <a href="#contactForm"
+                        class="inline-flex items-center gap-2 primary-bg text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 hover:bg-opacity-90">
                         <i class="fas fa-arrow-down"></i>
                         <span data-translate="contact.hero.btn_write">Nous écrire</span>
                     </a>
@@ -122,88 +168,116 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="py-20 bg-gray-100">
+    <section class="py-20 bg-[#1a1a1a] animate-on-scroll" data-animation="fade-in-up">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <div class="bg-white p-8 rounded-lg shadow-md">
-                        <h3 class="text-2xl font-bold mb-6 primary-color" data-translate="contact.form.title">Des questions ?</h3>
+                <div class="lg:w-1/2 animate-on-scroll" data-animation="fade-in-left">
+                    <div class="bg-[#1e1e1e] p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6 primary-color" data-translate="contact.form.title">Des
+                            questions ?</h3>
                         <form id="contactForm" class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="name" class="block text-gray-700 mb-2" data-translate="contact.form.name">Nom complet*</label>
-                                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <label for="name" class="block text-gray-700 mb-2"
+                                        data-translate="contact.form.name">Nom complet*</label>
+                                    <input type="text" id="name" name="name" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                                 </div>
                                 <div>
-                                    <label for="email" class="block text-gray-700 mb-2" data-translate="contact.form.email">Email*</label>
-                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <label for="email" class="block text-gray-700 mb-2"
+                                        data-translate="contact.form.email">Email*</label>
+                                    <input type="email" id="email" name="email" required
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                                 </div>
                             </div>
                             <div>
-                                <label for="phone" class="block text-gray-700 mb-2" data-translate="contact.form.phone">Téléphone*</label>
-                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <label for="phone" class="block text-gray-700 mb-2"
+                                    data-translate="contact.form.phone">Téléphone*</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                             </div>
                             <div>
-                                <label for="projectType" class="block text-gray-700 mb-2" data-translate="contact.form.projectType">Type de projet*</label>
-                                <select id="projectType" name="projectType" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
-                                    <option value="" data-translate="contact.form.projectTypes.select">Sélectionnez...</option>
-                                    <option value="residential" data-translate="contact.form.projectTypes.residential">Construction résidentielle</option>
-                                    <option value="commercial" data-translate="contact.form.projectTypes.commercial">Construction commerciale</option>
-                                    <option value="renovation" data-translate="contact.form.projectTypes.renovation">Rénovation</option>
-                                    <option value="public" data-translate="contact.form.projectTypes.public">Travaux publics</option>
-                                    <option value="other" data-translate="contact.form.projectTypes.other">Autre</option>
+                                <label for="projectType" class="block text-gray-700 mb-2"
+                                    data-translate="contact.form.projectType">Type de projet*</label>
+                                <select id="projectType" name="projectType" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="" data-translate="contact.form.projectTypes.select">Sélectionnez...
+                                    </option>
+                                    <option value="residential" data-translate="contact.form.projectTypes.residential">
+                                        Construction résidentielle</option>
+                                    <option value="commercial" data-translate="contact.form.projectTypes.commercial">
+                                        Construction commerciale</option>
+                                    <option value="renovation" data-translate="contact.form.projectTypes.renovation">
+                                        Rénovation</option>
+                                    <option value="public" data-translate="contact.form.projectTypes.public">Travaux
+                                        publics</option>
+                                    <option value="other" data-translate="contact.form.projectTypes.other">Autre
+                                    </option>
                                 </select>
                             </div>
                             <div>
-                                <label for="message" class="block text-gray-700 mb-2" data-translate="contact.form.message">Message*</label>
-                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                                <label for="message" class="block text-gray-700 mb-2"
+                                    data-translate="contact.form.message">Message*</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
                             </div>
                             <div>
-                                <label for="file" class="block text-gray-700 mb-2" data-translate="contact.form.file">Joindre un fichier (plan, photo...)</label>
-                                <input type="file" id="file" name="file" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <label for="file" class="block text-gray-700 mb-2"
+                                    data-translate="contact.form.file">Joindre un fichier (plan, photo...)</label>
+                                <input type="file" id="file" name="file"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                             </div>
-                            <button type="submit" class="primary-bg hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105" data-translate="contact.form.submit">Envoyer la demande</button>
+                            <button type="submit"
+                                class="primary-bg hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105"
+                                data-translate="contact.form.submit">Envoyer la demande</button>
                         </form>
                     </div>
                 </div>
-                
-                <div class="lg:w-1/2">
-                    <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-                        <h3 class="text-2xl font-bold mb-6 primary-color" data-translate="contact.info.title">Nos coordonnées</h3>
+
+                <div class="lg:w-1/2 animate-on-scroll" data-animation="fade-in-right">
+                    <div class="bg-[#1e1e1e] p-8 rounded-lg shadow-md mb-8">
+                        <h3 class="text-2xl font-bold mb-6 primary-color" data-translate="contact.info.title">Nos
+                            coordonnées</h3>
                         <div class="space-y-4">
                             <div class="flex items-start">
                                 <i class="fas fa-map-marker-alt mt-1 mr-4 primary-color"></i>
                                 <div>
                                     <h4 class="font-bold" data-translate="contact.info.address.title">Adresse</h4>
-                                    <p class="text-gray-700" data-translate="contact.info.address.content">12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo</p>
+                                    <p class="text-gray-700" data-translate="contact.info.address.content">1, Av Kayaya
+                                        Ilunga, Q/Daipn, C/ N'sele</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <i class="fas fa-phone-alt mt-1 mr-4 primary-color"></i>
                                 <div>
                                     <h4 class="font-bold" data-translate="contact.info.phone.title">Téléphone</h4>
-                                    <p class="text-gray-700" data-translate="contact.info.phone.content">+243 858 673 529 / +49 1512 5025867</p>
+                                    <p class="text-gray-700" data-translate="contact.info.phone.content">+243 858 673
+                                        529 / +49 1512 5025867</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <i class="fas fa-envelope mt-1 mr-4 primary-color"></i>
                                 <div>
                                     <h4 class="font-bold" data-translate="contact.info.email.title">Email</h4>
-                                    <p class="text-gray-700" data-translate="contact.info.email.content">contact@kayayailungacontsruction.com</p>
+                                    <p class="text-gray-700" data-translate="contact.info.email.content">
+                                        contact@kayayailungacontsruction.com</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <i class="fas fa-clock mt-1 mr-4 primary-color"></i>
                                 <div>
                                     <h4 class="font-bold" data-translate="contact.info.hours.title">Horaires</h4>
-                                    <p class="text-gray-700" data-translate="contact.info.hours.content">Lundi - Vendredi : 8h - 18h<br>Samedi : 9h - 12h</p>
+                                    <p class="text-gray-700" data-translate="contact.info.hours.content">Lundi -
+                                        Vendredi : 8h - 18h<br>Samedi : 9h - 12h</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="h-64 md:h-80 rounded-lg overflow-hidden shadow-md">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.528624!2d15.3152736!3d-4.3188677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMTknMDcuOSJTIDE1wrAxOCw1NC45IkU!5e0!3m2!1sfr!2scd!4v1635000000000!5m2!1sfr!2scd" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.528624!2d15.3152736!3d-4.3188677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMTknMDcuOSJTIDE1wrAxOCw1NC45IkU!5e0!3m2!1sfr!2scd!4v1635000000000!5m2!1sfr!2scd"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -211,83 +285,114 @@
     </section>
 
     <!-- Informations supplémentaires -->
-    <section class="py-20 bg-gradient-to-br from-white to-gray-50">
+    <section class="py-20 bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a] animate-on-scroll" data-animation="fade-in-up">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold primary-color mb-4">
-                    <i class="fas fa-star mr-3"></i><span data-translate="contact.why.title">Pourquoi Nous Choisir ?</span>
+                    <i class="fas fa-star mr-3"></i><span data-translate="contact.why.title">Pourquoi Nous Choisir
+                        ?</span>
                 </h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto" data-translate="contact.why.subtitle">
                     Nous nous engageons à vous offrir un service de qualité et un accompagnement personnalisé.
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-20 h-20 primary-bg rounded-full flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform">
+                <div class="text-center p-6 bg-[#1e1e1e] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll delay-100"
+                    data-animation="scale-in">
+                    <div
+                        class="w-20 h-20 primary-bg rounded-full flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform">
                         <i class="fas fa-clock text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 primary-color" data-translate="contact.why.fast.title">Réponse Rapide</h3>
-                    <p class="text-gray-600" data-translate="contact.why.fast.description">Nous vous répondons sous 24h pour tous vos projets de construction et rénovation.</p>
+                    <h3 class="text-xl font-bold mb-4 primary-color" data-translate="contact.why.fast.title">Réponse
+                        Rapide</h3>
+                    <p class="text-gray-600" data-translate="contact.why.fast.description">Nous vous répondons sous 24h
+                        pour tous vos projets de construction et rénovation.</p>
                 </div>
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-20 h-20 primary-bg rounded-full flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform">
+                <div class="text-center p-6 bg-[#1e1e1e] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll delay-200"
+                    data-animation="scale-in">
+                    <div
+                        class="w-20 h-20 primary-bg rounded-full flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform">
                         <i class="fas fa-calculator text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 primary-color" data-translate="contact.why.quote.title">Devis Gratuit</h3>
-                    <p class="text-gray-600" data-translate="contact.why.quote.description">Estimation gratuite et sans engagement pour tous vos projets. Transparence garantie.</p>
+                    <h3 class="text-xl font-bold mb-4 primary-color" data-translate="contact.why.quote.title">Devis
+                        Gratuit</h3>
+                    <p class="text-gray-600" data-translate="contact.why.quote.description">Estimation gratuite et sans
+                        engagement pour tous vos projets. Transparence garantie.</p>
                 </div>
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-20 h-20 primary-bg rounded-full flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform">
+                <div class="text-center p-6 bg-[#1e1e1e] rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-on-scroll delay-300"
+                    data-animation="scale-in">
+                    <div
+                        class="w-20 h-20 primary-bg rounded-full flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform">
                         <i class="fas fa-handshake text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 primary-color" data-translate="contact.why.support.title">Accompagnement</h3>
-                    <p class="text-gray-600" data-translate="contact.why.support.description">Suivi personnalisé de votre projet du début à la fin avec un chef de projet dédié.</p>
+                    <h3 class="text-xl font-bold mb-4 primary-color" data-translate="contact.why.support.title">
+                        Accompagnement</h3>
+                    <p class="text-gray-600" data-translate="contact.why.support.description">Suivi personnalisé de
+                        votre projet du début à la fin avec un chef de projet dédié.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="secondary-bg py-16">
+    <footer class="secondary-bg py-16" style="background-color: #0a0a0a;">
         <div class="container mx-auto px-6">
             <!-- Logo et description centrés -->
             <div class="text-center mb-12">
                 <div class="mb-6">
-                    <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-20 w-auto object-contain mx-auto">
+                    <img src="images/logos/logo.png" alt="Logo Kayaya Ilunga Construction"
+                        class="h-20 w-auto object-contain mx-auto">
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction</h3>
-                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets, pierre après pierre depuis 2019 en Afrique et en Europe.</p>
+                <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction
+                </h3>
+                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets,
+                    pierre après pierre depuis 2024 en Afrique et en Europe.</p>
             </div>
 
             <!-- Colonnes de navigation -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div class="text-center md:text-left">
-                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation</h4>
+                    <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.navigation.title">Navigation
+                    </h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.home">Accueil</a></li>
-                        <li><a href="index.html#about" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.about">À propos</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.services">Services</a></li>
-                        <li><a href="realisations.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.projects">Réalisations</a></li>
-                        <li><a href="blog.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.blog">Blog</a></li>
-                        <li><a href="contact.html" class="text-gray-200 hover:text-white transition duration-300" data-translate="nav.contact">Contact</a></li>
+                        <li><a href="index.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.home">Accueil</a></li>
+                        <li><a href="index.html#about" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.about">À propos</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.services">Services</a></li>
+                        <li><a href="realisations.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.projects">Réalisations</a></li>
+                        <li><a href="blog.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.blog">Blog</a></li>
+                        <li><a href="contact.html" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="nav.contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.services.title">Services</h4>
                     <ul class="space-y-3">
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.residential.title">Construction résidentielle</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.commercial.title">Construction commerciale</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.renovation.title">Rénovation</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.public.title">Travaux publics</a></li>
-                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300" data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.residential.title">Construction résidentielle</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.commercial.title">Construction commerciale</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.renovation.title">Rénovation</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.public.title">Travaux publics</a></li>
+                        <li><a href="index.html#services" class="text-gray-200 hover:text-white transition duration-300"
+                                data-translate="services.items.management.title">Maîtrise d'œuvre</a></li>
                     </ul>
                 </div>
                 <div class="text-center md:text-left">
                     <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
                     <div class="space-y-3">
-                        <p class="text-gray-200" data-translate="footer.contact.address">12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo</p>
-                        <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867</p>
-                        <p class="text-gray-200" data-translate="footer.contact.email">contact@kayayailungacontsruction.com</p>
+                        <p class="text-gray-200" data-translate="footer.contact.address">1, Av Kayaya Ilunga, Q/Daipn,
+                            C/ N'sele</p>
+                        <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512
+                            5025867</p>
+                        <p class="text-gray-200" data-translate="footer.contact.email">
+                            contact@kayayailungacontsruction.com</p>
                     </div>
                 </div>
             </div>
@@ -296,16 +401,20 @@
             <div class="text-center mb-8">
                 <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.social.title">Suivez-nous</h4>
                 <div class="flex justify-center space-x-4">
-                    <a href="https://www.facebook.com/" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                    <a href="https://www.facebook.com/"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-tiktok"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
+                    <a href="#"
+                        class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -314,31 +423,56 @@
             <!-- Ligne de séparation et copyright -->
             <div class="border-t border-white border-opacity-20 pt-8">
                 <div class="text-center">
-                    <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga Construction. Tous droits réservés.</p>
+                    <p class="text-gray-300 text-sm" data-translate="footer.legal.copyright">© 2025 Kayaya Ilunga
+                        Construction. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 primary-bg text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 primary-bg text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- Scripts -->
     <script src="js/translations.js"></script>
     <script src="js/language-switcher.js"></script>
+    <script src="js/animations.js"></script>
     <script src="js/script.js"></script>
     <script>
-        // Mobile menu
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function (event) {
+                    if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+
+                // Close menu when clicking on a link
+                const mobileLinks = mobileMenu.querySelectorAll('a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
         });
 
         // Back to top button
         const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', function() {
+
+        window.addEventListener('scroll', function () {
             if (window.pageYOffset > 300) {
                 backToTopButton.classList.remove('invisible');
                 backToTopButton.classList.add('visible');
@@ -347,66 +481,278 @@
                 backToTopButton.classList.remove('visible');
             }
         });
-        
-        backToTopButton.addEventListener('click', function() {
+
+        backToTopButton.addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
 
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.innerHTML;
-            
-            // Désactiver le bouton et afficher un message de chargement
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Envoi en cours...';
-            
-            // Créer un FormData avec les données du formulaire
-            const formData = new FormData(this);
-            
-            // Envoyer les données au serveur
-            fetch('php/process_contact.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Afficher un message de succès
-                    showMessage(data.message, 'success');
-                    // Réinitialiser le formulaire
-                    this.reset();
-                } else {
-                    // Afficher un message d'erreur
-                    showMessage(data.message || 'Une erreur s\'est produite. Veuillez réessayer.', 'error');
+        // Enhanced Form Validation
+        (function () {
+            const form = document.getElementById('contactForm');
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+
+            // Validation rules
+            const validationRules = {
+                name: {
+                    pattern: /^[a-zA-ZÀ-ÿ\s'-]{2,50}$/,
+                    message: 'Le nom doit contenir entre 2 et 50 caractères (lettres uniquement)'
+                },
+                email: {
+                    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: 'Veuillez entrer une adresse email valide'
+                },
+                phone: {
+                    pattern: /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$/,
+                    message: 'Veuillez entrer un numéro de téléphone valide'
+                },
+                message: {
+                    minLength: 10,
+                    message: 'Le message doit contenir au moins 10 caractères'
                 }
-            })
-            .catch(error => {
-                console.error('Erreur:', error);
-                showMessage('Une erreur s\'est produite lors de l\'envoi du message. Veuillez réessayer ou nous contacter directement par téléphone au +243 858 673 529 / +49 1512 5025867', 'error');
-            })
-            .finally(() => {
-                // Réactiver le bouton
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalButtonText;
+            };
+
+            // Add validation icons and message containers to each form group
+            inputs.forEach(input => {
+                const formGroup = input.closest('.grid > div') || input.parentElement;
+                if (!formGroup.classList.contains('form-group')) {
+                    formGroup.classList.add('form-group');
+                }
+
+                // Add validation icon
+                if (!formGroup.querySelector('.validation-icon')) {
+                    const icon = document.createElement('i');
+                    icon.className = 'validation-icon fas';
+                    formGroup.appendChild(icon);
+                }
+
+                // Add validation message
+                if (!formGroup.querySelector('.validation-message')) {
+                    const message = document.createElement('span');
+                    message.className = 'validation-message';
+                    formGroup.appendChild(message);
+                }
+
+                // Mark required labels
+                const label = formGroup.querySelector('label');
+                if (label && input.hasAttribute('required')) {
+                    label.classList.add('required');
+                }
             });
-        });
-        
+
+            // Validate individual field
+            function validateField(input) {
+                const formGroup = input.closest('.form-group');
+                const icon = formGroup.querySelector('.validation-icon');
+                const message = formGroup.querySelector('.validation-message');
+                const fieldName = input.name;
+                const value = input.value.trim();
+
+                // Skip validation if field is empty and not required
+                if (!value && !input.hasAttribute('required')) {
+                    resetFieldValidation(formGroup, icon, message);
+                    return true;
+                }
+
+                // Check if field is empty and required
+                if (!value && input.hasAttribute('required')) {
+                    showFieldError(formGroup, icon, message, 'Ce champ est requis');
+                    return false;
+                }
+
+                // Apply specific validation rules
+                if (validationRules[fieldName]) {
+                    const rule = validationRules[fieldName];
+
+                    // Pattern validation
+                    if (rule.pattern && !rule.pattern.test(value)) {
+                        showFieldError(formGroup, icon, message, rule.message);
+                        return false;
+                    }
+
+                    // Min length validation
+                    if (rule.minLength && value.length < rule.minLength) {
+                        showFieldError(formGroup, icon, message, rule.message);
+                        return false;
+                    }
+                }
+
+                // Check HTML5 validity
+                if (input.validity && !input.validity.valid) {
+                    let errorMessage = 'Valeur invalide';
+                    if (input.validity.typeMismatch) {
+                        errorMessage = validationRules[fieldName]?.message || 'Format invalide';
+                    }
+                    showFieldError(formGroup, icon, message, errorMessage);
+                    return false;
+                }
+
+                // Field is valid
+                showFieldSuccess(formGroup, icon, message);
+                return true;
+            }
+
+            function showFieldError(formGroup, icon, message, text) {
+                formGroup.classList.remove('has-success');
+                formGroup.classList.add('has-error');
+
+                const input = formGroup.querySelector('input, select, textarea');
+                input.classList.remove('valid');
+                input.classList.add('invalid');
+
+                icon.className = 'validation-icon fas fa-exclamation-circle error show';
+                message.textContent = text;
+                message.className = 'validation-message error show';
+            }
+
+            function showFieldSuccess(formGroup, icon, message) {
+                formGroup.classList.remove('has-error');
+                formGroup.classList.add('has-success');
+
+                const input = formGroup.querySelector('input, select, textarea');
+                input.classList.remove('invalid');
+                input.classList.add('valid');
+
+                icon.className = 'validation-icon fas fa-check-circle success show';
+                message.textContent = '';
+                message.className = 'validation-message';
+            }
+
+            function resetFieldValidation(formGroup, icon, message) {
+                formGroup.classList.remove('has-error', 'has-success');
+
+                const input = formGroup.querySelector('input, select, textarea');
+                input.classList.remove('invalid', 'valid');
+
+                icon.className = 'validation-icon fas';
+                message.textContent = '';
+                message.className = 'validation-message';
+            }
+
+            // Real-time validation on input
+            inputs.forEach(input => {
+                // Validate on blur
+                input.addEventListener('blur', function () {
+                    if (this.value.trim()) {
+                        validateField(this);
+                    }
+                });
+
+                // Validate on input (with debounce for better performance)
+                let inputTimeout;
+                input.addEventListener('input', function () {
+                    clearTimeout(inputTimeout);
+                    inputTimeout = setTimeout(() => {
+                        if (this.value.trim()) {
+                            validateField(this);
+                        }
+                    }, 500);
+                });
+
+                // Clear validation on focus if field was invalid
+                input.addEventListener('focus', function () {
+                    const formGroup = this.closest('.form-group');
+                    if (formGroup.classList.contains('has-error')) {
+                        const icon = formGroup.querySelector('.validation-icon');
+                        const message = formGroup.querySelector('.validation-message');
+                        icon.classList.remove('show');
+                        message.classList.remove('show');
+                    }
+                });
+            });
+
+            // Form submission with validation
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Validate all fields
+                let isValid = true;
+                const errors = [];
+
+                inputs.forEach(input => {
+                    if (!validateField(input)) {
+                        isValid = false;
+                        const label = input.closest('.form-group').querySelector('label');
+                        const fieldName = label ? label.textContent.replace('*', '').trim() : input.name;
+                        errors.push(fieldName);
+                    }
+                });
+
+                // Show validation summary if there are errors
+                if (!isValid) {
+                    // Scroll to first error
+                    const firstError = form.querySelector('.has-error');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+
+                    // Show error message
+                    showMessage('Veuillez corriger les erreurs dans le formulaire avant de soumettre.', 'error');
+                    return;
+                }
+
+                // Mark form as validated
+                form.classList.add('form-validated');
+
+                const submitButton = this.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+
+                // Désactiver le bouton et afficher un message de chargement
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Envoi en cours...';
+
+                // Créer un FormData avec les données du formulaire
+                const formData = new FormData(this);
+
+                // Envoyer les données au serveur
+                fetch('php/process_contact.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Afficher un message de succès
+                            showMessage(data.message, 'success');
+                            // Réinitialiser le formulaire
+                            this.reset();
+                            // Reset validation states
+                            form.classList.remove('form-validated');
+                            inputs.forEach(input => {
+                                const formGroup = input.closest('.form-group');
+                                const icon = formGroup.querySelector('.validation-icon');
+                                const message = formGroup.querySelector('.validation-message');
+                                resetFieldValidation(formGroup, icon, message);
+                            });
+                        } else {
+                            // Afficher un message d'erreur
+                            showMessage(data.message || 'Une erreur s\'est produite. Veuillez réessayer.', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erreur:', error);
+                        showMessage('Une erreur s\'est produite lors de l\'envoi du message. Veuillez réessayer ou nous contacter directement par téléphone au +243 858 673 529 / +49 1512 5025867', 'error');
+                    })
+                    .finally(() => {
+                        // Réactiver le bouton
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    });
+            });
+        })();
+
         // Fonction pour afficher les messages
         function showMessage(message, type) {
             // Supprimer les anciens messages
             const oldMessages = document.querySelectorAll('.form-message');
             oldMessages.forEach(msg => msg.remove());
-            
+
             // Créer le nouveau message
             const messageDiv = document.createElement('div');
             messageDiv.className = `form-message ${type} p-4 rounded-lg mb-6`;
-            
+
             if (type === 'success') {
                 messageDiv.style.backgroundColor = '#d4edda';
                 messageDiv.style.color = '#155724';
@@ -418,14 +764,14 @@
                 messageDiv.style.border = '1px solid #f5c6cb';
                 messageDiv.innerHTML = `<i class="fas fa-exclamation-circle mr-2"></i>${message}`;
             }
-            
+
             // Insérer le message avant le formulaire
             const form = document.getElementById('contactForm');
             form.parentElement.insertBefore(messageDiv, form);
-            
+
             // Faire défiler vers le message
             messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
+
             // Supprimer le message après 8 secondes
             setTimeout(() => {
                 messageDiv.style.transition = 'opacity 0.5s';
@@ -433,6 +779,67 @@
                 setTimeout(() => messageDiv.remove(), 500);
             }, 8000);
         }
+
+        // ========================================
+        // LOADER SCRIPT
+        // ========================================
+        (function () {
+            'use strict';
+
+            const loader = document.getElementById('loader');
+            const loadingBar = loader ? loader.querySelector('.loading-bar') : null;
+
+            if (!loader) {
+                console.warn('Loader element not found');
+                return;
+            }
+
+            // Simulate loading progress
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 30;
+                if (progress > 100) progress = 100;
+
+                if (loadingBar) {
+                    loadingBar.style.width = progress + '%';
+                }
+
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                }
+            }, 200);
+
+            // Hide loader when page is fully loaded
+            window.addEventListener('load', function () {
+                // Ensure progress bar reaches 100%
+                if (loadingBar) {
+                    loadingBar.style.width = '100%';
+                }
+
+                // Wait a bit for smooth transition
+                setTimeout(() => {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+
+                    // Remove loader from DOM after transition
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 300);
+            });
+
+            // Fallback: hide loader after 5 seconds if load event doesn't fire
+            setTimeout(() => {
+                if (loader.style.display !== 'none') {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }
+            }, 5000);
+        })();
     </script>
 </body>
+
 </html>

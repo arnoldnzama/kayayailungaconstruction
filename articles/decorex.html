@@ -11,200 +11,35 @@
     <link rel="stylesheet" href="../css/colors.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/language-switcher.css">
-    <!-- Ajout des meta tags SEO -->
+    <link rel="stylesheet" href="../css/pages/article-dark.css">
+    
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Expo DECOREX Sandton Convention 2025 - The Future of Living. Découvrez comment les technologies de pointe et le design avant-gardiste révolutionnent l'habitat moderne.">
     <meta name="keywords" content="DECOREX 2025, exposition design, Sandton Convention, architecture intérieur, innovation habitat, design futuriste, technologies maison">
     <meta name="author" content="Kayaya Ilunga Construction">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Expo DECOREX Sandton Convention - The Future of Living">
     <meta property="og:description" content="L'exposition DECOREX 2025 explore le futur de l'habitat avec design et technologies innovantes">
     <meta property="og:image" content="../blog/Expo_DECOREX_July_2025/exp4.jpg">
     <meta property="og:url" content="https://arnoldnzama.github.io/KAYAYA-CONSTRUCTION/articles/decorex.html">
     <meta name="twitter:card" content="summary_large_image">
-    <style>
-        .article-hero {
-            background: linear-gradient(135deg, rgba(39, 40, 122, 0.8), rgba(39, 40, 122, 0.6)),
-                        url('../blog/Expo_DECOREX_July_2025/exp4.jpg') center/cover;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-        
-        .article-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .article-content h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #c69b49;
-            margin: 2rem 0 1rem;
-        }
-        
-        .article-content h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #c69b49;
-            margin: 1.5rem 0 1rem;
-        }
-        
-        .article-content p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 1.5rem;
-        }
-        
-        .article-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(39, 40, 122, 0.2);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .article-meta {
-            display: flex;
-            gap: 2rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #666;
-        }
-        
-        .meta-item i {
-            color: #c69b49;
-        }
-        
-        .related-articles {
-            background: #f8f9fa;
-            padding: 3rem 0;
-            margin-top: 3rem;
-        }
-        
-        /* Modal pour afficher les images */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-        }
-        
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-        }
-        
-        .modal-content img {
-            width: 100%;
-            height: auto;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 0.5rem;
-        }
-        
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            background: rgba(39, 40, 122, 0.8);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-close:hover {
-            background: rgba(39, 40, 122, 1);
-            transform: rotate(90deg);
-        }
-        
-        .modal-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(39, 40, 122, 0.8);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .modal-nav:hover {
-            background: rgba(39, 40, 122, 1);
-        }
-        
-        .modal-prev {
-            left: 1rem;
-        }
-        
-        .modal-next {
-            right: 1rem;
-        }
-    </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-[#0a0a0a]">
+    <!-- Loader -->
+    <div id="loader" class="fixed inset-0 z-[9999] flex items-center justify-center" style="background-color: #000000;">
+        <div class="relative text-center">
+            <img src="../images/logos/logo.png" alt="Logo" class="w-32 h-32 mx-auto mb-8 animate-bounce"
+                style="filter: brightness(1.2);" onerror="this.style.display='none'">
+            <div class="w-48 h-2 rounded-full overflow-hidden" style="background-color: #333333;">
+                <div class="loading-bar h-full rounded-full" style="background-color: #b78836; width: 0%"></div>
+            </div>
+            <div class="mt-4 font-semibold" style="color: #fffffe;">Chargement...</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="secondary-bg shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3">
@@ -215,12 +50,12 @@
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="../index.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.home">Accueil</a>
-                    <a href="../index.html#about" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.about">À propos</a>
-                    <a href="../index.html#services" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.services">Services</a>
-                    <a href="../realisations.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.projects">Réalisations</a>
-                    <a href="../blog.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-white pb-1" data-translate="nav.blog">Blog</a>
-                    <a href="../contact.html" class="text-white text-lg font-medium hover:text-gray-200 transition-colors duration-300 border-b-2 border-transparent hover:border-white pb-1" data-translate="nav.contact">Contact</a>
+                    <a href="../index.html" class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1" data-translate="nav.home">Accueil</a>
+                    <a href="../equipe.html" class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1" data-translate="nav.about">Équipe</a>
+                    <a href="../services.html" class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1" data-translate="nav.services">Services</a>
+                    <a href="../realisations.html" class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1" data-translate="nav.projects">Réalisations</a>
+                    <a href="../blog.html" class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-[#b78836] pb-1" data-translate="nav.blog">Blog</a>
+                    <a href="../contact.html" class="text-white text-lg font-medium hover:text-[#b78836] transition-colors duration-300 border-b-2 border-transparent hover:border-[#b78836] pb-1" data-translate="nav.contact">Contact</a>
                     
                     <!-- Language Switcher -->
                     <div class="language-switcher">
@@ -247,54 +82,55 @@
                     </button>
                 </div>
             </div>
+            
             <!-- Mobile menu -->
-                        <div class="mobile-menu hidden md:hidden primary-bg py-4 border-t border-white border-opacity-20">
-                            <a href="../index.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.home">Accueil</a>
-                            <a href="../index.html#about" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.about">À propos</a>
-                            <a href="../index.html#services" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.services">Services</a>
-                            <a href="../realisations.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.projects">Réalisations</a>
-                            <a href="../blog.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white" data-translate="nav.blog">Blog</a>
-                            <a href="../contact.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.contact">Contact</a>
-                            
-                            <!-- Language Switcher Mobile -->
-                            <div class="language-switcher px-4 mt-2">
-                                <button class="lang-btn-white-mobile">
-                                    <i class="fas fa-globe"></i>
-                                    <span id="current-lang-mobile">FR</span>
-                                    <i class="fas fa-chevron-down text-sm"></i>
-                                </button>
-                                <div class="lang-dropdown">
-                                    <div class="lang-option" data-lang="fr">
-                                        <img src="../images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
-                                        <span>Français</span>
-                                    </div>
-                                    <div class="lang-option" data-lang="en">
-                                        <img src="../images/flags/eng.png" alt="English" onerror="this.style.display='none'">
-                                        <span>English</span>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="mobile-menu hidden md:hidden secondary-bg py-4 border-t border-white border-opacity-20">
+                <a href="../index.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.home">Accueil</a>
+                <a href="../equipe.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.about">Équipe</a>
+                <a href="../services.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.services">Services</a>
+                <a href="../realisations.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.projects">Réalisations</a>
+                <a href="../blog.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-white" data-translate="nav.blog">Blog</a>
+                <a href="../contact.html" class="block py-3 px-4 text-white text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors duration-300 border-l-4 border-transparent hover:border-white" data-translate="nav.contact">Contact</a>
+                
+                <!-- Language Switcher Mobile -->
+                <div class="language-switcher px-4 mt-2">
+                    <button class="lang-btn-white-mobile">
+                        <i class="fas fa-globe"></i>
+                        <span id="current-lang-mobile">FR</span>
+                        <i class="fas fa-chevron-down text-sm"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <div class="lang-option" data-lang="fr">
+                            <img src="../images/flags/fr.png" alt="Français" onerror="this.style.display='none'">
+                            <span>Français</span>
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <img src="../images/flags/eng.png" alt="English" onerror="this.style.display='none'">
+                            <span>English</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="article-hero">
+    <section class="article-hero" style="background: linear-gradient(135deg, rgba(10, 10, 10, 0.85), rgba(30, 30, 30, 0.75)), url('../blog/Expo_DECOREX_July_2025/exp4.jpg') center/cover;">
         <div class="container mx-auto px-6">
             <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-4">
                 <span class="text-white font-semibold">
                     <i class="fas fa-tag mr-2"></i><span data-translate="articles.decorex.category">Expo DECOREX</span>
                 </span>
             </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-translate="articles.decorex.title">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white" style="text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);" data-translate="articles.decorex.title">
                 Expo DECOREX Sandton Convention
             </h1>
-            <p class="text-xl md:text-2xl mb-8" data-translate="articles.decorex.subtitle">
+            <p class="text-xl md:text-2xl mb-8 text-gray-300" style="text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);" data-translate="articles.decorex.subtitle">
                 The Future of Living
             </p>
             <div class="article-meta inline-flex bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
-                <div class="meta-item text-white">
-                    <i class="far fa-calendar"></i>
+                <div class="text-white">
+                    <i class="far fa-calendar text-[#b78836]"></i>
                     <span data-translate="articles.decorex.date">24-27 Juillet 2025</span>
                 </div>
             </div>
@@ -302,142 +138,165 @@
     </section>
 
     <!-- Article Content -->
-    <article class="py-16">
+    <article class="section-padding">
         <div class="container mx-auto px-6">
             <div class="article-content">
-                
-                <!-- Introduction -->
-                <div class="mb-8">
-                    <p class="text-xl text-gray-700 font-medium leading-relaxed" data-translate="articles.decorex.content.intro">
+                <div class="bg-[#1e1e1e] rounded-2xl p-8 border border-white/10">
+                    
+                    <!-- Introduction -->
+                    <p class="text-xl text-gray-300 leading-relaxed mb-8" data-translate="articles.decorex.content.intro">
                         L'exposition DECOREX 2025 au Sandton Convention Center a marqué un tournant majeur dans le monde du design et de l'architecture d'intérieur. Sous le thème « The Future of Living », cet événement prestigieux a rassemblé les plus grands noms de l'industrie pour explorer comment les technologies de pointe et le design avant-gardiste révolutionnent notre façon de vivre.
                     </p>
+
+                    <!-- Section 1 -->
+                    <h2><i class="fas fa-lightbulb mr-3"></i><span data-translate="articles.decorex.content.vision.title">Une Vision Futuriste de l'Habitat</span></h2>
+                    <p class="text-gray-400" data-translate="articles.decorex.content.vision.p1">
+                        DECOREX 2025 n'était pas simplement une exposition, c'était une fenêtre sur l'avenir de nos espaces de vie. Les visiteurs ont pu découvrir comment l'intelligence artificielle, la domotique avancée et les matériaux écologiques se combinent pour créer des environnements domestiques plus intelligents, plus confortables et plus durables.
+                    </p>
+                    <p class="text-gray-400" data-translate="articles.decorex.content.vision.p2">
+                        Les stands présentaient des concepts révolutionnaires : des murs qui changent de couleur selon l'humeur, des meubles auto-configurables, des systèmes d'éclairage qui s'adaptent au rythme circadien, et des matériaux de construction qui purifient l'air ambiant.
+                    </p>
+
+                    <!-- Section 2 -->
+                    <h2><i class="fas fa-palette mr-3"></i><span data-translate="articles.decorex.content.design.title">Design et Innovation</span></h2>
+                    <p class="text-gray-400" data-translate="articles.decorex.content.design.p1">
+                        Le design contemporain présenté à DECOREX repousse les limites de la créativité tout en restant ancré dans la fonctionnalité. Les créateurs ont démontré que le luxe moderne ne réside pas seulement dans l'esthétique, mais aussi dans la capacité à améliorer véritablement la qualité de vie des occupants.
+                    </p>
+                    <p class="text-gray-400" data-translate="articles.decorex.content.design.p2">
+                        Des installations interactives ont permis aux visiteurs d'expérimenter ces nouvelles technologies en temps réel, offrant une expérience immersive qui a transformé leur perception de ce que peut être un espace de vie au 21e siècle.
+                    </p>
+
+                    <!-- Galerie d'Images -->
+                    <h2><i class="fas fa-images mr-3"></i><span data-translate="articles.decorex.content.gallery">Galerie de l'Événement</span></h2>
+                    <div class="article-gallery">
+                        <div class="gallery-item" onclick="openModal(0)">
+                            <img src="../blog/Expo_DECOREX_July_2025/exp1.jpg" alt="DECOREX Expo 1">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(1)">
+                            <img src="../blog/Expo_DECOREX_July_2025/exp2.jpg" alt="DECOREX Expo 2">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(2)">
+                            <img src="../blog/Expo_DECOREX_July_2025/exp3.jpg" alt="DECOREX Expo 3">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(3)">
+                            <img src="../blog/Expo_DECOREX_July_2025/exp4.jpg" alt="DECOREX Expo 4">
+                        </div>
+                        <div class="gallery-item" onclick="openModal(4)">
+                            <img src="../blog/Expo_DECOREX_July_2025/exp5.jpg" alt="DECOREX Expo 5">
+                        </div>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <h2><i class="fas fa-leaf mr-3"></i><span data-translate="articles.decorex.content.durabilite.title">Durabilité et Responsabilité</span></h2>
+                    <p class="text-gray-400" data-translate="articles.decorex.content.durabilite.p1">
+                        Un thème central de DECOREX 2025 était la durabilité. Les exposants ont présenté des solutions innovantes pour réduire l'empreinte carbone des bâtiments, utiliser des matériaux recyclés et recyclables, et créer des espaces qui favorisent le bien-être tout en respectant l'environnement.
+                    </p>
+                    <p class="text-gray-400" data-translate="articles.decorex.content.durabilite.p2">
+                        Cette édition a clairement démontré que le luxe et la responsabilité environnementale ne sont plus incompatibles, mais au contraire, se renforcent mutuellement pour créer des espaces de vie exceptionnels et éthiques.
+                    </p>
+
+                    <!-- Points Clés -->
+                    <h3><i class="fas fa-check-circle mr-2"></i><span data-translate="articles.decorex.content.highlights.title">Points Clés de l'Exposition</span></h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-arrow-right text-[#b78836] mr-3 mt-1"></i>
+                            <span data-translate="articles.decorex.content.highlights.item1">Plus de 300 exposants internationaux présentant les dernières innovations</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-arrow-right text-[#b78836] mr-3 mt-1"></i>
+                            <span data-translate="articles.decorex.content.highlights.item2">Des conférences avec des leaders d'opinion du design mondial</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-arrow-right text-[#b78836] mr-3 mt-1"></i>
+                            <span data-translate="articles.decorex.content.highlights.item3">Des installations interactives démontrant les technologies de demain</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-arrow-right text-[#b78836] mr-3 mt-1"></i>
+                            <span data-translate="articles.decorex.content.highlights.item4">Un focus particulier sur les solutions écologiques et durables</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-arrow-right text-[#b78836] mr-3 mt-1"></i>
+                            <span data-translate="articles.decorex.content.highlights.item5">Des ateliers pratiques pour les professionnels de l'architecture et du design</span>
+                        </li>
+                    </ul>
+
+                    <!-- Conclusion -->
+                    <h2><i class="fas fa-globe mr-3"></i><span data-translate="articles.decorex.content.impact.title">Impact sur l'Industrie</span></h2>
+                    <p class="text-gray-400" data-translate="articles.decorex.content.impact.p1">
+                        DECOREX Sandton 2025 a confirmé sa position comme l'un des événements les plus influents de l'industrie du design en Afrique et dans le monde. Les tendances présentées lors de cet événement façonneront sans aucun doute l'évolution de l'architecture d'intérieur et de la construction pour les années à venir.
+                    </p>
+                    <p class="text-gray-400" data-translate="articles.decorex.content.impact.p2">
+                        Pour Kayaya Ilunga Construction, participer à cet événement en tant que visiteur privilégié nous a permis de nous inspirer des meilleures pratiques internationales et de renforcer notre engagement à offrir à nos clients des solutions de pointe qui allient beauté, fonctionnalité et durabilité.
+                    </p>
+
+                    <!-- Navigation Article -->
+                    <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-700">
+                        <a href="../blog.html" class="inline-flex items-center gap-2 text-[#b78836] font-semibold hover:gap-4 transition-all">
+                            <i class="fas fa-arrow-left"></i>
+                            <span data-translate="articles.navigation.backToBlog">Retour au Blog</span>
+                        </a>
+                        <a href="philharmonie.html" class="inline-flex items-center gap-2 text-[#b78836] font-semibold hover:gap-4 transition-all">
+                            <span data-translate="articles.navigation.next">Article Suivant</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
                 </div>
-
-                <h2><i class="fas fa-lightbulb mr-3"></i><span data-translate="articles.decorex.content.vision.title">Une Vision Futuriste de l'Habitat</span></h2>
-                <p data-translate="articles.decorex.content.vision.p1">
-                    DECOREX 2025 n'était pas simplement une exposition, c'était une fenêtre sur l'avenir de nos espaces de vie. Les visiteurs ont pu découvrir comment l'intelligence artificielle, la domotique avancée et les matériaux écologiques se combinent pour créer des environnements domestiques plus intelligents, plus confortables et plus durables.
-                </p>
-                <p data-translate="articles.decorex.content.vision.p2">
-                    Les stands présentaient des concepts révolutionnaires : des murs qui changent de couleur selon l'humeur, des meubles auto-configurables, des systèmes d'éclairage qui s'adaptent au rythme circadien, et des matériaux de construction qui purifient l'air ambiant.
-                </p>
-
-                <h2><i class="fas fa-palette mr-3"></i><span data-translate="articles.decorex.content.design.title">Design et Innovation</span></h2>
-                <p data-translate="articles.decorex.content.design.p1">
-                    Le design contemporain présenté à DECOREX repousse les limites de la créativité tout en restant ancré dans la fonctionnalité. Les créateurs ont démontré que le luxe moderne ne réside pas seulement dans l'esthétique, mais aussi dans la capacité à améliorer véritablement la qualité de vie des occupants.
-                </p>
-                <p data-translate="articles.decorex.content.design.p2">
-                    Des installations interactives ont permis aux visiteurs d'expérimenter ces nouvelles technologies en temps réel, offrant une expérience immersive qui a transformé leur perception de ce que peut être un espace de vie au 21e siècle.
-                </p>
-
-                <!-- Galerie d'Images -->
-                <h2><i class="fas fa-images mr-3"></i><span data-translate="articles.decorex.content.gallery">Galerie de l'Événement</span></h2>
-                <div class="article-gallery">
-                    <div class="gallery-item" onclick="openModal(0)">
-                        <img src="../blog/Expo_DECOREX_July_2025/exp1.jpg" alt="DECOREX Expo 1">
-                    </div>
-                    <div class="gallery-item" onclick="openModal(1)">
-                        <img src="../blog/Expo_DECOREX_July_2025/exp2.jpg" alt="DECOREX Expo 2">
-                    </div>
-                    <div class="gallery-item" onclick="openModal(2)">
-                        <img src="../blog/Expo_DECOREX_July_2025/exp3.jpg" alt="DECOREX Expo 3">
-                    </div>
-                    <div class="gallery-item" onclick="openModal(3)">
-                        <img src="../blog/Expo_DECOREX_July_2025/exp4.jpg" alt="DECOREX Expo 4">
-                    </div>
-                    <div class="gallery-item" onclick="openModal(4)">
-                        <img src="../blog/Expo_DECOREX_July_2025/exp5.jpg" alt="DECOREX Expo 5">
-                    </div>
-                </div>
-
-                <h2><i class="fas fa-leaf mr-3"></i><span data-translate="articles.decorex.content.durabilite.title">Durabilité et Responsabilité</span></h2>
-                <p data-translate="articles.decorex.content.durabilite.p1">
-                    Un thème central de DECOREX 2025 était la durabilité. Les exposants ont présenté des solutions innovantes pour réduire l'empreinte carbone des bâtiments, utiliser des matériaux recyclés et recyclables, et créer des espaces qui favorisent le bien-être tout en respectant l'environnement.
-                </p>
-                <p data-translate="articles.decorex.content.durabilite.p2">
-                    Cette édition a clairement démontré que le luxe et la responsabilité environnementale ne sont plus incompatibles, mais au contraire, se renforcent mutuellement pour créer des espaces de vie exceptionnels et éthiques.
-                </p>
-
-                <h3><i class="fas fa-check-circle mr-2 primary-color"></i><span data-translate="articles.decorex.content.highlights.title">Points Clés de l'Exposition</span></h3>
-                <ul class="space-y-3 mb-6">
-                    <li class="flex items-start">
-                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
-                        <span data-translate="articles.decorex.content.highlights.item1">Plus de 300 exposants internationaux présentant les dernières innovations</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
-                        <span data-translate="articles.decorex.content.highlights.item2">Des conférences avec des leaders d'opinion du design mondial</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
-                        <span data-translate="articles.decorex.content.highlights.item3">Des installations interactives démontrant les technologies de demain</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
-                        <span data-translate="articles.decorex.content.highlights.item4">Un focus particulier sur les solutions écologiques et durables</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-arrow-right primary-color mr-3 mt-1"></i>
-                        <span data-translate="articles.decorex.content.highlights.item5">Des ateliers pratiques pour les professionnels de l'architecture et du design</span>
-                    </li>
-                </ul>
-
-                <h2><i class="fas fa-globe mr-3"></i><span data-translate="articles.decorex.content.impact.title">Impact sur l'Industrie</span></h2>
-                <p data-translate="articles.decorex.content.impact.p1">
-                    DECOREX Sandton 2025 a confirmé sa position comme l'un des événements les plus influents de l'industrie du design en Afrique et dans le monde. Les tendances présentées lors de cet événement façonneront sans aucun doute l'évolution de l'architecture d'intérieur et de la construction pour les années à venir.
-                </p>
-                <p data-translate="articles.decorex.content.impact.p2">
-                    Pour Kayaya Ilunga Construction, participer à cet événement en tant que visiteur privilégié nous a permis de nous inspirer des meilleures pratiques internationales et de renforcer notre engagement à offrir à nos clients des solutions de pointe qui allient beauté, fonctionnalité et durabilité.
-                </p>
-
-                <!-- Navigation Article -->
-                <div class="flex justify-between items-center mt-12 pt-8 border-t border-gray-200">
-                    <a href="../blog.html" class="inline-flex items-center gap-2 text-[#c69b49] font-semibold hover:gap-4 transition-all">
-                        <i class="fas fa-arrow-left"></i>
-                        <span data-translate="articles.navigation.backToBlog">Retour au Blog</span>
-                    </a>
-                    <a href="philharmonie.html" class="inline-flex items-center gap-2 text-[#c69b49] font-semibold hover:gap-4 transition-all">
-                        <span data-translate="articles.navigation.next">Article Suivant</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
             </div>
         </div>
     </article>
 
     <!-- Related Articles -->
-    <section class="related-articles">
+    <section class="related-articles section-padding bg-[#0a0a0a]">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold primary-color mb-8 text-center">
+            <h2 class="text-3xl font-bold text-[#b78836] mb-8 text-center">
                 <i class="fas fa-book mr-3"></i><span data-translate="articles.related.title">Articles Connexes</span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <a href="philharmonie.html" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
-                    <img src="../blog/La_Philharmonie_de_Paris/p6.jpg" alt="Philharmonie" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold primary-color mb-2">La Philharmonie de Paris</h3>
-                        <p class="text-gray-600">Un chef-d'œuvre architectural signé Jean Nouvel...</p>
+            <div class="related-grid">
+                <!-- Article 1 -->
+                <a href="philharmonie.html" class="related-card">
+                    <img src="../blog/La_Philharmonie_de_Paris/p6.jpg" alt="Philharmonie">
+                    <div class="related-card-content">
+                        <h3 class="text-xl font-bold text-white mb-2">La Philharmonie de Paris</h3>
+                        <p class="text-gray-400 mb-4">Un chef-d'œuvre architectural signé Jean Nouvel...</p>
+                        <span class="read-more">
+                            Lire la suite
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
                     </div>
                 </a>
-                <a href="arabie-saoudite.html" class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
-                    <img src="../blog/Royaume _Arabie_Saoudite/r2.jpg" alt="Arabie Saoudite" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold primary-color mb-2">Pavillon d'Arabie Saoudite</h3>
-                        <p class="text-gray-600">Architecture audacieuse à l'EXPO Dubaï 2020...</p>
+                
+                <!-- Article 2 -->
+                <a href="arabie-saoudite.html" class="related-card">
+                    <img src="../blog/Royaume _Arabie_Saoudite/r2.jpg" alt="Arabie Saoudite">
+                    <div class="related-card-content">
+                        <h3 class="text-xl font-bold text-white mb-2">Pavillon d'Arabie Saoudite</h3>
+                        <p class="text-gray-400 mb-4">Architecture audacieuse à l'EXPO Dubaï 2020...</p>
+                        <span class="read-more">
+                            Lire la suite
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Modal pour afficher les images -->
-    <div id="imageModal" class="modal">
-        <span class="modal-close" onclick="closeModal()">&times;</span>
-        <div class="modal-prev modal-nav" onclick="changeImage(-1)">&#10094;</div>
-        <div class="modal-content">
-            <img id="modalImage" src="" alt="Image agrandie">
+    <!-- Image Modal/Lightbox -->
+    <div id="imageModal" class="image-lightbox" style="display: none;">
+        <span id="close-modal" class="close-modal" style="position: absolute; top: 2rem; right: 2rem; background: rgba(30, 30, 30, 0.8); border: 1px solid rgba(198, 155, 73, 0.3); backdrop-filter: blur(10px); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 10;">
+            <i class="fas fa-times"></i>
+        </span>
+        <div id="prev-image" class="prev-image" style="position: absolute; left: 2rem; top: 50%; transform: translateY(-50%); background: rgba(30, 30, 30, 0.8); border: 1px solid rgba(198, 155, 73, 0.3); backdrop-filter: blur(10px); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 10;">
+            <i class="fas fa-chevron-left"></i>
         </div>
-        <div class="modal-next modal-nav" onclick="changeImage(1)">&#10095;</div>
+        <img id="modalImage" class="modal-image" src="" alt="Image agrandie" style="max-width: 90%; max-height: 90vh; object-fit: contain; border-radius: 0.5rem; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);">
+        <div id="next-image" class="next-image" style="position: absolute; right: 2rem; top: 50%; transform: translateY(-50%); background: rgba(30, 30, 30, 0.8); border: 1px solid rgba(198, 155, 73, 0.3); backdrop-filter: blur(10px); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; z-index: 10;">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="image-counter" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); background: rgba(30, 30, 30, 0.9); border: 1px solid rgba(198, 155, 73, 0.3); backdrop-filter: blur(10px); color: #b78836; padding: 0.75rem 1.5rem; border-radius: 2rem; font-weight: 600;">
+            <span id="current-image">1</span> / <span id="total-images">5</span>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -449,7 +308,7 @@
                     <img src="../images/logos/logo.png" alt="Logo Kayaya Ilunga Construction" class="h-20 w-auto object-contain mx-auto">
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4" data-translate="footer.title">Kayaya Ilunga Construction</h3>
-                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets, pierre après pierre depuis 2019 en Afrique et en Europe.</p>
+                <p class="text-gray-200 max-w-2xl mx-auto" data-translate="footer.description">Bâtissons vos projets, pierre après pierre depuis 2024 en Afrique et en Europe.</p>
             </div>
 
             <!-- Colonnes de navigation -->
@@ -478,7 +337,7 @@
                 <div class="text-center md:text-left">
                     <h4 class="font-bold text-lg text-white mb-6" data-translate="footer.contact.title">Contact</h4>
                     <div class="space-y-3">
-                        <p class="text-gray-200" data-translate="footer.contact.address">12, N'sele Boulevard Lumumba, Kinshasa, République Démocratique du Congo</p>
+                        <p class="text-gray-200" data-translate="footer.contact.address">1, Av Kayaya Ilunga, Q/Daipn, C/ N'sele</p>
                         <p class="text-gray-200" data-translate="footer.contact.phone">+243 858 673 529 / +49 1512 5025867</p>
                         <p class="text-gray-200" data-translate="footer.contact.email">contact@kayayailungacontsruction.com</p>
                     </div>
@@ -496,7 +355,7 @@
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
-                        <i class="fab fa-linkedin-in"></i>
+                        <i class="fab fa-tiktok"></i>
                     </a>
                     <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-white hover:bg-opacity-30 transition duration-300">
                         <i class="fab fa-youtube"></i>
@@ -514,7 +373,7 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#c69b49] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-[#b78836] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all duration-300 invisible">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -522,7 +381,34 @@
     <script src="../js/translations.js"></script>
     <script src="../js/language-switcher.js"></script>
     <script>
-        // Données des images
+        // ========================================
+        // PAGE LOADER ANIMATION
+        // ========================================
+        
+        const loader = document.getElementById('loader');
+        const loadingBar = document.querySelector('.loading-bar');
+
+        if (loader && loadingBar) {
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                loadingBar.style.width = `${progress}%`;
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    loader.classList.add('fade-out');
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }
+            }, 100);
+        }
+
+        // ========================================
+        // IMAGE GALLERY & MODAL
+        // ========================================
+        
+        // Données des images DECOREX
         const images = [
             { src: '../blog/Expo_DECOREX_July_2025/exp1.jpg', title: 'DECOREX Expo 1' },
             { src: '../blog/Expo_DECOREX_July_2025/exp2.jpg', title: 'DECOREX Expo 2' },
@@ -537,8 +423,13 @@
             currentImageIndex = index;
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
+            const currentImageSpan = document.getElementById('current-image');
+            const totalImagesSpan = document.getElementById('total-images');
             
             modalImage.src = images[index].src;
+            currentImageSpan.textContent = index + 1;
+            totalImagesSpan.textContent = images.length;
+            
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -559,16 +450,23 @@
             }
             
             const modalImage = document.getElementById('modalImage');
+            const currentImageSpan = document.getElementById('current-image');
+            
             modalImage.src = images[currentImageIndex].src;
+            currentImageSpan.textContent = currentImageIndex + 1;
         }
 
+        // Event listeners pour le modal
+        document.getElementById('close-modal').addEventListener('click', closeModal);
+        document.getElementById('prev-image').addEventListener('click', () => changeImage(-1));
+        document.getElementById('next-image').addEventListener('click', () => changeImage(1));
+
         // Fermer le modal en cliquant en dehors de l'image
-        window.onclick = function(event) {
-            const modal = document.getElementById('imageModal');
-            if (event.target == modal) {
+        document.getElementById('imageModal').addEventListener('click', function(event) {
+            if (event.target === this) {
                 closeModal();
             }
-        }
+        });
 
         // Navigation avec les flèches du clavier
         document.addEventListener('keydown', function(event) {
@@ -584,12 +482,18 @@
             }
         });
 
-        // Mobile menu
+        // ========================================
+        // MOBILE MENU
+        // ========================================
+        
         document.querySelector('.mobile-menu-button').addEventListener('click', function() {
             document.querySelector('.mobile-menu').classList.toggle('hidden');
         });
 
-        // Back to top button
+        // ========================================
+        // BACK TO TOP BUTTON
+        // ========================================
+        
         const backToTopButton = document.getElementById('back-to-top');
         
         window.addEventListener('scroll', function() {
@@ -611,4 +515,3 @@
     </script>
 </body>
 </html>
-
