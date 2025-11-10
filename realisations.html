@@ -216,10 +216,19 @@
             border-radius: 0.5rem;
             cursor: pointer;
             transition: transform 0.3s ease;
+            display: block;
         }
 
         .modal-image:hover {
             transform: scale(1.02);
+        }
+        
+        #modal-content {
+            background: #1a1a1a;
+        }
+        
+        #modal-gallery .gallery-item {
+            background: #2a2a2a;
         }
 
         #image-lightbox {
@@ -428,7 +437,7 @@
 
             <!-- Project Modal -->
             <div id="project-modal"
-                class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4 backdrop-blur-sm"
+                class="fixed inset-0 bg-black bg-opacity-90 z-50 items-center justify-center p-4 backdrop-blur-sm"
                 style="display: none;">
                 <div
                     class="bg-[#1e1e1e] border border-[#b78836] border-opacity-30 rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
@@ -440,7 +449,7 @@
                             <i class="fas fa-times"></i>
                         </button>
                     </div>
-                    <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-120px)] bg-[#1a1a1a]">
+                    <div id="modal-content" class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]" style="background: #1a1a1a;">
                         <div id="modal-gallery" class="gallery-grid">
                             <!-- Project images will be loaded here -->
                         </div>
@@ -496,9 +505,9 @@
                     </div>
                     
                     <!-- Image Container -->
-                    <div id="image-container" class="relative" style="cursor: grab;">
-                        <img id="lightbox-image" class="max-w-none" src="" alt="" 
-                            style="transition: opacity 0.3s ease; transform-origin: center center; user-select: none;">
+                    <div id="image-container" class="relative flex items-center justify-center" style="cursor: grab; max-width: 90vw; max-height: 90vh;">
+                        <img id="lightbox-image" src="" alt="" 
+                            style="max-width: 100%; max-height: 85vh; width: auto; height: auto; object-fit: contain; transition: opacity 0.3s ease; transform-origin: center center; user-select: none;">
                     </div>
                     
                     <!-- Image Counter -->
@@ -646,64 +655,29 @@
         // Project data with all available projects
         const projects = [
             {
-                id: 'arch_interieur',
-                title: 'Architecture Intérieure',
-                titleEn: 'Interior Architecture',
-                category: 'amenagement',
-                images: ['a1.jpg', 'a2.jpeg'],
-                description: 'Projet d\'aménagement intérieur moderne',
-                descriptionEn: 'Modern interior design project'
-            },
-            {
                 id: 'mall',
                 title: 'Centre Commercial',
                 titleEn: 'Shopping Mall',
                 category: 'commercial',
-                images: ['img1-small.webp', 'img2-small.webp', 'img3-small.webp'],
+                images: ['1.webp', '2.webp', '3.webp'],
                 description: 'Construction d\'un centre commercial moderne',
                 descriptionEn: 'Modern shopping mall construction'
             },
             {
-                id: 'residence_privee',
-                title: 'Résidence Privée',
-                titleEn: 'Private Residence',
-                category: 'residence',
-                images: ['r1.jpg', 'r10.jpg', 'r2.jpg', 'r3.jpg', 'r4.jpg', 'r5.jpg', 'r6.jpg', 'r7.jpg', 'r8.jpg', 'r9.jpg'],
-                description: 'Construction d\'une résidence privée de luxe',
-                descriptionEn: 'Luxury private residence construction'
-            },
-            {
-                id: 'Immeuble R+2 NGALIEMA',
+                id: 'Immeuble_R+2_NGALIEMA',
                 title: 'Immeuble R+2 NGALIEMA',
                 titleEn: 'R+2 Building NGALIEMA',
                 category: 'residence',
-                images: [
-                    'WhatsApp Image 2025-11-05 at 16.19.01.jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.01 (1).jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.01 (2).jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.02.jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.02 (1).jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.02 (2).jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.02 (3).jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.02 (4).jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.02 (5).jpeg',
-                    'WhatsApp Image 2025-11-05 at 16.19.02 (6).jpeg'
-                ],
+                images: ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg', '6.jpeg', '7.jpeg', '8.jpeg', '9.jpeg', '10.jpeg'],
                 description: 'Construction d\'un immeuble résidentiel R+2 à Ngaliema',
                 descriptionEn: 'Construction of a R+2 residential building in Ngaliema'
             },
             {
-                id: 'Immeuble ABC',
+                id: 'Immeuble_ABC',
                 title: 'Immeuble ABC',
                 titleEn: 'ABC Building',
                 category: 'residence',
-                images: [
-                    'a_1 - Photo-4~2.jpg',
-                    'a_10 - Photo-1.jpeg',
-                    'a_10 - Photo-3.jpg',
-                    'a_7 - Photo-5.jpg',
-                    'a_8 - Photo-5.jpg'
-                ],
+                images: ['1.jpg', '2.jpg', '3.jpeg', '4.jpg', '5.jpg'],
                 description: 'Construction d\'un immeuble résidentiel moderne ABC',
                 descriptionEn: 'Construction of a modern ABC residential building'
             }
@@ -737,6 +711,14 @@
             });
         }
 
+        // Helper function to build image path
+        function buildImagePath(projectId, imageName) {
+            // Replace spaces with %20 for URL encoding
+            const encodedProjectId = projectId.replace(/ /g, '%20');
+            const encodedImageName = imageName.replace(/ /g, '%20');
+            return `projets/${encodedProjectId}/${encodedImageName}`;
+        }
+
         // Create project folder element
         function createProjectElement(project) {
             const div = document.createElement('div');
@@ -747,8 +729,8 @@
             const title = currentLang === 'en' ? project.titleEn : project.title;
             const description = currentLang === 'en' ? project.descriptionEn : project.description;
 
-            // Encode the image path properly
-            const imagePath = `projets/${encodeURIComponent(project.id)}/${encodeURIComponent(project.images[0])}`;
+            // Build the image path
+            const imagePath = buildImagePath(project.id, project.images[0]);
 
             div.innerHTML = `
                 <img src="${imagePath}" alt="${title}" class="project-folder-image" onerror="console.error('Failed to load:', this.src); this.style.display='none'; this.parentNode.classList.add('image-error');">
@@ -769,36 +751,59 @@
             const modalTitle = document.getElementById('modal-title');
             const modalGallery = document.getElementById('modal-gallery');
 
+            if (!modal || !modalTitle || !modalGallery) {
+                console.error('Modal elements not found');
+                return;
+            }
+
             const currentLang = getCurrentLanguage();
             const title = currentLang === 'en' ? project.titleEn : project.title;
 
             modalTitle.textContent = title;
             modalGallery.innerHTML = '';
 
+            console.log('Loading project:', project.id, 'with', project.images.length, 'images');
+
             project.images.forEach((image, index) => {
                 const imgElement = document.createElement('div');
                 imgElement.className = 'gallery-item';
                 
-                // Encode the image path properly
-                const imagePath = `projets/${encodeURIComponent(project.id)}/${encodeURIComponent(image)}`;
+                // Build the image path
+                const imagePath = buildImagePath(project.id, image);
                 
-                imgElement.innerHTML = `
-                    <img src="${imagePath}" alt="${title} - Image ${index + 1}" class="modal-image" onerror="console.error('Failed to load:', this.src); this.style.display='none'; this.parentNode.style.display='none';">
-                `;
+                console.log('Image path:', imagePath);
+                
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.alt = `${title} - Image ${index + 1}`;
+                img.className = 'modal-image';
+                img.style.display = 'block';
+                
+                img.onerror = function() {
+                    console.error('Failed to load image:', this.src);
+                    this.style.display = 'none';
+                    this.parentNode.style.display = 'none';
+                };
+                
+                img.onload = function() {
+                    console.log('Image loaded successfully:', this.src);
+                };
 
+                imgElement.appendChild(img);
                 imgElement.addEventListener('click', () => openLightbox(project.images, index, project.id));
                 modalGallery.appendChild(imgElement);
             });
 
-            modal.classList.remove('hidden');
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
+            
+            console.log('Modal opened with', modalGallery.children.length, 'images');
         }
 
         // Open image lightbox
         function openLightbox(images, startIndex, projectId) {
-            // Encode the image paths properly
-            currentImages = images.map(img => `projets/${encodeURIComponent(projectId)}/${encodeURIComponent(img)}`);
+            // Build the image paths
+            currentImages = images.map(img => buildImagePath(projectId, img));
             currentImageIndex = startIndex;
 
             const lightbox = document.getElementById('image-lightbox');
@@ -806,15 +811,25 @@
             const currentImageSpan = document.getElementById('current-image');
             const totalImagesSpan = document.getElementById('total-images');
 
+            if (!lightbox || !lightboxImage || !currentImageSpan || !totalImagesSpan) return;
+
             // Reset zoom and position
             resetZoom();
 
+            // Set image source and make visible
             lightboxImage.src = currentImages[currentImageIndex];
+            lightboxImage.style.opacity = '1';
+            lightboxImage.style.display = 'block';
+            
             currentImageSpan.textContent = currentImageIndex + 1;
             totalImagesSpan.textContent = currentImages.length;
 
-            lightbox.classList.remove('hidden');
             lightbox.style.display = 'flex';
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+            
+            console.log('Lightbox opened with image:', currentImages[currentImageIndex]);
         }
 
         // Setup modal events
@@ -822,19 +837,24 @@
             const modal = document.getElementById('project-modal');
             const closeModal = document.getElementById('close-modal');
 
-            closeModal.addEventListener('click', () => {
-                closeModalWithAnimation(modal);
-            });
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
+            if (closeModal) {
+                closeModal.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     closeModalWithAnimation(modal);
-                }
-            });
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModalWithAnimation(modal);
+                    }
+                });
+            }
 
             // Close modal with Escape key
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                if (e.key === 'Escape' && modal && modal.style.display === 'flex') {
                     closeModalWithAnimation(modal);
                 }
             });
@@ -842,21 +862,10 @@
 
         // Close modal with smooth animation
         function closeModalWithAnimation(modal) {
-            const modalContent = modal.querySelector('> div');
-            if (modalContent) {
-                modalContent.style.animation = 'modalSlideDown 0.3s ease-out';
-            }
-            modal.style.animation = 'fadeOut 0.3s ease-out';
-
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-                if (modalContent) {
-                    modalContent.style.animation = '';
-                }
-                modal.style.animation = '';
-            }, 300);
+            if (!modal) return;
+            
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         // Setup lightbox events
@@ -871,57 +880,80 @@
             const lightboxImage = document.getElementById('lightbox-image');
             const imageContainer = document.getElementById('image-container');
 
-            closeLightbox.addEventListener('click', () => {
-                closeLightboxWithAnimation(lightbox);
-            });
-
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
+            if (closeLightbox) {
+                closeLightbox.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     closeLightboxWithAnimation(lightbox);
-                }
-            });
+                });
+            }
 
-            prevImage.addEventListener('click', () => {
-                navigateImage(-1);
-            });
+            if (lightbox) {
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target === lightbox) {
+                        closeLightboxWithAnimation(lightbox);
+                    }
+                });
+            }
 
-            nextImage.addEventListener('click', () => {
-                navigateImage(1);
-            });
+            if (prevImage) {
+                prevImage.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navigateImage(-1);
+                });
+            }
+
+            if (nextImage) {
+                nextImage.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navigateImage(1);
+                });
+            }
 
             // Zoom controls
-            zoomIn.addEventListener('click', () => {
-                adjustZoom(0.2);
-            });
+            if (zoomIn) {
+                zoomIn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    adjustZoom(0.2);
+                });
+            }
 
-            zoomOut.addEventListener('click', () => {
-                adjustZoom(-0.2);
-            });
+            if (zoomOut) {
+                zoomOut.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    adjustZoom(-0.2);
+                });
+            }
 
-            zoomReset.addEventListener('click', () => {
-                resetZoom();
-            });
+            if (zoomReset) {
+                zoomReset.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    resetZoom();
+                });
+            }
 
             // Mouse wheel zoom
-            imageContainer.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                const delta = e.deltaY > 0 ? -0.1 : 0.1;
-                adjustZoom(delta);
-            });
+            if (imageContainer) {
+                imageContainer.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+                    adjustZoom(delta);
+                });
 
-            // Drag to pan when zoomed
-            imageContainer.addEventListener('mousedown', startDrag);
+                // Drag to pan when zoomed
+                imageContainer.addEventListener('mousedown', startDrag);
+                
+                // Touch events for mobile
+                imageContainer.addEventListener('touchstart', handleTouchStart);
+                imageContainer.addEventListener('touchmove', handleTouchMove);
+                imageContainer.addEventListener('touchend', endDrag);
+            }
+
             document.addEventListener('mousemove', drag);
             document.addEventListener('mouseup', endDrag);
 
-            // Touch events for mobile
-            imageContainer.addEventListener('touchstart', handleTouchStart);
-            imageContainer.addEventListener('touchmove', handleTouchMove);
-            imageContainer.addEventListener('touchend', endDrag);
-
             // Keyboard navigation
             document.addEventListener('keydown', (e) => {
-                if (!lightbox.classList.contains('hidden')) {
+                if (lightbox && lightbox.style.display === 'flex') {
                     if (e.key === 'ArrowLeft') {
                         navigateImage(-1);
                     } else if (e.key === 'ArrowRight') {
@@ -941,13 +973,12 @@
 
         // Close lightbox with smooth animation
         function closeLightboxWithAnimation(lightbox) {
-            lightbox.style.animation = 'fadeOut 0.3s ease-out';
-
-            setTimeout(() => {
-                lightbox.classList.add('hidden');
-                lightbox.style.display = 'none';
-                lightbox.style.animation = '';
-            }, 300);
+            if (!lightbox) return;
+            
+            lightbox.style.display = 'none';
+            
+            // Restore body scroll
+            document.body.style.overflow = 'auto';
         }
 
         // Navigate between images with smooth transition
@@ -976,7 +1007,11 @@
             const lightboxImage = document.getElementById('lightbox-image');
             const currentImageSpan = document.getElementById('current-image');
 
+            if (!lightboxImage || !currentImageSpan) return;
+
             lightboxImage.src = currentImages[currentImageIndex];
+            lightboxImage.style.opacity = '1';
+            lightboxImage.style.display = 'block';
             currentImageSpan.textContent = currentImageIndex + 1;
         }
 
@@ -998,7 +1033,13 @@
             const zoomLevelDisplay = document.getElementById('zoom-level');
             const imageContainer = document.getElementById('image-container');
 
-            lightboxImage.style.transform = `scale(${zoomLevel}) translate(${translateX}px, ${translateY}px)`;
+            if (!lightboxImage || !zoomLevelDisplay || !imageContainer) return;
+
+            // Apply transform with proper scaling
+            const scaleTransform = `scale(${zoomLevel})`;
+            const translateTransform = zoomLevel > 1 ? `translate(${translateX / zoomLevel}px, ${translateY / zoomLevel}px)` : '';
+            lightboxImage.style.transform = `${scaleTransform} ${translateTransform}`;
+            
             zoomLevelDisplay.textContent = `${Math.round(zoomLevel * 100)}%`;
 
             // Change cursor based on zoom level
