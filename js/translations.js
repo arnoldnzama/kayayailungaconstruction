@@ -236,8 +236,8 @@ const translations = {
             cta: "Voir tous les projets",
             items: {
                 residence_privee: {
-                    title: "Résidence collective",
-                    location: "Kinshasa",
+                    title: "Résidence Privée",
+                    location: "Kinshasa / NGALIEMA",
                     description: "Construction d'une maison individuelle avec terrasse et jardin paysagé."
                 },
                 school: {
@@ -246,24 +246,9 @@ const translations = {
                     description: "Construction d'une école moderne dans les normes internationales."
                 },
                 container: {
-                    title: "Rénovation d'un conteneur",
-                    location: "RDC, Kinshasa - 2025",
+                    title: "Immeuble ABC",
+                    location: "Kinshasa / Kalamu",
                     description: "Réhabilitation complète d'un conteneur de 60 pieds."
-                },
-                papa_cenco: {
-                    title: "Visite Papa-CENCO",
-                    location: "RDC, Kinshasa - 2023",
-                    description: "Un lieu emblématique dédié à la prière, à la rencontre et au renouveau spirituel."
-                },
-                olympics: {
-                    title: "Jeux Olympiques",
-                    location: "RDC, Kinshasa - 2023",
-                    description: "Innovation décorative au service d'un design olympique d'exception."
-                },
-                hangar: {
-                    title: "Construction hangar",
-                    location: "RDC, Kinshasa - 2025",
-                    description: "Ancien hangar entièrement rénové et transformé en maison d'habitation."
                 }
             }
         },
@@ -984,8 +969,8 @@ const translations = {
             cta: "View all projects",
             items: {
                 residence_privee: {
-                    title: "Collective Residence",
-                    location: "Kinshasa",
+                    title: "Private Residence",
+                    location: "Kinshasa / Ngaliema",
                     description: "Construction of an individual house with terrace and landscaped garden."
                 },
                 school: {
@@ -994,24 +979,9 @@ const translations = {
                     description: "Construction of a modern school meeting international standards."
                 },
                 container: {
-                    title: "Container Renovation",
-                    location: "DRC, Kinshasa - 2025",
+                    title: "ABC Building",
+                    location: "Kinshasa / Kalamu",
                     description: "Complete rehabilitation of a 60-foot container."
-                },
-                papa_cenco: {
-                    title: "Papa-CENCO Visit",
-                    location: "DRC, Kinshasa - 2023",
-                    description: "An iconic place dedicated to prayer, meeting and spiritual renewal."
-                },
-                olympics: {
-                    title: "Olympic Games",
-                    location: "DRC, Kinshasa - 2023",
-                    description: "Decorative innovation in the service of exceptional Olympic design."
-                },
-                hangar: {
-                    title: "Hangar Construction",
-                    location: "DRC, Kinshasa - 2025",
-                    description: "Old hangar completely renovated and transformed into a residential house."
                 }
             }
         },
