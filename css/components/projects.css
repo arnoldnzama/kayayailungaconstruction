@@ -40,8 +40,8 @@
 
 /* Projects Grid - 3 Columns Layout */
 .projects-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     margin-bottom: 64px;
 }
@@ -54,22 +54,19 @@
     cursor: pointer;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     height: 450px;
-    grid-column: span 1 !important;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
 }
 
-/* Large Project Card - Force 1 column span */
+/* Large Project Card */
 .project-card-large {
-    grid-column: span 1 !important;
     height: 450px;
 }
 
 /* Small Project Card */
 .project-card-small {
-    grid-column: span 1 !important;
     height: 450px;
 }
 
@@ -266,13 +263,10 @@
         margin-bottom: 48px;
     }
 
-    .project-card-large {
-        grid-column: span 1;
-        height: 450px;
-    }
-
+    .project-card,
+    .project-card-large,
     .project-card-small {
-        height: 350px;
+        height: 400px;
     }
 
     .project-content {
@@ -311,6 +305,7 @@
         font-size: 28px;
     }
 
+    .project-card,
     .project-card-large,
     .project-card-small {
         height: 320px;

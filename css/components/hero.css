@@ -13,47 +13,17 @@
     justify-content: center;
 }
 
-/* Video Background */
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: var(--z-base);
-}
-
-/* Fallback Image */
-.hero-fallback-image {
+/* Hero Background Image */
+.hero-background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Fallback for browsers that don't support WebP */
-    background-image: url('../images/hero-fallback.jpg');
-    /* Modern WebP format */
-    background-image: url('../img/architecture.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 0;
-    display: none;
-}
-
-/* Error state - show fallback if video fails to load */
-.hero-video.error ~ .hero-fallback-image {
-    display: block;
-}
-
-/* Show fallback if video fails */
-.hero-video:not([src])~.hero-fallback-image,
-.hero-video[src=""]~.hero-fallback-image {
-    display: block;
+    z-index: 1;
 }
 
 /* Dark Overlay with Gradient */
@@ -239,21 +209,10 @@
         bottom: 24px;
     }
 
-    /* Keep video visible on mobile */
-    .hero-video {
-        display: block;
-        min-width: 100%;
-        min-height: 100%;
-    }
-
-    /* Fallback image only if video fails */
-    .hero-fallback-image {
-        display: none;
-    }
-    
-    .hero-video.error ~ .hero-fallback-image,
-    .hero-video:not([src]) ~ .hero-fallback-image {
-        display: block;
+    /* Ensure background image covers properly on mobile */
+    .hero-background-image {
+        background-size: cover;
+        background-position: center;
     }
 }
 

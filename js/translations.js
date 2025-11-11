@@ -730,6 +730,28 @@ const translations = {
                 subtitle: "Notre équipe est à votre disposition pour discuter de vos besoins",
                 button: "Contactez-nous"
             }
+        },
+        // Testimonials Section
+        testimonials: {
+            title: "Ce que disent nos clients",
+            subtitle: "Découvrez les expériences de ceux qui nous ont fait confiance",
+            items: {
+                testimonial1: {
+                    text: "Kayaya Ilunga Construction a transformé notre vision en réalité. Leur professionnalisme et leur attention aux détails sont exceptionnels. Notre nouvelle résidence dépasse toutes nos attentes.",
+                    name: "Jean-Pierre Mukendi",
+                    role: "Propriétaire, Résidence Privée Ngaliema"
+                },
+                testimonial2: {
+                    text: "Un partenaire fiable et compétent. Ils ont respecté les délais et le budget pour la construction de notre centre commercial. Je recommande vivement leurs services.",
+                    name: "Marie Kalala",
+                    role: "Directrice, Mall Martin Bakole"
+                },
+                testimonial3: {
+                    text: "Excellence et innovation à chaque étape. Leur équipe a su comprendre nos besoins et livrer un projet qui allie esthétique moderne et fonctionnalité. Un travail remarquable.",
+                    name: "Patrick Tshisekedi",
+                    role: "PDG, Immeuble ABC Kalamu"
+                }
+            }
         }
     },
     en: {
@@ -1462,6 +1484,28 @@ const translations = {
                 title: "Ready to start your project?",
                 subtitle: "Our team is at your disposal to discuss your needs",
                 button: "Contact us"
+            }
+        },
+        // Testimonials Section
+        testimonials: {
+            title: "What Our Clients Say",
+            subtitle: "Discover the experiences of those who trusted us",
+            items: {
+                testimonial1: {
+                    text: "Kayaya Ilunga Construction transformed our vision into reality. Their professionalism and attention to detail are exceptional. Our new residence exceeds all our expectations.",
+                    name: "Jean-Pierre Mukendi",
+                    role: "Owner, Private Residence Ngaliema"
+                },
+                testimonial2: {
+                    text: "A reliable and competent partner. They respected the deadlines and budget for the construction of our shopping center. I highly recommend their services.",
+                    name: "Marie Kalala",
+                    role: "Director, Mall Martin Bakole"
+                },
+                testimonial3: {
+                    text: "Excellence and innovation at every step. Their team understood our needs and delivered a project that combines modern aesthetics and functionality. Remarkable work.",
+                    name: "Patrick Tshisekedi",
+                    role: "CEO, ABC Building Kalamu"
+                }
             }
         }
     }

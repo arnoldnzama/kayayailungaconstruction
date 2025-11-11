@@ -22,6 +22,8 @@
 @import url('components/contact-cta.css');
 @import url('components/footer.css');
 
+/* Note: partners.css now contains testimonials styles */
+
 /* 4. Legacy Support (temporary - to be removed) */
 /* Uncomment if you need backward compatibility */
 /* @import url('legacy.css'); */

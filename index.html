@@ -163,13 +163,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <main id="main-content">
-            <!-- Video Background -->
-            <video class="hero-video" autoplay loop muted playsinline poster="img/architecture.webp">
-                <source src="vid/3d.mp4" type="video/mp4">
-            </video>
-
-            <!-- Fallback Image for browsers that don't support video -->
-            <div class="hero-fallback-image"></div>
+            <!-- Hero Background Image -->
+            <div class="hero-background-image" style="background-image: url('images/equipes/1.png');"></div>
 
             <!-- Dark Overlay -->
             <div class="hero-overlay"></div>
@@ -457,7 +452,7 @@
                 <!-- Project 2 - Small -->
                 <div class="project-card project-card-small">
                     <div class="project-image-wrapper">
-                        <img src="projets/mall/img2-small.webp" alt="Projet Mall Martin Bakole"
+                        <img src="projets/mall/1.webp" alt="Projet Mall Martin Bakole"
                             class="project-image lazy-image" loading="lazy"
                             onerror="this.src='images/placeholder.svg'; this.onerror=null;">
                         <div class="project-overlay"></div>
@@ -690,28 +685,84 @@
         </div>
     </section>
 
-    <!-- Partners Section -->
-    <section id="partners" class="partners-section animate-on-scroll" data-animation="fade-in-up">
-        <div class="partners-container">
-            <h2 class="partners-title" data-translate="partners.title">
-                Ils nous font confiance
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section animate-on-scroll" data-animation="fade-in-up">
+        <div class="testimonials-container">
+            <h2 class="testimonials-title" data-translate="testimonials.title">
+                Ce que disent nos clients
             </h2>
-            <div class="partners-logo-container">
-                <div class="partner-logo">
-                    <img src="images/parts/logo_officiel.png" alt="Partenaire BIT" loading="lazy" class="lazy-image"
-                        onerror="this.style.opacity='0.3'; this.onerror=null;">
+            <p class="testimonials-subtitle" data-translate="testimonials.subtitle">
+                Découvrez les expériences de ceux qui nous ont fait confiance
+            </p>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text" data-translate="testimonials.items.testimonial1.text">
+                        Kayaya Ilunga Construction a transformé notre vision en réalité. Leur professionnalisme et leur attention aux détails sont exceptionnels. Notre nouvelle résidence dépasse toutes nos attentes.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author-name" data-translate="testimonials.items.testimonial1.name">Jean-Pierre Mukendi</h4>
+                            <p class="testimonial-author-role" data-translate="testimonials.items.testimonial1.role">Propriétaire, Résidence Privée Ngaliema</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                 </div>
-                <div class="partner-logo">
-                    <img src="images/parts/CANAL-logo-300x169.png" alt="Partenaire Canal+" loading="lazy"
-                        class="lazy-image" onerror="this.style.opacity='0.3'; this.onerror=null;">
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text" data-translate="testimonials.items.testimonial2.text">
+                        Un partenaire fiable et compétent. Ils ont respecté les délais et le budget pour la construction de notre centre commercial. Je recommande vivement leurs services.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author-name" data-translate="testimonials.items.testimonial2.name">Marie Kalala</h4>
+                            <p class="testimonial-author-role" data-translate="testimonials.items.testimonial2.role">Directrice, Mall Martin Bakole</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                 </div>
-                <div class="partner-logo">
-                    <img src="images/parts/mb.webp" alt="Partenaire MB" loading="lazy" class="lazy-image"
-                        onerror="this.style.opacity='0.3'; this.onerror=null;">
-                </div>
-                <div class="partner-logo">
-                    <img src="images/parts/Vodacom-Logo.wine_-300x200.png" alt="Partenaire Vodacom" loading="lazy"
-                        class="lazy-image" onerror="this.style.opacity='0.3'; this.onerror=null;">
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="testimonial-text" data-translate="testimonials.items.testimonial3.text">
+                        Excellence et innovation à chaque étape. Leur équipe a su comprendre nos besoins et livrer un projet qui allie esthétique moderne et fonctionnalité. Un travail remarquable.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-info">
+                            <h4 class="testimonial-author-name" data-translate="testimonials.items.testimonial3.name">Patrick Tshisekedi</h4>
+                            <p class="testimonial-author-role" data-translate="testimonials.items.testimonial3.role">PDG, Immeuble ABC Kalamu</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
